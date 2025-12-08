@@ -74,7 +74,7 @@
     }
 
     .logo-img {
-      height: 142px; /* logo bien grand */
+      height: 72px; /* logo bien grand */
       width: auto;
       transition: transform 0.3s ease, filter 0.3s ease;
     }
@@ -105,6 +105,7 @@
       display: flex;
       gap: 20px;
       font-size: 0.95rem;
+      align-items: center;
     }
 
     .nav-links a {
@@ -115,6 +116,12 @@
     .nav-links a:hover {
       opacity: 1;
       transform: translateY(-1px);
+    }
+
+    .nav-lang {
+      font-weight: 600;
+      font-size: 0.9rem;
+      opacity: 1;
     }
 
     .theme-toggle {
@@ -689,9 +696,11 @@
         <div class="nav-right">
           <nav class="nav-links" id="navLinks">
             <a href="#about">À propos</a>
+            <a href="#why">Pourquoi ?</a>
             <a href="#services">Services</a>
             <a href="#plans">Offres</a>
             <a href="#contact">Contact</a>
+            <a href="en.html" class="nav-lang">EN</a>
           </nav>
 
           <button class="theme-toggle" id="themeToggle" type="button">
@@ -716,9 +725,7 @@
           </h1>
 
           <p class="hero-subtitle">
-            Support, maintenance informatique et accompagnement cloud
-            sur <strong>Google Workspace</strong> ou <strong>Microsoft 365</strong>,
-            selon la plateforme que vous choisissez.
+            <strong>« L’intelligence connectée pour une informatique qui ne s’arrête jamais. »</strong>
           </p>
 
           <div class="hero-cta">
@@ -791,6 +798,50 @@
           </p>
           <p>
             Nos interventions se font à distance ou sur site selon le niveau d’urgence.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION : POURQUOI L’INTELLIGENCE CONNECTÉE ? -->
+  <section id="why">
+    <div class="container">
+      <h2 class="section-title">Pourquoi l’intelligence connectée ?</h2>
+      <p class="section-subtitle">
+        Une approche moderne qui rend votre informatique plus intelligente, plus rapide et plus fiable.
+      </p>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Un IT proactif</h3>
+          <p>
+            Grâce à l’intelligence connectée, les incidents sont anticipés plutôt que subis :
+            supervision, alertes et optimisation continue. Votre activité reste opérationnelle.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>Support + Maintenance + Cloud, unifiés</h3>
+          <p>
+            Tous vos outils — Google Workspace ou Microsoft 365 — travaillent ensemble,
+            connectés à votre support et à votre infrastructure pour une expérience fluide.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>Des utilisateurs plus productifs</h3>
+          <p>
+            Une informatique stable, rapide et sécurisée permet à vos équipes de travailler sans interruption.
+            Moins de pannes, plus d’efficacité au quotidien.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>Une informatique qui ne s’arrête jamais</h3>
+          <p>
+            L’intelligence connectée garantit la continuité de votre activité :
+            disponibilité, sécurité, réactivité et performance, même en période de forte charge.
           </p>
         </div>
       </div>
