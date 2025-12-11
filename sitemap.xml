@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Page d'accueil FR -->
+  <url>
+    <loc>https://synaptech.tn/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Version anglaise -->
+  <url>
+    <loc>https://synaptech.tn/en.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Page de remerciement FR (facultatif, tu peux la supprimer si tu la désindexes) -->
+  <url>
+    <loc>https://synaptech.tn/merci-fr.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Page de remerciement EN (si tu la crées) -->
+  <url>
+    <loc>https://synaptech.tn/merci-en.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Si tu mets ta brochure PDF sur le site, tu peux ajouter son URL ici :
+  <url>
+    <loc>https://synaptech.tn/Synaptech_Brochure_FR.pdf</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  -->
+
+</urlset>
