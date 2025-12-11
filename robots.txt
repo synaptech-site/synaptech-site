@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# On évite d'indexer les pages de remerciement
+Disallow: /merci.html
+Disallow: /merci-fr.html
+Disallow: /merci-en.html
+
+Sitemap: https://synaptech.tn/sitemap.xml
+Host: synaptech.tn
