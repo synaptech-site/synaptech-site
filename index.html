@@ -61,6 +61,55 @@
   </script>
 
   <style>
+
+/* ===== MOBILE FIXED HEADER ===== */
+@media (max-width: 768px) {
+  .mobile-header {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 24px);
+    max-width: 420px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 999px;
+    padding: 10px 16px;
+
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+
+  .mobile-logo img {
+    height: 48px;
+    width: auto;
+  }
+
+  .mobile-menu-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #111;
+  }
+
+  /* Cache l'ancien header desktop */
+  .navbar {
+    display: none;
+  }
+
+  body {
+    padding-top: 90px; /* évite que le contenu passe sous le header */
+  }
+}
+
+
+    
     :root {
       --primary: #1E90FF;
       --primary-light: #00BFFF;
