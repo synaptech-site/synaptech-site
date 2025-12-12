@@ -1,71 +1,65 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta name="robots" content="index, follow" />
-
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-  <link rel="canonical" href="https://synaptech.tn/" />
-
-  <link rel="alternate" href="https://synaptech.tn/" hreflang="fr" />
-  <link rel="alternate" href="https://synaptech.tn/en.html" hreflang="en" />
-  <link rel="alternate" href="https://synaptech.tn/" hreflang="x-default" />
-
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Synaptech IT Services – Support & maintenance IT en Tunisie</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Description SEO -->
-  <meta name="description" content="Synaptech IT Services accompagne les entreprises en Tunisie avec du support informatique, maintenance IT et solutions cloud Google Workspace ou Microsoft 365." />
-
-  <!-- Mots-clés -->
-  <meta name="keywords" content="support informatique, maintenance IT, Google Workspace, Microsoft 365, cloud, Tunisie, Synaptech, helpdesk, support à distance" />
-
-  <!-- Langues / hreflang (historique GitHub — tu peux supprimer plus tard) -->
-  <link rel="alternate" href="https://synaptech-site.github.io/synaptech-site/index.html" hreflang="fr" />
-  <link rel="alternate" href="https://synaptech-site.github.io/synaptech-site/en.html" hreflang="en" />
-  <link rel="canonical" href="https://synaptech.tn/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Synaptech IT Services accompagne les entreprises en Tunisie avec du support informatique, maintenance IT et solutions cloud Google Workspace ou Microsoft 365.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://synaptech.tn/">
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Synaptech IT Services – Support & maintenance IT" />
-  <meta property="og:description" content="Support utilisateurs, maintenance informatique et cloud Google Workspace ou Microsoft 365 pour les entreprises en Tunisie." />
-  <meta property="og:url" content="https://synaptech.tn/" />
-  <meta property="og:site_name" content="Synaptech IT Services" />
-  <meta property="og:image" content="https://synaptech.tn/logo-synaptech.png" />
+  <meta property="og:title" content="Synaptech IT Services">
+  <meta property="og:description" content="Support informatique & maintenance IT en Tunisie.">
+  <meta property="og:image" content="https://synaptech.tn/logo-synaptech.png">
+  <meta property="og:url" content="https://synaptech.tn/">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Synaptech IT Services – Support & maintenance IT" />
-  <meta name="twitter:description" content="Support IT, maintenance et cloud pour entreprises en Tunisie." />
-  <meta name="twitter:image" content="https://synaptech.tn/logo-synaptech.png" />
-
-  <!-- Données structurées LocalBusiness -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Synaptech IT Services",
-    "image": "https://synaptech.tn/logo-synaptech.png",
-    "description": "Support informatique, maintenance IT et solutions cloud (Google Workspace ou Microsoft 365) pour entreprises en Tunisie.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "TN",
-      "addressLocality": "Tunis"
-    },
-    "telephone": "+21622961115",
-    "url": "https://synaptech.tn/"
-  }
-  </script>
+  <link rel="icon" href="favicon.ico">
 
   <style>
-    /* ===== WhatsApp Float ===== */
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+      background: #050816;
+      color: #f9fafb;
+      line-height: 1.6;
+    }
+
+    h1,h2,h3 { margin-top: 0; }
+
+    section {
+      padding: 60px 16px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* ===== MOBILE FLOATING LOGO ===== */
+    @media (max-width: 768px) {
+      .mobile-logo-float {
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        z-index: 10000;
+        width: 72px;
+        height: 72px;
+        background: rgba(255,255,255,0.95);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      }
+
+      .mobile-logo-float img {
+        width: 60px;
+      }
+    }
+
+    /* ===== WHATSAPP ===== */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      z-index: 9999;
       width: 56px;
       height: 56px;
       background: #25D366;
@@ -73,1165 +67,76 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      z-index: 9999;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-      transition: transform 0.2s ease;
-    }
-    .whatsapp-float img { width: 30px; height: 30px; }
-    .whatsapp-float:hover { transform: scale(1.08); }
-
-    :root {
-      --primary: #1E90FF;
-      --primary-light: #00BFFF;
-      --bg: #050816;
-      --header-bg: linear-gradient(145deg,#050816,#0b1224);
-      --surface: #0f172a;
-      --surface-soft: #111827;
-      --text-main: #f9fafb;
-      --text-muted: #9ca3af;
-      --border-subtle: #1f2937;
-      --pill-bg: #dbeafe;
-      --pill-text: #1d4ed8;
     }
 
-    body[data-theme="light"] {
-      --bg: #f3f5f9;
-      --header-bg: linear-gradient(145deg,#e5f0ff,#f9fbff);
-      --surface: #ffffff;
-      --surface-soft: #ffffff;
-      --text-main: #111827;
-      --text-muted: #4b5563;
-      --border-subtle: #e5e7eb;
-      --pill-bg: #e0f2fe;
-      --pill-text: #0369a1;
+    .whatsapp-float img {
+      width: 30px;
     }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text-main);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    a { text-decoration: none; color: inherit; }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 0 16px;
-    }
-
-    header {
-      padding: 16px 0 64px;
-      background: var(--header-bg);
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 32px;
-      position: relative;
-      z-index: 20;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-
-    .logo-img {
-      height: 162px;
-      width: auto;
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
-
-    .logo:hover .logo-img {
-      transform: translateY(-2px) scale(1.05) rotate(-2deg);
-      filter: drop-shadow(0 0 8px rgba(56,189,248,0.5));
-    }
-
-    .logo-text {
-      display: flex;
-      gap: 6px;
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      white-space: nowrap;
-    }
-    .logo-name { color: #ffffff; }
-    .logo-sub { color: var(--primary-light); }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      font-size: 0.95rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      opacity: 0.85;
-      transition: opacity 0.2s ease, transform 0.1s ease;
-      white-space: nowrap;
-    }
-    .nav-links a:hover {
-      opacity: 1;
-      transform: translateY(-1px);
-    }
-
-    .nav-lang {
-      font-weight: 600;
-      font-size: 0.9rem;
-      opacity: 1;
-    }
-
-    .theme-toggle {
-      border: 1px solid var(--border-subtle);
-      background: rgba(255,255,255,0.05);
-      border-radius: 999px;
-      padding: 6px 10px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      color: var(--text-main);
-      flex-shrink: 0;
-    }
-
-    .theme-toggle span { font-size: 1rem; }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 4px;
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      padding: 4px;
-    }
-    .hamburger span {
-      width: 20px;
-      height: 2px;
-      border-radius: 999px;
-      background: var(--text-main);
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-    .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0,1.5fr) minmax(0,1.1fr);
-      gap: 32px;
-      align-items: center;
-    }
-
-    .hero-badge {
-      background: rgba(15,23,42,0.7);
-      border-radius: 999px;
-      padding: 6px 14px;
-      font-size: 0.78rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      border: 1px solid rgba(148,163,184,0.6);
-      margin-bottom: 12px;
-    }
-    body[data-theme="light"] .hero-badge {
-      background: rgba(255,255,255,0.9);
-      border-color: var(--border-subtle);
-    }
-
-    .hero-badge-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 5px rgba(34,197,94,0.25);
-    }
-
-    .hero-title {
-      font-size: clamp(2.1rem, 4.5vw, 2.7rem);
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-    .hero-title span { color: var(--primary-light); }
-
-    .hero-subtitle {
-      font-size: 1rem;
-      margin-bottom: 18px;
-      color: #cbd5f5;
-      max-width: 520px;
-    }
-    body[data-theme="light"] .hero-subtitle { color: #4b5563; }
-
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      border: none;
-      padding: 9px 18px;
-      border-radius: 999px;
-      color: white;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.95rem;
-      box-shadow: 0 10px 22px rgba(37,99,235,0.35);
-      transition: 0.15s ease;
-    }
-    .btn-primary:hover {
-      background: #0b6cd3;
-      transform: translateY(-1px);
-      box-shadow: 0 14px 30px rgba(37,99,235,0.45);
-    }
-
-    .btn-ghost {
-      padding: 9px 18px;
-      border-radius: 999px;
-      border: 1px solid var(--border-subtle);
-      background: transparent;
-      color: var(--text-main);
-      cursor: pointer;
-      font-size: 0.95rem;
-      transition: 0.15s ease;
-    }
-    .btn-ghost:hover { background: rgba(255,255,255,0.06); }
-    body[data-theme="light"] .btn-ghost:hover { background: rgba(15,23,42,0.06); }
-
-    .hero-meta {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-
-    .hero-card {
-      background: radial-gradient(circle at top, rgba(59,130,246,0.28), transparent 55%),
-                  radial-gradient(circle at bottom, rgba(56,189,248,0.22), transparent 55%),
-                  var(--surface-soft);
-      border-radius: 20px;
-      padding: 18px;
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 14px 32px rgba(15,23,42,0.65);
-    }
-    body[data-theme="light"] .hero-card { box-shadow: 0 10px 26px rgba(15,23,42,0.1); }
-
-    .hero-card-title { font-size: 0.9rem; margin-bottom: 10px; color: #e5e7eb; }
-    body[data-theme="light"] .hero-card-title { color: #111827; }
-
-    .hero-metrics {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
-    .metric {
-      background: rgba(15,23,42,0.85);
-      border-radius: 12px;
-      padding: 8px;
-      border: 1px solid var(--border-subtle);
-    }
-    body[data-theme="light"] .metric { background: rgba(255,255,255,0.9); }
-
-    .metric-value { font-size: 0.95rem; font-weight: 700; color: var(--primary-light); }
-    .metric-label { font-size: 0.7rem; color: #e5e7eb; }
-    body[data-theme="light"] .metric-label { color: #4b5563; }
-
-    .hero-card-list { font-size: 0.82rem; color: #d1d5db; list-style: none; }
-    body[data-theme="light"] .hero-card-list { color: #4b5563; }
-
-    section { padding: 56px 0; }
-    .section-title { text-align: center; font-size: 1.6rem; margin-bottom: 6px; }
-    .section-subtitle {
-      text-align: center;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      max-width: 480px;
-      margin: 0 auto 26px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(0,1.4fr) minmax(0,1fr);
-      gap: 28px;
-      align-items: flex-start;
-    }
-
-    .about-text p { margin-bottom: 10px; font-size: 0.95rem; }
-
-    .about-highlights {
-      display: grid;
-      grid-template-columns: repeat(2,minmax(0,1fr));
-      gap: 10px;
-      margin-top: 8px;
-    }
-
-    .pill {
-      background: var(--pill-bg);
-      color: var(--pill-text);
-      padding: 6px 8px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      text-align: center;
-    }
-
-    .about-card {
-      background: var(--surface-soft);
-      border-radius: 16px;
-      padding: 16px;
-      border: 1px solid var(--border-subtle);
-      font-size: 0.9rem;
-      box-shadow: 0 8px 22px rgba(15,23,42,0.45);
-    }
-    body[data-theme="light"] .about-card { box-shadow: 0 8px 24px rgba(15,23,42,0.1); }
-
-    .about-card h3 { margin-bottom: 6px; }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3,minmax(0,1fr));
-      gap: 20px;
-    }
-
-    .service-card {
-      background: var(--surface);
-      border-radius: 16px;
-      padding: 16px;
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 8px 22px rgba(15,23,42,0.4);
-      font-size: 0.9rem;
-    }
-    body[data-theme="light"] .service-card { box-shadow: 0 8px 24px rgba(15,23,42,0.08); }
-
-    .service-tag {
-      font-size: 0.7rem;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: rgba(37,99,235,0.12);
-      color: #bfdbfe;
-      display: inline-block;
-      margin-bottom: 4px;
-    }
-    body[data-theme="light"] .service-tag { background: #eff6ff; color: #1d4ed8; }
-
-    .service-card h3 { margin-bottom: 4px; }
-
-    .service-list {
-      margin-top: 4px;
-      list-style: none;
-      color: var(--text-muted);
-      font-size: 0.82rem;
-    }
-
-    /* PLANS */
-    .plans-grid {
-      display: grid;
-      grid-template-columns: repeat(3,minmax(0,1fr));
-      gap: 20px;
-    }
-
-    .plan-card {
-      background: var(--surface);
-      border-radius: 16px;
-      padding: 16px;
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 8px 22px rgba(15,23,42,0.4);
-      font-size: 0.9rem;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      position: relative;
-      overflow: hidden;
-    }
-    body[data-theme="light"] .plan-card { box-shadow: 0 8px 24px rgba(15,23,42,0.08); }
-
-    .plan-card.reco {
-      border-color: var(--primary-light);
-      box-shadow: 0 12px 30px rgba(37,99,235,0.55);
-    }
-
-    .plan-badge {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      border-radius: 999px;
-      background: linear-gradient(135deg,#f97316,#facc15);
-      color: #111827;
-      font-size: 0.7rem;
-      padding: 4px 8px;
-      font-weight: 600;
-    }
-
-    .plan-header h3 { margin: 0; font-size: 1.05rem; }
-
-    .plan-price {
-      margin-top: 4px;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary-light);
-    }
-    .plan-price span { font-size: 0.9rem; opacity: 0.85; }
-
-    .plan-period { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 6px; }
-    .plan-desc { font-size: 0.86rem; color: var(--text-muted); }
-
-    .plan-list {
-      margin-top: 4px;
-      list-style: none;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-
-    .plan-cta { margin-top: 8px; }
-
-    .plan-cta button {
-      padding: 7px 12px;
-      font-size: 0.82rem;
-      border-radius: 999px;
-      border: 1px solid var(--primary-light);
-      background: transparent;
-      color: var(--primary-light);
-      cursor: pointer;
-      transition: 0.15s ease;
-    }
-    .plan-cta button:hover { background: var(--primary-light); color: #0b1120; }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
-      gap: 24px;
-      align-items: flex-start;
-    }
-
-    .contact-item { margin-bottom: 6px; font-size: 0.92rem; }
-    .chat-actions { margin-top: 12px; }
-
-    .btn-outline {
-      background: rgba(255,255,255,0.06);
-      border-radius: 999px;
-      border: 1px solid var(--border-subtle);
-      padding: 8px 14px;
-      font-size: 0.85rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--text-main);
-      transition: 0.15s ease;
-    }
-    .btn-outline:hover { background: rgba(255,255,255,0.12); }
-    body[data-theme="light"] .btn-outline:hover { background: rgba(15,23,42,0.06); }
-
-    .contact-card {
-      background: var(--surface);
-      border-radius: 16px;
-      padding: 16px;
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 8px 22px rgba(15,23,42,0.4);
-    }
-    body[data-theme="light"] .contact-card { box-shadow: 0 8px 24px rgba(15,23,42,0.08); }
-
-    .contact-card h3 { margin-bottom: 8px; }
-
-    .field-group { margin-bottom: 8px; font-size: 0.85rem; }
-    .field-group label { margin-bottom: 2px; display: block; color: var(--text-muted); }
-
-    input, textarea {
-      width: 100%;
-      font: inherit;
-      padding: 8px 9px;
-      border-radius: 10px;
-      border: 1px solid var(--border-subtle);
-      background: rgba(15,23,42,0.7);
-      color: var(--text-main);
-      outline: none;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-    }
-    body[data-theme="light"] input, body[data-theme="light"] textarea { background: #f9fafb; }
-
-    input:focus, textarea:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 1px rgba(37,99,235,0.4);
-      background: rgba(15,23,42,0.9);
-    }
-    body[data-theme="light"] input:focus, body[data-theme="light"] textarea:focus { background: #ffffff; }
-
-    textarea { min-height: 90px; resize: vertical; }
-
-    .form-note { font-size: 0.76rem; color: var(--text-muted); margin-top: 4px; }
 
     footer {
-      background: #020617;
-      color: #9ca3af;
-      padding: 14px 0;
-      font-size: 0.8rem;
       text-align: center;
-    }
-    body[data-theme="light"] footer { background: #0b1120; }
-
-    /* --- RESPONSIVE --- */
-    @media (max-width: 900px) {
-      .container { padding: 0 14px; }
-
-      .hero { grid-template-columns: minmax(0,1fr); gap: 24px; }
-      .hero-card { margin-top: 6px; }
-
-      .about-grid, .services-grid, .plans-grid, .contact-grid { grid-template-columns: minmax(0,1fr); }
-      .services-grid, .plans-grid { gap: 16px; }
-
-      .nav-links {
-        position: absolute;
-        top: 52px;
-        right: 14px;
-        left: 14px;
-        background: var(--surface);
-        border-radius: 14px;
-        border: 1px solid var(--border-subtle);
-        padding: 10px 14px;
-        flex-direction: column;
-        gap: 10px;
-        display: none;
-        box-shadow: 0 12px 30px rgba(15,23,42,0.7);
-      }
-      body[data-theme="light"] .nav-links { box-shadow: 0 10px 24px rgba(15,23,42,0.12); }
-
-      .nav-links.open { display: flex; }
-      .hamburger { display: flex; }
-      .nav-right { gap: 10px; }
-    }
-
-    @media (max-width: 600px) {
-      header { padding-bottom: 52px; }
-      .hero-title { font-size: 2rem; }
-      .hero-subtitle { font-size: 0.95rem; }
-      .hero-cta { flex-direction: column; align-items: flex-start; }
-      .logo-img { height: 80px; }
-      .logo-text { font-size: 1.3rem; }
-    }
-
-    @media (max-width: 420px) {
-      .logo-img { height: 80px; }
-      .logo-text { display: none; }
-    }
-
-    /* ===== MOBILE FIXED CAPSULE HEADER (logo 60px) ===== */
-    .mobile-header, .mobile-nav { display: none; }
-
-    @media (max-width: 768px) {
-      body { padding-top: 112px; }
-
-      .navbar { display: none; }
-
-      .mobile-header {
-        display: flex;
-        position: fixed;
-        top: 12px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: calc(100% - 24px);
-        max-width: 520px;
-        z-index: 10000;
-
-        align-items: center;
-        justify-content: space-between;
-
-        background: rgba(255, 255, 255, 0.88);
-        border: 1px solid rgba(255,255,255,0.65);
-        backdrop-filter: blur(10px);
-        border-radius: 999px;
-        padding: 10px 14px;
-
-        box-shadow: 0 10px 28px rgba(0,0,0,0.18);
-      }
-
-      .mobile-brand { display: flex; align-items: center; }
-
-      .mobile-logo-wrap {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-
-        background: #ffffff;
-        border: 2px solid rgba(255,255,255,0.95);
-        border-radius: 999px;
-
-        padding: 8px 14px;
-        box-shadow: 0 8px 18px rgba(0,0,0,0.12);
-      }
-
-      .mobile-logo-wrap img {
-        height: 60px;
-        width: auto;
-        display: block;
-      }
-
-      .mobile-actions {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .mobile-menu-btn {
-        border: none;
-        background: transparent;
-        font-size: 26px;
-        cursor: pointer;
-        color: #111827;
-        padding: 6px 10px;
-        line-height: 1;
-      }
-
-      .mobile-header .theme-toggle {
-        background: rgba(255,255,255,0.7);
-        color: #111827;
-        border-color: rgba(0,0,0,0.08);
-      }
-
-      .mobile-nav {
-        display: none;
-        position: fixed;
-        top: 92px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: calc(100% - 24px);
-        max-width: 520px;
-        z-index: 10000;
-
-        background: rgba(15,23,42,0.95);
-        border: 1px solid rgba(255,255,255,0.10);
-        border-radius: 16px;
-        padding: 12px;
-
-        box-shadow: 0 16px 40px rgba(0,0,0,0.35);
-      }
-
-      body[data-theme="light"] .mobile-nav {
-        background: rgba(255,255,255,0.95);
-        border-color: rgba(0,0,0,0.08);
-      }
-
-      .mobile-nav a {
-        display: block;
-        padding: 10px 10px;
-        border-radius: 12px;
-        color: var(--text-main);
-        font-weight: 600;
-        opacity: 0.95;
-      }
-
-      body[data-theme="light"] .mobile-nav a { color: #111827; }
-
-      .mobile-nav a:hover { background: rgba(255,255,255,0.08); }
-      body[data-theme="light"] .mobile-nav a:hover { background: rgba(15,23,42,0.06); }
-
-      .mobile-nav.open { display: block; }
-
-      .whatsapp-float { bottom: 18px; right: 18px; }
+      padding: 20px;
+      background: #020617;
+      font-size: 0.85rem;
+      color: #9ca3af;
     }
   </style>
 </head>
 
-<body data-theme="dark">
+<body>
 
-  <!-- MOBILE FIXED HEADER (capsule blanche) -->
-  <div class="mobile-header" aria-label="Header mobile">
-    <a class="mobile-brand" href="#top" aria-label="Accueil Synaptech">
-      <span class="mobile-logo-wrap">
-        <img src="logo-synaptech.png" alt="Synaptech IT Services">
-      </span>
-    </a>
+<!-- LOGO MOBILE -->
+<div class="mobile-logo-float">
+  <img src="logo-synaptech.png" alt="Synaptech IT Services">
+</div>
 
-    <div class="mobile-actions">
-      <button class="theme-toggle" id="themeToggleMobile" type="button" aria-label="Changer le thème">
-        <span id="themeIconMobile">🌙</span>
-      </button>
+<!-- HERO -->
+<section>
+  <h1>L’intelligence connectée au service de votre support IT</h1>
+  <p><strong>Support informatique professionnel, maintenance IT et cloud en Tunisie.</strong></p>
+</section>
 
-      <button class="mobile-menu-btn" id="menuToggleMobile" type="button" aria-label="Ouvrir le menu">
-        ☰
-      </button>
-    </div>
-  </div>
+<!-- SERVICES -->
+<section>
+  <h2>Nos services</h2>
+  <ul>
+    <li>Support utilisateurs & helpdesk</li>
+    <li>Maintenance informatique proactive</li>
+    <li>Google Workspace ou Microsoft 365</li>
+    <li>Supervision & sécurité IT</li>
+  </ul>
+</section>
 
-  <!-- MENU MOBILE -->
-  <nav class="mobile-nav" id="navLinksMobile" aria-label="Menu mobile">
-    <a href="#about">À propos</a>
-    <a href="#why">Pourquoi ?</a>
-    <a href="#services">Services</a>
-    <a href="#plans">Offres</a>
-    <a href="#contact">Contact</a>
-    <a href="en.html" class="nav-lang">EN</a>
-  </nav>
+<!-- OFFRES -->
+<section id="plans">
+  <h2>Offres & services</h2>
 
-  <div id="top"></div>
+  <h3>Standard – 49 TND / poste / mois</h3>
+  <p>Support IT structuré pour PME.</p>
 
-  <header>
-    <div class="container">
-      <div class="navbar">
-        <div class="logo">
-          <img src="logo-synaptech.png" class="logo-img" alt="Logo Synaptech IT Services, support informatique en Tunisie">
-          <div class="logo-text">
-            <span class="logo-name">Synaptech</span>
-            <span class="logo-sub">IT Services</span>
-          </div>
-        </div>
+  <h3>Premium – 89 TND / poste / mois</h3>
+  <p>Support prioritaire + supervision avancée.</p>
 
-        <div class="nav-right">
-          <nav class="nav-links" id="navLinks">
-            <a href="#about">À propos</a>
-            <a href="#why">Pourquoi ?</a>
-            <a href="#services">Services</a>
-            <a href="#plans">Offres</a>
-            <a href="#contact">Contact</a>
-            <a href="en.html" class="nav-lang">EN</a>
-          </nav>
+  <h3>Développement de sites web</h3>
+  <p>Création de sites web professionnels, rapides et optimisés SEO.</p>
+</section>
 
-          <button class="theme-toggle" id="themeToggle" type="button">
-            <span id="themeIcon">🌙</span>
-          </button>
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>📍 Tunis, Tunisie</p>
+  <p>📞 WhatsApp : +216 22 961 115</p>
+</section>
 
-          <button class="hamburger" id="menuToggle" type="button" aria-label="Ouvrir le menu">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </div>
+<footer>
+  © 2025 Synaptech IT Services — Tous droits réservés.
+</footer>
 
-      <div class="hero">
-        <div>
-          <div class="hero-badge">
-            <span class="hero-badge-dot"></span>
-            Support & maintenance IT gérés pour vous
-          </div>
-
-          <h1 class="hero-title">
-            L’intelligence <span>connectée</span> au service de votre support IT
-          </h1>
-
-          <h2>Support informatique professionnel en Tunisie</h2>
-          <h2>Solutions Cloud Google Workspace & Microsoft 365</h2>
-          <h2>Maintenance & optimisation IT pour PME</h2>
-
-          <p class="hero-subtitle">
-            <strong>« L’intelligence connectée pour une informatique qui ne s’arrête jamais. »</strong>
-          </p>
-
-          <div class="hero-cta">
-            <a href="#contact"><button class="btn-primary">Contacter le support →</button></a>
-            <a href="#plans"><button class="btn-ghost">Voir les offres</button></a>
-          </div>
-
-          <div class="hero-meta">
-            ✓ Support utilisateurs & helpdesk • ✓ Google Workspace ou Microsoft 365 au choix
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <p class="hero-card-title">Votre point de contact unique pour le support IT</p>
-          <div class="hero-metrics">
-            <div class="metric">
-              <div class="metric-value">Support</div>
-              <div class="metric-label">Utilisateurs & incidents</div>
-            </div>
-            <div class="metric">
-              <div class="metric-value">Cloud</div>
-              <div class="metric-label">Google ou Microsoft</div>
-            </div>
-            <div class="metric">
-              <div class="metric-value">Réactif</div>
-              <div class="metric-label">Prise en charge rapide</div>
-            </div>
-          </div>
-          <ul class="hero-card-list">
-            <li>• Support à distance pour vos équipes sur Google Workspace ou Microsoft 365.</li>
-            <li>• Prise en charge rapide des tickets et incidents utilisateurs.</li>
-            <li>• Maintenance et optimisation continues de votre environnement IT.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">À propos</h2>
-      <p class="section-subtitle">
-        Nous aidons les entreprises à maintenir un environnement IT sécurisé, rapide et performant.
-      </p>
-
-      <div class="about-grid">
-        <div class="about-text">
-          <p>
-            Synaptech IT Services est spécialisée dans le <strong>support informatique</strong>,
-            la <strong>maintenance IT</strong> et les solutions cloud
-            <strong>Google Workspace</strong> ou <strong>Microsoft 365</strong>, au choix de votre entreprise.
-          </p>
-          <p>
-            Basés en Tunisie, nous aidons les PME et entreprises à garder une informatique
-            <strong>rapide, sécurisée et disponible</strong>, afin que votre infrastructure devienne
-            un véritable accélérateur de business.
-          </p>
-          <div class="about-highlights">
-            <div class="pill">Support utilisateurs & helpdesk</div>
-            <div class="pill">Google Workspace ou Microsoft 365</div>
-            <div class="pill">Maintenance & optimisation</div>
-            <div class="pill">Sécurité & continuité</div>
-          </div>
-          <p style="margin-top:12px; font-size:0.9rem;">
-            Découvrez en détail nos <a href="#services" style="color:var(--primary-light); text-decoration:underline;">
-            services de support informatique et de maintenance IT</a>.
-          </p>
-        </div>
-
-        <div class="about-card">
-          <h3>Un interlocuteur unique pour votre IT</h3>
-          <p>
-            De la configuration initiale à la maintenance, en passant par le support utilisateur,
-            nous centralisons vos besoins IT pour simplifier votre quotidien.
-          </p>
-          <p>
-            Nos interventions se font à distance ou sur site selon le niveau d’urgence.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="why">
-    <div class="container">
-      <h2 class="section-title">Pourquoi l’intelligence connectée ?</h2>
-      <p class="section-subtitle">
-        Une approche moderne qui rend votre informatique plus intelligente, plus rapide et plus fiable.
-      </p>
-
-      <div class="about-grid">
-        <div class="about-card">
-          <h3>Un IT proactif</h3>
-          <p>
-            Grâce à l’intelligence connectée, les incidents sont anticipés plutôt que subis :
-            supervision, alertes et optimisation continue. Votre activité reste opérationnelle.
-          </p>
-        </div>
-
-        <div class="about-card">
-          <h3>Support + Maintenance + Cloud, unifiés</h3>
-          <p>
-            Tous vos outils — Google Workspace ou Microsoft 365 — travaillent ensemble,
-            connectés à votre support et à votre infrastructure pour une expérience fluide.
-          </p>
-        </div>
-
-        <div class="about-card">
-          <h3>Des utilisateurs plus productifs</h3>
-          <p>
-            Une informatique stable, rapide et sécurisée permet à vos équipes de travailler sans interruption.
-            Moins de pannes, plus d’efficacité au quotidien.
-          </p>
-        </div>
-
-        <div class="about-card">
-          <h3>Une informatique qui ne s’arrête jamais</h3>
-          <p>
-            L’intelligence connectée garantit la continuité de votre activité :
-            disponibilité, sécurité, réactivité et performance, même en période de forte charge.
-          </p>
-        </div>
-      </div>
-
-      <p style="text-align:center; font-size:0.9rem; color:var(--text-muted); margin-top:18px;">
-        Avec cette approche d’<strong>intelligence connectée</strong>, Synaptech IT Services
-        vous offre un support informatique structuré, une maintenance IT proactive et
-        une gestion simplifiée de vos environnements Google Workspace ou Microsoft 365.
-      </p>
-    </div>
-  </section>
-
-  <section id="services">
-    <div class="container">
-      <h2 class="section-title">Nos services</h2>
-      <p class="section-subtitle">
-        Support utilisateurs, maintenance et cloud au service de votre activité.
-      </p>
-
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-tag">Support & helpdesk</div>
-          <h3>Support à distance</h3>
-          <p>Nous devenons le point de contact IT de vos équipes.</p>
-          <ul class="service-list">
-            <li>• Prise en main à distance sécurisée</li>
-            <li>• Résolution rapide des incidents</li>
-            <li>• Assistance Google Workspace ou Microsoft 365</li>
-            <li>• Accompagnement pédagogique des utilisateurs</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-tag">Maintenance</div>
-          <h3>Maintenance informatique</h3>
-          <p>Nous veillons au bon fonctionnement de vos postes et serveurs.</p>
-          <ul class="service-list">
-            <li>• Surveillance proactive</li>
-            <li>• Optimisation des performances</li>
-            <li>• Mises à jour & correctifs</li>
-            <li>• Dépannage sur site ou à distance</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-tag">Cloud</div>
-          <h3>Google Workspace ou Microsoft 365</h3>
-          <p>Nous vous accompagnons dans le choix et la mise en place de votre plateforme cloud.</p>
-          <ul class="service-list">
-            <li>• Conseil sur la solution la plus adaptée</li>
-            <li>• Migrations de messagerie & données</li>
-            <li>• Gestion des comptes & licences</li>
-            <li>• Sécurisation & bonnes pratiques</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="plans">
-    <div class="container">
-      <h2 class="section-title">Offres & services</h2>
-      <p class="section-subtitle">
-        Tarification claire par poste et par mois. Choisissez la formule adaptée à vos besoins.
-      </p>
-
-      <div class="plans-grid">
-        <div class="plan-card">
-          <div class="plan-header">
-            <h3>Standard</h3>
-            <div class="plan-price">49 <span>TND / poste / mois</span></div>
-            <div class="plan-period">Idéal pour démarrer avec un support IT structuré.</div>
-          </div>
-          <p class="plan-desc">
-            Pour les petites structures qui veulent un socle solide de support et de maintenance sans complexité.
-          </p>
-          <ul class="plan-list">
-            <li>• Support à distance aux heures ouvrables (jours ouvrables).</li>
-            <li>• Prise en charge des incidents utilisateurs (poste, messagerie, bureautique).</li>
-            <li>• Maintenance préventive de base (mises à jour système, antivirus, nettoyage).</li>
-            <li>• Suivi simple des demandes par email ou WhatsApp.</li>
-            <li>• Assistance sur Google Workspace ou Microsoft 365 (selon votre choix).</li>
-          </ul>
-          <div class="plan-cta">
-            <button type="button" onclick="location.href='#contact'">Demander un devis Standard</button>
-          </div>
-        </div>
-
-        <div class="plan-card reco">
-          <div class="plan-badge">Recommandé</div>
-          <div class="plan-header">
-            <h3>Premium</h3>
-            <div class="plan-price">89 <span>TND / poste / mois</span></div>
-            <div class="plan-period">Pour les entreprises qui exigent un haut niveau de service.</div>
-          </div>
-          <p class="plan-desc">
-            Formule avancée avec support prioritaire, supervision renforcée et accompagnement proactif.
-          </p>
-          <ul class="plan-list">
-            <li>• Tout ce qui est inclus dans <strong>Standard</strong>.</li>
-            <li>• Support prioritaire (temps de réponse réduit, file dédiée).</li>
-            <li>• Supervision renforcée des postes et services cloud (alertes, suivi santé IT).</li>
-            <li>• Recommandations régulières pour améliorer la sécurité et les performances.</li>
-            <li>• Assistance approfondie sur Google Workspace ou Microsoft 365 (configurations avancées).</li>
-            <li>• Points réguliers possibles avec un référent Synaptech (selon volume).</li>
-          </ul>
-          <div class="plan-cta">
-            <button type="button" onclick="location.href='#contact'">Passer à l’offre Premium</button>
-          </div>
-        </div>
-
-        <div class="plan-card">
-          <div class="plan-header">
-            <h3>Développement de sites web</h3>
-            <div class="plan-price">Sur devis <span>/ projet</span></div>
-            <div class="plan-period">Création de sites modernes, rapides et professionnels.</div>
-          </div>
-          <p class="plan-desc">
-            Nous créons des sites web performants, sécurisés et adaptés aux besoins des entreprises.
-          </p>
-          <ul class="plan-list">
-            <li>• Site vitrine / landing page moderne</li>
-            <li>• 100% responsive (mobile/tablette/desktop)</li>
-            <li>• Optimisation SEO + performance</li>
-            <li>• Intégration WhatsApp + formulaire</li>
-            <li>• Mise en ligne + configuration domaine</li>
-          </ul>
-          <div class="plan-cta">
-            <button type="button" onclick="location.href='#contact'">Demander un devis web</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact & support</h2>
-      <p class="section-subtitle">
-        Contactez-nous pour renforcer votre support IT, votre maintenance et votre plateforme cloud.
-      </p>
-
-      <div class="contact-grid">
-        <div>
-          <div class="contact-item"><strong>Société :</strong> Synaptech IT Services</div>
-          <div class="contact-item">
-            <strong>WhatsApp :</strong>
-            <a href="https://wa.me/21622961115" target="_blank" rel="noopener">+216 22 961 115</a>
-          </div>
-          <div class="contact-item"><strong>Localisation :</strong> Tunis, Tunisie</div>
-
-          <p style="margin-top:8px;">
-            Nous accompagnons votre entreprise vers une infrastructure moderne, performante
-            et sécurisée, avec un support orienté utilisateur.
-          </p>
-
-          <div class="chat-actions">
-            <a href="https://wa.me/21622961115" target="_blank" rel="noopener">
-              <button type="button" class="btn-outline">💬 Discuter sur WhatsApp</button>
-            </a>
-          </div>
-        </div>
-
-        <div class="contact-card">
-          <h3>Envoyer une demande</h3>
-
-          <form class="contact-form" action="https://formsubmit.co/abdeddeim.souhaib@gmail.com" method="POST">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://synaptech.tn/merci-fr.html">
-            <input type="text" name="_honey" style="display:none">
-
-            <div class="field-group">
-              <label for="name">Nom & prénom</label>
-              <input type="text" id="name" name="name" placeholder="Votre nom" required />
-            </div>
-
-            <div class="field-group">
-              <label for="email">Adresse email</label>
-              <input type="email" id="email" name="email" placeholder="vous@exemple.com" required />
-            </div>
-
-            <div class="field-group">
-              <label for="company">Entreprise (optionnel)</label>
-              <input type="text" id="company" name="company" placeholder="Nom de votre société" />
-            </div>
-
-            <div class="field-group">
-              <label for="message">Votre besoin</label>
-              <textarea id="message" name="message" placeholder="Décrivez votre projet ou vos besoins IT"></textarea>
-            </div>
-
-            <button type="submit" class="btn-primary" style="margin-top:4px;">
-              Envoyer la demande →
-            </button>
-
-            <p class="form-note">
-              Les demandes envoyées via ce formulaire sont directement transmises à notre équipe support.
-            </p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    © <span id="year"></span> Synaptech IT Services — Tous droits réservés.
-  </footer>
-
-  <a href="https://wa.me/21622961115" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-  </a>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const body = document.body;
-
-    // THEME (desktop + mobile)
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
-    const themeToggleMobile = document.getElementById('themeToggleMobile');
-    const themeIconMobile = document.getElementById('themeIconMobile');
-
-    const savedTheme = localStorage.getItem('synaptech-theme');
-    if (savedTheme === 'light' || savedTheme === 'dark') {
-      body.setAttribute('data-theme', savedTheme);
-    }
-
-    function refreshThemeIcons() {
-      const current = body.getAttribute('data-theme') || 'dark';
-      if (themeIcon) themeIcon.textContent = current === 'dark' ? '🌙' : '☀️';
-      if (themeIconMobile) themeIconMobile.textContent = current === 'dark' ? '🌙' : '☀️';
-    }
-    refreshThemeIcons();
-
-    function toggleTheme() {
-      const current = body.getAttribute('data-theme') || 'dark';
-      const next = current === 'dark' ? 'light' : 'dark';
-      body.setAttribute('data-theme', next);
-      localStorage.setItem('synaptech-theme', next);
-      refreshThemeIcons();
-    }
-
-    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
-    if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
-
-    // Desktop menu
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    if (menuToggle && navLinks) {
-      menuToggle.addEventListener('click', () => {
-        const isOpen = navLinks.classList.toggle('open');
-        menuToggle.classList.toggle('open', isOpen);
-      });
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('open');
-          menuToggle.classList.remove('open');
-        });
-      });
-    }
-
-    // Mobile menu
-    const menuToggleMobile = document.getElementById('menuToggleMobile');
-    const navLinksMobile = document.getElementById('navLinksMobile');
-
-    if (menuToggleMobile && navLinksMobile) {
-      menuToggleMobile.addEventListener('click', () => {
-        navLinksMobile.classList.toggle('open');
-      });
-
-      navLinksMobile.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          navLinksMobile.classList.remove('open');
-        });
-      });
-
-      document.addEventListener('click', (e) => {
-        const clickedInside = navLinksMobile.contains(e.target) || menuToggleMobile.contains(e.target);
-        if (!clickedInside) navLinksMobile.classList.remove('open');
-      });
-    }
-  </script>
+<a href="https://wa.me/21622961115" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+</a>
 
 </body>
 </html>
