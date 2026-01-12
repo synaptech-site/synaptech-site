@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="robots" content="index, follow" />
 
   <title>Synaptech IT Services – Support & maintenance IT en Tunisie</title>
 
   <!-- Description SEO -->
   <meta name="description" content="Synaptech IT Services accompagne les entreprises en Tunisie avec du support informatique, maintenance IT et solutions cloud Google Workspace ou Microsoft 365." />
+
+  <!-- Mots-clés (optionnel) -->
   <meta name="keywords" content="support informatique, maintenance IT, Google Workspace, Microsoft 365, cloud, Tunisie, Synaptech, helpdesk, support à distance" />
 
   <!-- Canonical + hreflang -->
@@ -37,23 +40,22 @@
   <meta name="twitter:description" content="Support IT, maintenance et cloud pour entreprises en Tunisie." />
   <meta name="twitter:image" content="https://synaptech.tn/logo-synaptech.png" />
 
-  <!-- Données structurées (avec email) -->
+  <!-- Données structurées (avec email hello@synaptech.tn) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "LocalBusiness",
     "name": "Synaptech IT Services",
-    "url": "https://synaptech.tn/",
-    "logo": "https://synaptech.tn/logo-synaptech.png",
     "image": "https://synaptech.tn/logo-synaptech.png",
     "description": "Support informatique, maintenance IT et solutions cloud (Google Workspace ou Microsoft 365) pour entreprises en Tunisie.",
     "email": "hello@synaptech.tn",
-    "telephone": "+21622961115",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "TN",
       "addressLocality": "Tunis"
-    }
+    },
+    "telephone": "+21622961115",
+    "url": "https://synaptech.tn/"
   }
   </script>
 
@@ -558,6 +560,7 @@
 
     @media (max-width: 900px) {
       .container { padding: 0 14px; }
+
       .hero { grid-template-columns: minmax(0,1fr); gap: 24px; }
       .hero-card { margin-top: 6px; }
 
@@ -916,6 +919,7 @@
         <div>
           <div class="contact-item"><strong>Société :</strong> Synaptech IT Services</div>
 
+          <!-- ✅ EMAIL AJOUTÉ -->
           <div class="contact-item">
             <strong>Email :</strong>
             <a href="mailto:hello@synaptech.tn">hello@synaptech.tn</a>
@@ -943,11 +947,10 @@
         <div class="contact-card">
           <h3>Envoyer une demande</h3>
 
-          <!-- FormSubmit : remplacer l'email de réception ici -->
+          <!-- ✅ FormSubmit -> envoi vers hello@synaptech.tn -->
           <form class="contact-form" action="https://formsubmit.co/hello@synaptech.tn" method="POST">
             <input type="hidden" name="_captcha" value="false">
             <input type="text" name="_honey" style="display:none">
-
             <input type="hidden" name="_next" value="https://synaptech.tn/merci-fr.html">
 
             <div class="field-group">
