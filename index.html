@@ -3,15 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <meta name="robots" content="index, follow" />
 
   <title>Synaptech IT Services – Support & maintenance IT en Tunisie</title>
 
   <!-- Description SEO -->
   <meta name="description" content="Synaptech IT Services accompagne les entreprises en Tunisie avec du support informatique, maintenance IT et solutions cloud Google Workspace ou Microsoft 365." />
-
-  <!-- Mots-clés (optionnel) -->
   <meta name="keywords" content="support informatique, maintenance IT, Google Workspace, Microsoft 365, cloud, Tunisie, Synaptech, helpdesk, support à distance" />
 
   <!-- Canonical + hreflang -->
@@ -20,16 +17,12 @@
   <link rel="alternate" href="https://synaptech.tn/en.html" hreflang="en" />
   <link rel="alternate" href="https://synaptech.tn/" hreflang="x-default" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="icon" href="https://synaptech.tn/favicon.ico" sizes="any">
+  <!-- Favicons (propre & compatible Google) -->
+  <link rel="icon" href="https://synaptech.tn/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="https://synaptech.tn/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="https://synaptech.tn/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://synaptech.tn/apple-touch-icon.png">
 
-<link rel="icon" type="image/png" sizes="48x48"
-      href="https://synaptech.tn/favicon-48.png">
-
-<link rel="icon" type="image/png" sizes="192x192"
-      href="https://synaptech.tn/favicon-192.png">
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Synaptech IT Services – Support & maintenance IT" />
@@ -44,21 +37,23 @@
   <meta name="twitter:description" content="Support IT, maintenance et cloud pour entreprises en Tunisie." />
   <meta name="twitter:image" content="https://synaptech.tn/logo-synaptech.png" />
 
-  <!-- Données structurées LocalBusiness -->
+  <!-- Données structurées (avec email) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "Organization",
     "name": "Synaptech IT Services",
+    "url": "https://synaptech.tn/",
+    "logo": "https://synaptech.tn/logo-synaptech.png",
     "image": "https://synaptech.tn/logo-synaptech.png",
     "description": "Support informatique, maintenance IT et solutions cloud (Google Workspace ou Microsoft 365) pour entreprises en Tunisie.",
+    "email": "hello@synaptech.tn",
+    "telephone": "+21622961115",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "TN",
       "addressLocality": "Tunis"
-    },
-    "telephone": "+21622961115",
-    "url": "https://synaptech.tn/"
+    }
   }
   </script>
 
@@ -87,24 +82,12 @@
     .whatsapp-float:hover { transform: scale(1.08); }
 
     :root{
-  --bg:
-    linear-gradient(rgba(5,8,22,0.85), rgba(5,8,22,0.85)),
-    url("visax.jpg") center / cover no-repeat;
+      --bg:
+        linear-gradient(rgba(5,8,22,0.85), rgba(5,8,22,0.85)),
+        url("visax.jpg") center / cover no-repeat;
 
-  --primary: #1E90FF;
-  --primary-light: #00BFFF;
-  --header-bg: linear-gradient(145deg,#050816,#0b1224);
-  --surface: #0f172a;
-  --surface-soft: #111827;
-  --text-main: #f9fafb;
-  --text-muted: #9ca3af;
-  --border-subtle: #1f2937;
-  --pill-bg: #dbeafe;
-  --pill-text: #1d4ed8;
-      
-    
-        
-
+      --primary: #1E90FF;
+      --primary-light: #00BFFF;
       --header-bg: linear-gradient(145deg,#050816,#0b1224);
       --surface: #0f172a;
       --surface-soft: #111827;
@@ -116,7 +99,6 @@
     }
 
     body[data-theme="light"] {
-      /* Light = fond clair (évite d'utiliser l'image en light) */
       --bg: #f3f5f9;
       --header-bg: linear-gradient(145deg,#e5f0ff,#f9fbff);
       --surface: #ffffff;
@@ -128,10 +110,6 @@
       --pill-text: #0369a1;
     }
 
-    /* =========================
-       Anti-saccade mobile
-       (no fixed background)
-       ========================= */
     @media (max-width: 768px) {
       body {
         background:
@@ -578,10 +556,8 @@
     }
     body[data-theme="light"] footer { background: #0b1120; }
 
-    /* --- RESPONSIVE --- */
     @media (max-width: 900px) {
       .container { padding: 0 14px; }
-
       .hero { grid-template-columns: minmax(0,1fr); gap: 24px; }
       .hero-card { margin-top: 6px; }
 
@@ -904,7 +880,6 @@
           </div>
         </div>
 
-        <!-- Remplacement de l’ancienne offre “12 TND” -->
         <div class="plan-card">
           <div class="plan-header">
             <h3>Développement de sites web</h3>
@@ -940,10 +915,17 @@
       <div class="contact-grid">
         <div>
           <div class="contact-item"><strong>Société :</strong> Synaptech IT Services</div>
+
+          <div class="contact-item">
+            <strong>Email :</strong>
+            <a href="mailto:hello@synaptech.tn">hello@synaptech.tn</a>
+          </div>
+
           <div class="contact-item">
             <strong>WhatsApp :</strong>
             <a href="https://wa.me/21622961115" target="_blank" rel="noopener">+216 22 961 115</a>
           </div>
+
           <div class="contact-item"><strong>Localisation :</strong> Tunis, Tunisie</div>
 
           <p style="margin-top:8px;">
@@ -961,11 +943,11 @@
         <div class="contact-card">
           <h3>Envoyer une demande</h3>
 
-          <form class="contact-form" action="https://formsubmit.co/abdeddeim.souhaib@gmail.com" method="POST">
+          <!-- FormSubmit : remplacer l'email de réception ici -->
+          <form class="contact-form" action="https://formsubmit.co/hello@synaptech.tn" method="POST">
             <input type="hidden" name="_captcha" value="false">
             <input type="text" name="_honey" style="display:none">
 
-            <!-- Mets ici une page de remerciement SUR TON DOMAINE (conseillé) -->
             <input type="hidden" name="_next" value="https://synaptech.tn/merci-fr.html">
 
             <div class="field-group">
