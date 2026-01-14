@@ -498,6 +498,27 @@ body[data-theme="light"]{
     @media (prefers-reduced-motion: reduce){
       *{scroll-behavior:auto !important; transition:none !important;}
     }
+    html, body { height: 100%; }
+
+body{
+  background: #050816; /* fallback si l'image met du temps */
+  position: relative;
+}
+
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background:
+    linear-gradient(var(--bg-overlay), var(--bg-overlay)),
+    var(--bg-img) center/cover no-repeat;
+
+  transform: translateZ(0);
+  will-change: transform;
+}
+
   </style>
 </head>
 
