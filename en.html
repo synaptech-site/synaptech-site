@@ -729,6 +729,51 @@
       .logo-img { height: 50px; }
       .logo-text { display: none; }
     }
+    /* =========================
+   WhatsApp Floating Button
+   ========================= */
+.whatsapp-float{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform .2s ease, box-shadow .2s ease;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.whatsapp-float img{
+  width: 30px;
+  height: 30px;
+}
+
+.whatsapp-float:hover{
+  transform: scale(1.08);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.35);
+}
+
+/* Optionnel: un peu plus petit sur mobile */
+@media (max-width: 600px){
+  .whatsapp-float{
+    width: 52px;
+    height: 52px;
+    bottom: 16px;
+    right: 16px;
+  }
+  .whatsapp-float img{
+    width: 28px;
+    height: 28px;
+  }
+}
+
   </style>
 </head>
 
@@ -1147,5 +1192,19 @@
       });
     });
   </script>
+  <a
+  href="https://wa.me/21622961115"
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener"
+  aria-label="Contacter sur WhatsApp"
+  title="Contacter sur WhatsApp"
+>
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+    alt="WhatsApp"
+  />
+</a>
+
 </body>
 </html>
