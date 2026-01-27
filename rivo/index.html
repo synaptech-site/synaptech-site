@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rivo — Pilotez votre activité simplement | Synaptech</title>
+  <meta name="description" content="Rivo est un outil simple pour PME et commerçants : factures, dépenses, stock et trésorerie dans une seule plateforme. Gratuit pour démarrer. Un produit Synaptech." />
+  <meta name="theme-color" content="#0B1220" />
+
+  <style>
+    :root{
+      --bg:#0B1220;
+      --card:#0F1A33;
+      --muted:#8EA0C6;
+      --text:#EAF0FF;
+      --soft:#CFE0FF;
+      --accent:#2FE38A;
+      --accent2:#4EA2FF;
+      --warning:#FFB020;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 18px 40px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(78,162,255,.32), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(47,227,138,.22), transparent 55%),
+        radial-gradient(900px 600px at 50% 120%, rgba(255,176,32,.14), transparent 60%),
+        var(--bg);
+      line-height:1.5;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 18px}
+    .nav{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.55);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+    .logo{
+      width:34px;height:34px;border-radius:10px;
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
+      box-shadow: 0 10px 22px rgba(78,162,255,.25);
+      display:grid;place-items:center;
+      color:#071022;font-weight:900;
+    }
+    .brand small{
+      display:block;
+      color:var(--muted);
+      font-weight:600;
+      letter-spacing:0;
+      margin-top:1px;
+      font-size:12px;
+    }
+    .nav-links{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .nav-links a{
+      color:var(--soft);
+      font-weight:650;
+      font-size:14px;
+      opacity:.9;
+    }
+    .nav-links a:hover{opacity:1}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 14px;border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:750;
+      cursor:pointer;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.16)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(78,162,255,.95), rgba(47,227,138,.92));
+      border-color: transparent;
+      color:#071022;
+      box-shadow: 0 18px 34px rgba(47,227,138,.16), 0 18px 34px rgba(78,162,255,.18);
+    }
+    .btn.primary:hover{transform: translateY(-2px)}
+    .btn.ghost{background: transparent}
+    .pill{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color:var(--soft);
+      font-weight:700;
+      font-size:13px;
+    }
+    .pill .dot{
+      width:8px;height:8px;border-radius:999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(47,227,138,.14);
+    }
+
+    .hero{padding:62px 0 26px}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:26px;
+      align-items:stretch;
+    }
+    h1{
+      font-size: clamp(34px, 4.2vw, 52px);
+      line-height:1.08;
+      margin:14px 0 12px;
+      letter-spacing:-.6px;
+    }
+    .lead{
+      color:var(--soft);
+      font-size: clamp(16px, 1.5vw, 18px);
+      max-width: 62ch;
+      opacity:.95;
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .trust{
+      display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;color:var(--muted);font-weight:650;font-size:13px
+    }
+    .trust span{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 10px;border-radius:999px;border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .trust svg{opacity:.9}
+
+    .card{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-inner{padding:18px}
+    .mock{
+      height:100%;
+      display:flex;flex-direction:column;
+    }
+    .mock-top{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 16px;border-bottom:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .mock-title{font-weight:800}
+    .badge{
+      font-size:12px;
+      font-weight:800;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(47,227,138,.14);
+      border:1px solid rgba(47,227,138,.25);
+      color: #BFFFE0;
+    }
+    .mock-body{padding:16px;display:grid;gap:12px}
+    .kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .kpi{
+      border:1px solid var(--border);
+      background: rgba(11,18,32,.35);
+      border-radius:16px;
+      padding:12px;
+    }
+    .kpi .label{color:var(--muted);font-weight:700;font-size:12px}
+    .kpi .value{font-weight:900;font-size:18px;margin-top:6px}
+    .todo{
+      border:1px dashed rgba(255,255,255,.18);
+      background: rgba(11,18,32,.22);
+      border-radius:16px;
+      padding:12px;
+      display:flex;align-items:flex-start;gap:10px;
+    }
+    .check{
+      width:20px;height:20px;border-radius:6px;
+      border:1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.04);
+      display:grid;place-items:center;flex:0 0 auto;
+    }
+    .todo b{display:block}
+    .todo p{margin:4px 0 0;color:var(--muted);font-weight:650;font-size:13px}
+
+    section{padding:34px 0}
+    .section-title{
+      display:flex;align-items:flex-end;justify-content:space-between;
+      gap:14px;flex-wrap:wrap;
+      margin-bottom:14px;
+    }
+    .section-title h2{
+      margin:0;
+      font-size: clamp(22px, 2.5vw, 30px);
+      letter-spacing:-.3px;
+    }
+    .section-title p{margin:0;color:var(--muted);max-width:70ch;font-weight:650}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .feature{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .feature h3{margin:10px 0 6px;font-size:16px}
+    .feature p{margin:0;color:var(--muted);font-weight:650}
+    .icon{
+      width:40px;height:40px;border-radius:14px;
+      background: rgba(78,162,255,.14);
+      border:1px solid rgba(78,162,255,.22);
+      display:grid;place-items:center;
+    }
+    .icon.green{background: rgba(47,227,138,.14);border-color: rgba(47,227,138,.22)}
+    .icon.orange{background: rgba(255,176,32,.14);border-color: rgba(255,176,32,.22)}
+    .icon.purple{background: rgba(160,120,255,.14);border-color: rgba(160,120,255,.22)}
+    ul.clean{margin:10px 0 0;padding-left:18px;color:var(--muted);font-weight:650}
+    ul.clean li{margin:6px 0}
+
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .price-card{
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      position:relative;
+    }
+    .price-card.highlight{
+      background: rgba(255,255,255,.05);
+      border-color: rgba(47,227,138,.28);
+      box-shadow: 0 24px 60px rgba(47,227,138,.12);
+    }
+    .tag{
+      position:absolute;top:14px;right:14px;
+      font-size:12px;font-weight:900;
+      padding:6px 10px;border-radius:999px;
+      background: rgba(47,227,138,.14);
+      border:1px solid rgba(47,227,138,.25);
+      color:#BFFFE0;
+    }
+    .price-card h3{margin:0 0 6px}
+    .price{font-size:28px;font-weight:950;margin:10px 0 12px}
+    .price small{font-size:13px;font-weight:750;color:var(--muted)}
+    .divider{height:1px;background: var(--border);margin:12px 0}
+    .faq{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    details{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.03);
+      padding:14px 14px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:850;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{margin:10px 0 0;color:var(--muted);font-weight:650}
+
+    .cta{
+      padding:22px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: calc(var(--radius) + 8px);
+      background: radial-gradient(700px 260px at 20% 0%, rgba(78,162,255,.20), transparent 55%),
+                  radial-gradient(700px 260px at 80% 100%, rgba(47,227,138,.18), transparent 55%),
+                  rgba(255,255,255,.04);
+      display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+      box-shadow: var(--shadow);
+    }
+    .cta h2{margin:0;font-size:22px}
+    .cta p{margin:6px 0 0;color:var(--muted);font-weight:650;max-width:70ch}
+    .form{
+      display:flex;gap:10px;flex-wrap:wrap;align-items:center
+    }
+    input, textarea{
+      font: inherit;
+      color: var(--text);
+      background: rgba(11,18,32,.35);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:14px;
+      padding:12px 12px;
+      outline:none;
+      min-width: 240px;
+    }
+    textarea{min-width: 320px;min-height: 110px;resize: vertical}
+    input:focus, textarea:focus{border-color: rgba(78,162,255,.55)}
+    .note{color:var(--muted);font-weight:650;font-size:13px;margin-top:10px}
+    footer{
+      padding:26px 0 40px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-weight:650;
+      margin-top: 24px;
+    }
+    .foot{
+      display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center
+    }
+    .foot a{opacity:.9}
+    .foot a:hover{opacity:1}
+    .sr{position:absolute;left:-9999px}
+
+    @media (max-width: 920px){
+      .hero-grid{grid-template-columns:1fr;gap:16px}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .pricing{grid-template-columns:1fr}
+      .faq{grid-template-columns:1fr}
+      input, textarea{min-width: 100%}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <div class="brand" aria-label="Rivo">
+          <div class="logo" aria-hidden="true">R</div>
+          <div>
+            Rivo
+            <small>Un produit Synaptech</small>
+          </div>
+        </div>
+
+        <nav class="nav-links" aria-label="Navigation">
+          <a href="#pourqui">Pour qui</a>
+          <a href="#fonctionnalites">Fonctionnalités</a>
+          <a href="#gratuit">Gratuit</a>
+          <a href="#tarifs">Tarifs</a>
+          <a href="#faq">FAQ</a>
+          <a class="btn ghost" href="#contact">Demander une démo</a>
+          <a class="btn primary" href="#notify">Être notifié</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="pill"><span class="dot"></span> Gratuit pour démarrer • Sans engagement</div>
+            <h1>Pilotez votre activité simplement.</h1>
+            <p class="lead">
+              Factures, dépenses, stock et trésorerie dans un seul outil, pensé pour les PME et les commerçants.
+              Moins de complexité, plus d’actions utiles au quotidien.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn primary" href="#contact">Demander une démo</a>
+              <a class="btn" href="#notify">Être notifié au lancement</a>
+              <a class="btn ghost" href="#fonctionnalites">Voir les fonctionnalités</a>
+            </div>
+
+            <div class="trust" aria-label="Engagements">
+              <span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Sans carte bancaire
+              </span>
+              <span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Données hébergées chez vous
+              </span>
+              <span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M22 4 12 14.01l-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Support Synaptech
+              </span>
+            </div>
+          </div>
+
+          <!-- Simple mock dashboard -->
+          <div class="card mock" aria-label="Aperçu Rivo">
+            <div class="mock-top">
+              <div class="mock-title">Aujourd’hui</div>
+              <div class="badge">Mode simple</div>
+            </div>
+            <div class="mock-body">
+              <div class="kpi-grid">
+                <div class="kpi">
+                  <div class="label">Argent à recevoir</div>
+                  <div class="value">2 430 TND</div>
+                </div>
+                <div class="kpi">
+                  <div class="label">Argent à payer</div>
+                  <div class="value">980 TND</div>
+                </div>
+              </div>
+              <div class="todo">
+                <div class="check" aria-hidden="true">⚡</div>
+                <div>
+                  <b>Créer votre prochaine facture</b>
+                  <p>En 30 secondes, envoyez un PDF pro à votre client.</p>
+                </div>
+              </div>
+              <div class="todo">
+                <div class="check" aria-hidden="true">📦</div>
+                <div>
+                  <b>Stock bas (si commerce)</b>
+                  <p>Activez les alertes pour éviter les ruptures.</p>
+                </div>
+              </div>
+              <div class="todo">
+                <div class="check" aria-hidden="true">📄</div>
+                <div>
+                  <b>Factures en retard</b>
+                  <p>Relances automatiques disponibles en offre Business.</p>
+                </div>
+              </div>
+              <div>
+                <a class="btn primary" href="#contact" style="width:100%;">Demander une démo</a>
+              </div>
+              <div class="note">Aperçu illustratif. Interface finale adaptée à votre activité (services ou commerce).</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POUR QUI -->
+    <section id="pourqui">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Pour qui est Rivo ?</h2>
+            <p>Rivo s’adapte à votre activité : services, commerce, ou les deux. Vous ne voyez que l’essentiel.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="feature">
+            <div class="icon green" aria-hidden="true">💼</div>
+            <h3>PME de services</h3>
+            <p>Consultants, agences, indépendants, sociétés de services… facturez vite et suivez l’argent clairement.</p>
+            <ul class="clean">
+              <li>Devis & factures en quelques clics</li>
+              <li>Suivi des paiements et retards</li>
+              <li>Vue simple du mois</li>
+            </ul>
+          </div>
+
+          <div class="feature">
+            <div class="icon orange" aria-hidden="true">🏪</div>
+            <h3>Commerçants</h3>
+            <p>Boutiques, magasins, revendeurs… gérez stock et ventes sans prise de tête.</p>
+            <ul class="clean">
+              <li>Produits, marges et alertes de stock bas</li>
+              <li>Ventes et facturation rapides</li>
+              <li>POS disponible (phase ultérieure)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLÈMES -->
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Les problèmes que Rivo résout</h2>
+            <p>Moins d’Excel et de papier, plus de clarté et de contrôle au quotidien.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="feature">
+            <div class="icon" aria-hidden="true">📉</div>
+            <h3>Pas de visibilité</h3>
+            <p>Difficile de savoir combien encaisser et combien payer. Rivo affiche l’essentiel tout de suite.</p>
+          </div>
+          <div class="feature">
+            <div class="icon purple" aria-hidden="true">🧾</div>
+            <h3>Factures oubliées</h3>
+            <p>Devis, factures, paiements : tout est centralisé, avec statuts clairs.</p>
+          </div>
+          <div class="feature">
+            <div class="icon green" aria-hidden="true">📦</div>
+            <h3>Stock mal suivi</h3>
+            <p>Alertes de stock bas et mouvements automatiques (si module stock activé).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FONCTIONNALITÉS -->
+    <section id="fonctionnalites">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Ce que vous pouvez faire avec Rivo</h2>
+            <p>Rivo va à l’essentiel : une interface claire, un langage simple, et des actions utiles.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="feature">
+            <div class="icon" aria-hidden="true">📄</div>
+            <h3>Facturation simple</h3>
+            <p>Devis et factures en quelques clics. PDF professionnels. Envoi par email.</p>
+            <ul class="clean">
+              <li>Numérotation, modèles, mentions</li>
+              <li>Statuts : brouillon, envoyé, payé, en retard</li>
+              <li>Paiements partiels</li>
+            </ul>
+          </div>
+          <div class="feature">
+            <div class="icon green" aria-hidden="true">💸</div>
+            <h3>Dépenses & argent</h3>
+            <p>Suivez ce qui sort et gardez une vue claire sur votre trésorerie.</p>
+            <ul class="clean">
+              <li>Catégories de dépenses</li>
+              <li>Historique simple et export</li>
+              <li>Prévisions (offre Business)</li>
+            </ul>
+          </div>
+          <div class="feature">
+            <div class="icon orange" aria-hidden="true">📦</div>
+            <h3>Stock (commerce)</h3>
+            <p>Entrées/sorties, alertes de stock bas et visibilité sur les produits.</p>
+            <ul class="clean">
+              <li>Seuils d’alerte</li>
+              <li>Mouvements de stock</li>
+              <li>Multi-dépôts (offre Pro)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top:14px;">
+          <div class="feature">
+            <div class="icon purple" aria-hidden="true">📊</div>
+            <h3>Dashboard “Aujourd’hui”</h3>
+            <p>Argent à recevoir, argent à payer, factures en retard, résumé du mois. Pas de complexité inutile.</p>
+          </div>
+          <div class="feature">
+            <div class="icon" aria-hidden="true">⚙️</div>
+            <h3>Rivo s’adapte à vous</h3>
+            <p>Mode Services ou Commerce : vous ne voyez que les menus utiles. Le reste reste caché.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRATUIT -->
+    <section id="gratuit">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Gratuit, vraiment ?</h2>
+            <p>Oui. Rivo est gratuit pour démarrer : vous pouvez travailler sans stress, sans piège.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="feature">
+            <div class="icon green" aria-hidden="true">🆓</div>
+            <h3>Ce qui est gratuit à vie</h3>
+            <ul class="clean">
+              <li>Factures & devis illimités</li>
+              <li>Clients illimités</li>
+              <li>Produits & services</li>
+              <li>PDF + envoi email</li>
+              <li>1 utilisateur / 1 entreprise</li>
+            </ul>
+          </div>
+          <div class="feature">
+            <div class="icon" aria-hidden="true">🔓</div>
+            <h3>Vous payez seulement si vous en avez besoin</h3>
+            <ul class="clean">
+              <li>Relances automatiques</li>
+              <li>Trésorerie prévisionnelle</li>
+              <li>Dépenses avancées</li>
+              <li>Stock avancé / multi-dépôts</li>
+              <li>Multi-utilisateurs</li>
+            </ul>
+            <p style="margin-top:10px;color:var(--muted);font-weight:650;">Pas de frustration : l’essentiel reste gratuit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TARIFS -->
+    <section id="tarifs">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Tarifs</h2>
+            <p>Des offres simples, adaptées à votre taille. (Les prix peuvent être ajustés au lancement.)</p>
+          </div>
+        </div>
+
+        <div class="pricing">
+          <div class="price-card">
+            <h3>Free</h3>
+            <div class="price">0 <small>TND / mois</small></div>
+            <div class="divider"></div>
+            <ul class="clean">
+              <li>Factures & devis illimités</li>
+              <li>Clients illimités</li>
+              <li>Produits & services</li>
+              <li>PDF + email</li>
+              <li>1 utilisateur</li>
+            </ul>
+            <div class="divider"></div>
+            <a class="btn primary" href="#notify" style="width:100%;">Commencer</a>
+            <div class="note">Idéal pour démarrer sans stress.</div>
+          </div>
+
+          <div class="price-card highlight">
+            <div class="tag">Le plus choisi</div>
+            <h3>Business</h3>
+            <div class="price">— <small>à partir du lancement</small></div>
+            <div class="divider"></div>
+            <ul class="clean">
+              <li>Dépenses & catégories avancées</li>
+              <li>Relances automatiques</li>
+              <li>Trésorerie prévisionnelle</li>
+              <li>Stock (si commerce)</li>
+              <li>Jusqu’à 5 utilisateurs</li>
+            </ul>
+            <div class="divider"></div>
+            <a class="btn primary" href="#contact" style="width:100%;">Demander une démo</a>
+            <div class="note">Pour PME qui veulent gagner du temps.</div>
+          </div>
+
+          <div class="price-card">
+            <h3>Pro</h3>
+            <div class="price">— <small>à partir du lancement</small></div>
+            <div class="divider"></div>
+            <ul class="clean">
+              <li>Multi-dépôts / stock avancé</li>
+              <li>Exports avancés</li>
+              <li>POS (phase ultérieure)</li>
+              <li>Support prioritaire</li>
+              <li>Paramétrage sur mesure</li>
+            </ul>
+            <div class="divider"></div>
+            <a class="btn" href="#contact" style="width:100%;">Parler à Synaptech</a>
+            <div class="note">Pour structures plus exigeantes.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>FAQ</h2>
+            <p>Les réponses aux questions les plus fréquentes avant le lancement.</p>
+          </div>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>Rivo est-il vraiment gratuit ?</summary>
+            <p>Oui. L’essentiel (factures, clients, PDF/email, 1 utilisateur) reste gratuit. Vous payez uniquement si vous souhaitez des fonctionnalités avancées.</p>
+          </details>
+          <details>
+            <summary>Est-ce adapté aux services ET au commerce ?</summary>
+            <p>Oui. Rivo propose un mode Services ou Commerce pour n’afficher que les menus utiles, afin de rester simple.</p>
+          </details>
+          <details>
+            <summary>Est-ce que mes données sont en sécurité ?</summary>
+            <p>Rivo est conçu pour fonctionner sur une infrastructure sécurisée (HTTPS, sauvegardes, rôles). Les modalités finales d’hébergement seront précisées au lancement.</p>
+          </details>
+          <details>
+            <summary>Puis-je avoir de l’accompagnement ?</summary>
+            <p>Oui. Synaptech propose support, formation et paramétrage selon votre activité.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA + NOTIFY -->
+    <section id="notify">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>Être notifié au lancement</h2>
+            <p>Laissez votre email. Nous vous informerons dès que Rivo sera disponible, avec l’offre de lancement.</p>
+            <div class="note">Astuce : ce formulaire est prêt. Vous pourrez le connecter plus tard (Formspree, Google Forms, etc.).</div>
+          </div>
+
+          <!-- No-backend form: replace action later -->
+          <form class="form" action="#" method="post" onsubmit="return handleNotify(event)">
+            <label class="sr" for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Votre email" required />
+            <button class="btn primary" type="submit">Être notifié</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Demander une démo</h2>
+            <p>Parlez-nous de votre activité. Nous vous recontactons pour une démo courte et utile.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="feature">
+            <div class="icon green" aria-hidden="true">🤝</div>
+            <h3>Un produit développé par Synaptech</h3>
+            <p>Synaptech accompagne les entreprises avec support, formation et paramétrage, pour que Rivo soit simple dès le premier jour.</p>
+            <div class="divider"></div>
+            <p style="margin:0;color:var(--muted);font-weight:650;">
+              Contact : <a href="mailto:contact@synaptech.tn">contact@synaptech.tn</a><br/>
+              Téléphone/WhatsApp : <a href="tel:+21600000000">+216 00 000 000</a>
+            </p>
+            <p class="note">Remplace le numéro WhatsApp par le tien.</p>
+          </div>
+
+          <div class="feature">
+            <div class="icon" aria-hidden="true">📝</div>
+            <h3>Formulaire</h3>
+            <form action="#" method="post" onsubmit="return handleDemo(event)">
+              <label class="sr" for="name">Nom</label>
+              <input id="name" name="name" type="text" placeholder="Votre nom" required />
+              <div style="height:10px"></div>
+              <label class="sr" for="company">Entreprise</label>
+              <input id="company" name="company" type="text" placeholder="Nom de l’entreprise" required />
+              <div style="height:10px"></div>
+              <label class="sr" for="contactinfo">Téléphone ou email</label>
+              <input id="contactinfo" name="contact" type="text" placeholder="Téléphone ou email" required />
+              <div style="height:10px"></div>
+              <label class="sr" for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Ex: Je suis commerçant, je veux facturation + stock."></textarea>
+              <div style="height:10px"></div>
+              <button class="btn primary" type="submit" style="width:100%;">Envoyer</button>
+              <p class="note">Ce formulaire affiche un message. Tu pourras le connecter plus tard à un service (Formspree, Google Forms, etc.).</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>© <span id="year"></span> <b style="color:var(--text);">Rivo</b> — Un produit Synaptech</div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;">
+          <a href="https://synaptech.tn" target="_blank" rel="noopener">Synaptech</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+          <a href="#" onclick="alert('Ajoute ici ta page de politique de confidentialité.');return false;">Confidentialité</a>
+          <a href="#" onclick="alert('Ajoute ici tes conditions d\\'utilisation.');return false;">Conditions</a>
+        </div>
+      </div>
+      <div class="note">Page vitrine prête pour synaptech.tn/rivo (GitHub Pages). Remplace les contacts et connecte les formulaires plus tard.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function handleNotify(e){
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      if(!email){ return false; }
+      alert("Merci ! Nous vous notifierons au lancement : " + email);
+      e.target.reset();
+      return false;
+    }
+
+    function handleDemo(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      alert("Merci " + (name || "") + " ! Votre demande de démo a été reçue. Nous vous recontactons rapidement.");
+      e.target.reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
