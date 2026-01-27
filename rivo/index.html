@@ -3,21 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rivo — Gestion simple pour PME & commerçants | Synaptech</title>
-  <meta name="description" content="Rivo est un outil simple pour PME et commerçants : factures, dépenses, stock et trésorerie. Gratuit pour démarrer. Un produit Synaptech." />
+  <title>Rivo — Gestion simple pour PME & commerçants</title>
+  <meta name="description" content="Rivo : facturation, dépenses, stock et trésorerie. Interface simple, prix par jour, support Synaptech." />
   <meta name="theme-color" content="#ffffff" />
+
   <style>
     :root{
-      --bg:#ffffff;
-      --text:#0f172a;
-      --muted:#475569;
-      --soft:#64748b;
-      --border:#e2e8f0;
-      --card:#ffffff;
-      --brand:#2563eb;   /* bleu */
-      --brand2:#16a34a;  /* vert */
-      --radius:14px;
-      --max:1080px;
+      --bg:#fff;
+      --text:#0b1220;
+      --muted:#5b6475;
+      --border:#e8ebf0;
+      --soft:#f6f7fb;
+      --brand:#111827;          /* noir/charbon */
+      --accent:#2563eb;         /* bleu */
+      --accent2:#16a34a;        /* vert */
+      --radius:16px;
+      --max:1040px;
     }
     *{box-sizing:border-box}
     body{
@@ -30,31 +31,31 @@
     a{color:inherit;text-decoration:none}
     .container{max-width:var(--max);margin:0 auto;padding:0 18px}
     .nav{
-      position:sticky;top:0;z-index:50;
+      position:sticky;top:0;z-index:10;
       background:rgba(255,255,255,.92);
       backdrop-filter: blur(10px);
       border-bottom:1px solid var(--border);
     }
-    .nav-inner{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:14px 0;gap:14px;
-    }
+    .navin{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 0}
     .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.2px}
     .logo{
-      width:34px;height:34px;border-radius:10px;
-      background:linear-gradient(135deg,var(--brand),var(--brand2));
+      width:34px;height:34px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
       display:grid;place-items:center;color:#fff;font-weight:900;
     }
-    .nav-links{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-    .nav-links a{font-weight:700;color:var(--muted);font-size:14px}
-    .nav-links a:hover{color:var(--text)}
+    .links{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+    .links a{color:var(--muted);font-weight:750;font-size:14px}
+    .links a:hover{color:var(--text)}
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:10px 14px;border-radius:12px;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
       border:1px solid var(--border);
       background:#fff;
-      font-weight:800;font-size:14px;
+      padding:10px 14px;
+      border-radius:14px;
+      font-weight:850;
+      font-size:14px;
       cursor:pointer;
+      white-space:nowrap;
     }
     .btn.primary{
       border-color:transparent;
@@ -62,96 +63,111 @@
       color:#fff;
     }
     .btn.primary:hover{filter:brightness(.95)}
-    .hero{padding:64px 0 26px}
+    .btn.ghost{background:var(--soft)}
+    .hero{padding:74px 0 26px}
+    .kicker{color:var(--muted);font-weight:800;font-size:13px}
     h1{
-      font-size: clamp(30px, 4vw, 46px);
-      line-height:1.1;
-      margin:10px 0 10px;
-      letter-spacing:-.6px;
+      font-size: clamp(32px, 4.6vw, 54px);
+      line-height:1.06;
+      letter-spacing:-.9px;
+      margin:10px 0 12px;
     }
     .lead{
-      color:var(--muted);
-      font-size: clamp(15px, 1.5vw, 18px);
-      max-width: 70ch;
       margin:0;
+      color:var(--muted);
+      font-size: clamp(15px, 1.7vw, 18px);
+      max-width: 70ch;
     }
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .meta{
-      margin-top:14px;
-      color:var(--soft);
-      font-weight:700;
-      font-size:13px;
-      display:flex;gap:10px;flex-wrap:wrap;
-    }
-    .meta span{
+    .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .chip{
       border:1px solid var(--border);
-      border-radius:999px;
-      padding:7px 10px;
       background:#fff;
+      border-radius:999px;
+      padding:8px 10px;
+      font-weight:750;
+      font-size:13px;
+      color:var(--muted);
     }
+
     section{padding:28px 0}
-    .grid{
-      display:grid;gap:14px;
-      grid-template-columns: repeat(3, 1fr);
-    }
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
     .card{
       border:1px solid var(--border);
       border-radius:var(--radius);
-      padding:16px;
-      background:var(--card);
+      padding:18px;
+      background:#fff;
     }
     .card h3{margin:0 0 6px;font-size:15px;letter-spacing:-.2px}
     .card p{margin:0;color:var(--muted);font-weight:650;font-size:14px}
-    .split{
-      display:grid;grid-template-columns: 1.1fr .9fr;gap:14px;
-      align-items:start;
+
+    .pricing{padding:18px 0 54px}
+    .pricing h2{
+      font-size: clamp(22px, 2.6vw, 30px);
+      letter-spacing:-.4px;
+      margin:0 0 10px;
     }
-    .small{color:var(--muted);font-weight:650;font-size:14px;margin:0}
-    .form{
-      display:grid;gap:10px;
-    }
-    input, textarea{
-      width:100%;
-      font:inherit;
-      padding:11px 12px;
-      border-radius:12px;
+    .sub{margin:0 0 18px;color:var(--muted);font-weight:650}
+    .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .plan{
       border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:18px;
       background:#fff;
-      outline:none;
+      position:relative;
     }
-    textarea{min-height:110px;resize:vertical}
-    input:focus, textarea:focus{border-color:#93c5fd; box-shadow: 0 0 0 3px rgba(37,99,235,.12)}
-    footer{
-      margin-top:26px;
-      padding:22px 0 34px;
+    .plan.featured{
+      border-color:#dbe7ff;
+      box-shadow: 0 18px 40px rgba(37,99,235,.10);
+    }
+    .badge{
+      position:absolute;top:14px;right:14px;
+      font-size:12px;font-weight:900;
+      padding:6px 10px;border-radius:999px;
+      background:#eef2ff;color:#1d4ed8;
+      border:1px solid #dbe7ff;
+    }
+    .plan .name{font-weight:900}
+    .price{
+      margin-top:10px;
+      font-weight:950;
+      font-size:34px;
+      letter-spacing:-.6px;
+      display:flex;align-items:flex-end;gap:8px;flex-wrap:wrap;
+    }
+    .per{font-size:14px;font-weight:850;color:var(--muted);padding-bottom:6px}
+    .eq{margin-top:6px;color:var(--muted);font-weight:650;font-size:13px}
+    ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-weight:650}
+    li{margin:6px 0}
+    .divider{height:1px;background:var(--border);margin:14px 0}
+    .foot{
       border-top:1px solid var(--border);
-      color:var(--soft);
-      font-weight:700;
+      padding:22px 0 34px;
+      color:var(--muted);
+      font-weight:650;
       font-size:13px;
     }
-    .foot{
-      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center
-    }
-    .sr{position:absolute;left:-9999px}
+    .footin{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+    .note{color:var(--muted);font-weight:650;font-size:13px}
     @media (max-width: 920px){
-      .grid{grid-template-columns:1fr}
-      .split{grid-template-columns:1fr}
+      .grid3,.plans{grid-template-columns:1fr}
     }
   </style>
 </head>
+
 <body>
   <header class="nav">
     <div class="container">
-      <div class="nav-inner">
+      <div class="navin">
         <div class="brand">
           <div class="logo" aria-hidden="true">R</div>
           <div>Rivo</div>
         </div>
-        <nav class="nav-links" aria-label="Navigation">
+        <nav class="links" aria-label="Navigation">
           <a href="#features">Fonctionnalités</a>
-          <a href="#pricing">Offres</a>
+          <a href="#pricing">Tarifs</a>
           <a href="#contact">Contact</a>
-          <a class="btn" href="mailto:hello@synaptech.tn">Email</a>
+          <a class="btn ghost" href="mailto:hello@synaptech.tn">hello@synaptech.tn</a>
           <a class="btn primary" href="#contact">Demander une démo</a>
         </nav>
       </div>
@@ -159,117 +175,127 @@
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero">
       <div class="container">
-        <p class="small"><b>Un produit Synaptech</b></p>
-        <h1>La gestion la plus simple pour PME & commerçants.</h1>
+        <div class="kicker">Un produit Synaptech</div>
+        <h1>Gérez votre activité. <br/>Simplement.</h1>
         <p class="lead">
-          Factures, dépenses, stock et trésorerie — dans un seul outil.
-          Gratuit pour démarrer, sans complexité.
+          Facturation, dépenses, stock et trésorerie dans une interface claire.
+          <b>Prix par jour</b>, et moins cher pour démarrer.
         </p>
 
         <div class="actions">
           <a class="btn primary" href="#contact">Demander une démo</a>
-          <a class="btn" href="#pricing">Voir les offres</a>
-          <a class="btn" href="tel:+21622961115">Appeler : +216 22 961 115</a>
+          <a class="btn" href="#pricing">Voir les tarifs</a>
+          <a class="btn" href="tel:+21622961115">+216 22 961 115</a>
         </div>
 
-        <div class="meta" aria-label="Points clés">
-          <span>Gratuit pour démarrer</span>
-          <span>Simple & rapide</span>
-          <span>Support Synaptech</span>
+        <div class="chips" aria-label="Points clés">
+          <div class="chip">Gratuit pour commencer</div>
+          <div class="chip">Mode service / commerce</div>
+          <div class="chip">Support Synaptech</div>
         </div>
       </div>
     </section>
 
-    <!-- FEATURES -->
     <section id="features">
       <div class="container">
-        <div class="grid">
+        <div class="grid3">
           <div class="card">
-            <h3>Facturation</h3>
-            <p>Devis & factures en quelques clics, PDF pro, envoi email.</p>
+            <h3>Factures</h3>
+            <p>Devis & factures en quelques clics. PDF pro.</p>
           </div>
           <div class="card">
             <h3>Dépenses</h3>
-            <p>Suivi clair de l’argent qui sort, sans jargon comptable.</p>
+            <p>Suivi simple de l’argent qui sort, sans jargon.</p>
           </div>
           <div class="card">
-            <h3>Stock (commerce)</h3>
-            <p>Produits, alertes de stock bas, mouvements simples.</p>
+            <h3>Stock</h3>
+            <p>Alertes stock bas et mouvements faciles (commerce).</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PRICING -->
-    <section id="pricing">
+    <section id="pricing" class="pricing">
       <div class="container">
-        <div class="grid">
-          <div class="card">
-            <h3>Free</h3>
-            <p>Pour démarrer : factures, clients, produits/services, 1 utilisateur.</p>
+        <h2>Tarifs (par jour)</h2>
+        <p class="sub">Des prix simples, affichés <b>par jour</b>. Facturation mensuelle ou annuelle possible.</p>
+
+        <div class="plans">
+          <div class="plan">
+            <div class="name">Free</div>
+            <div class="price">0 <span class="per">TND / jour</span></div>
+            <div class="eq">Gratuit pour démarrer</div>
+            <div class="divider"></div>
+            <ul>
+              <li>Factures & devis</li>
+              <li>Clients</li>
+              <li>Produits / services</li>
+              <li>1 utilisateur</li>
+            </ul>
+            <div class="divider"></div>
+            <a class="btn primary" href="#contact" style="width:100%;">Commencer</a>
           </div>
-          <div class="card">
-            <h3>Business</h3>
-            <p>Pour grandir : dépenses avancées, trésorerie, relances, stock.</p>
+
+          <div class="plan featured">
+            <div class="badge">Moins cher</div>
+            <div class="name">Business</div>
+            <div class="price">0,99 <span class="per">TND / jour</span></div>
+            <div class="eq">≈ 361,35 TND / an</div>
+            <div class="divider"></div>
+            <ul>
+              <li>Dépenses avancées</li>
+              <li>Trésorerie simplifiée</li>
+              <li>Relances (email)</li>
+              <li>Jusqu’à 5 utilisateurs</li>
+            </ul>
+            <div class="divider"></div>
+            <a class="btn primary" href="#contact" style="width:100%;">Demander une démo</a>
           </div>
-          <div class="card">
-            <h3>Pro</h3>
-            <p>Pour scaler : multi-utilisateurs, exports avancés, support prioritaire.</p>
+
+          <div class="plan">
+            <div class="name">Pro</div>
+            <div class="price">1,50 <span class="per">TND / jour</span></div>
+            <div class="eq">≈ 547,50 TND / an</div>
+            <div class="divider"></div>
+            <ul>
+              <li>Stock avancé / multi-dépôt</li>
+              <li>Exports avancés</li>
+              <li>Support prioritaire</li>
+              <li>Paramétrage sur mesure</li>
+            </ul>
+            <div class="divider"></div>
+            <a class="btn" href="#contact" style="width:100%;">Parler à Synaptech</a>
           </div>
         </div>
+
+        <p class="note" style="margin-top:14px;">
+          Référence : Swiver affiche notamment un plan annuel à 600 TND sur sa page tarification. :contentReference[oaicite:0]{index=0}
+        </p>
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
       <div class="container">
-        <div class="split">
-          <div class="card">
-            <h3>Contact</h3>
-            <p style="margin-bottom:10px;">Demande une démo ou pose une question.</p>
-            <p class="small">Email : <a href="mailto:hello@synaptech.tn"><b>hello@synaptech.tn</b></a></p>
-            <p class="small">Téléphone : <a href="tel:+21622961115"><b>+216 22 961 115</b></a></p>
-            <p class="small" style="margin-top:10px;color:var(--soft);">
-              (Tu peux connecter le formulaire plus tard à Formspree / Google Forms.)
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Demander une démo</h3>
-            <form class="form" action="#" method="post" onsubmit="return handleDemo(event)">
-              <label class="sr" for="name">Nom</label>
-              <input id="name" name="name" type="text" placeholder="Votre nom" required />
-
-              <label class="sr" for="company">Entreprise</label>
-              <input id="company" name="company" type="text" placeholder="Nom de l’entreprise" required />
-
-              <label class="sr" for="contactinfo">Téléphone ou email</label>
-              <input id="contactinfo" name="contact" type="text" placeholder="Téléphone ou email" required />
-
-              <label class="sr" for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Ex: Je veux facturation + stock."></textarea>
-
-              <button class="btn primary" type="submit">Envoyer</button>
-              <p class="small" style="margin-top:8px;color:var(--soft);">
-                Pour l’instant, le bouton affiche un message. On le connecte ensuite à un service d’email.
-              </p>
-            </form>
-          </div>
+        <div class="card">
+          <h3>Contact</h3>
+          <p style="margin:6px 0 0;color:var(--muted);font-weight:650;">
+            Email : <a href="mailto:hello@synaptech.tn"><b>hello@synaptech.tn</b></a> &nbsp;•&nbsp;
+            Téléphone : <a href="tel:+21622961115"><b>+216 22 961 115</b></a>
+          </p>
         </div>
       </div>
     </section>
-
   </main>
 
-  <footer>
+  <footer class="foot">
     <div class="container">
-      <div class="foot">
+      <div class="footin">
         <div>© <span id="year"></span> Rivo — Un produit Synaptech</div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <div>
           <a href="mailto:hello@synaptech.tn">hello@synaptech.tn</a>
+          &nbsp;•&nbsp;
           <a href="tel:+21622961115">+216 22 961 115</a>
         </div>
       </div>
@@ -277,13 +303,7 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    function handleDemo(e){
-      e.preventDefault();
-      alert("Merci ! Votre demande a été envoyée. Nous vous recontactons rapidement.");
-      e.target.reset();
-      return false;
-    }
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
