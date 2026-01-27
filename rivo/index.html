@@ -9,16 +9,16 @@
 
   <style>
     :root{
-      --bg:#fff;
+      --bg:#ffffff;
       --text:#0b1220;
       --muted:#5b6475;
       --border:#e8ebf0;
       --soft:#f6f7fb;
-      --brand:#111827;          /* noir/charbon */
-      --accent:#2563eb;         /* bleu */
-      --accent2:#16a34a;        /* vert */
+      --brand:#111827;
+      --blue:#2563eb;
+      --blueSoft:#eaf2ff;
       --radius:16px;
-      --max:1040px;
+      --max:1080px;
     }
     *{box-sizing:border-box}
     body{
@@ -30,6 +30,8 @@
     }
     a{color:inherit;text-decoration:none}
     .container{max-width:var(--max);margin:0 auto;padding:0 18px}
+
+    /* NAV */
     .nav{
       position:sticky;top:0;z-index:10;
       background:rgba(255,255,255,.92);
@@ -40,7 +42,7 @@
     .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.2px}
     .logo{
       width:34px;height:34px;border-radius:12px;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      background:linear-gradient(135deg,#2563eb,#16a34a);
       display:grid;place-items:center;color:#fff;font-weight:900;
     }
     .links{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
@@ -64,7 +66,16 @@
     }
     .btn.primary:hover{filter:brightness(.95)}
     .btn.ghost{background:var(--soft)}
-    .hero{padding:74px 0 26px}
+
+    /* HERO */
+    .hero{
+      padding:70px 0 24px;
+      background:
+        radial-gradient(1200px 520px at 50% 0%, rgba(37,99,235,.10), transparent 60%),
+        radial-gradient(1000px 520px at 10% 10%, rgba(37,99,235,.08), transparent 55%),
+        #fff;
+      border-bottom:1px solid var(--border);
+    }
     .kicker{color:var(--muted);font-weight:800;font-size:13px}
     h1{
       font-size: clamp(32px, 4.6vw, 54px);
@@ -76,38 +87,73 @@
       margin:0;
       color:var(--muted);
       font-size: clamp(15px, 1.7vw, 18px);
-      max-width: 70ch;
+      max-width: 72ch;
     }
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-    .chip{
-      border:1px solid var(--border);
-      background:#fff;
-      border-radius:999px;
-      padding:8px 10px;
-      font-weight:750;
-      font-size:13px;
-      color:var(--muted);
-    }
 
-    section{padding:28px 0}
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .card{
+    /* ICON STRIP (comme l'image) */
+    .icon-strip-wrap{
+      margin-top:26px;
+      background: linear-gradient(180deg, rgba(37,99,235,.06), rgba(37,99,235,.02));
       border:1px solid var(--border);
-      border-radius:var(--radius);
+      border-radius: 20px;
       padding:18px;
-      background:#fff;
+      overflow:hidden;
     }
-    .card h3{margin:0 0 6px;font-size:15px;letter-spacing:-.2px}
-    .card p{margin:0;color:var(--muted);font-weight:650;font-size:14px}
+    .icon-strip{
+      display:grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap:14px;
+      align-items:stretch;
+    }
+    .icon-item{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+      text-align:center;
+      padding:10px 8px;
+      border-radius:18px;
+      border:1px solid transparent;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .icon-item:hover{
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.70);
+      border-color: var(--border);
+    }
+    .icon-box{
+      width:54px;height:54px;
+      border-radius:18px;
+      display:grid;place-items:center;
+      border:1px solid rgba(37,99,235,.20);
+      background:#fff;
+      color:#1f2a44;
+    }
+    .icon-item.active .icon-box{
+      background: var(--blue);
+      border-color: transparent;
+      color:#fff;
+      box-shadow: 0 12px 26px rgba(37,99,235,.20);
+    }
+    .icon-label{
+      font-weight:850;
+      font-size:14px;
+      color: var(--text);
+    }
+    .icon-item:not(.active) .icon-label{
+      color:#182033;
+      font-weight:800;
+    }
 
-    .pricing{padding:18px 0 54px}
+    /* SECTIONS */
+    section{padding:26px 0}
     .pricing h2{
       font-size: clamp(22px, 2.6vw, 30px);
       letter-spacing:-.4px;
       margin:0 0 10px;
     }
-    .sub{margin:0 0 18px;color:var(--muted);font-weight:650}
+    .sub{margin:0 0 16px;color:var(--muted);font-weight:650}
     .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
     .plan{
       border:1px solid var(--border);
@@ -124,7 +170,7 @@
       position:absolute;top:14px;right:14px;
       font-size:12px;font-weight:900;
       padding:6px 10px;border-radius:999px;
-      background:#eef2ff;color:#1d4ed8;
+      background:var(--blueSoft);color:#1d4ed8;
       border:1px solid #dbe7ff;
     }
     .plan .name{font-weight:900}
@@ -140,7 +186,17 @@
     ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-weight:650}
     li{margin:6px 0}
     .divider{height:1px;background:var(--border);margin:14px 0}
-    .foot{
+
+    .contact-card{
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:18px;
+      background:#fff;
+    }
+    .contact-card h3{margin:0 0 6px;font-size:16px}
+    .contact-card p{margin:0;color:var(--muted);font-weight:650}
+
+    footer{
       border-top:1px solid var(--border);
       padding:22px 0 34px;
       color:var(--muted);
@@ -148,9 +204,16 @@
       font-size:13px;
     }
     .footin{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
-    .note{color:var(--muted);font-weight:650;font-size:13px}
-    @media (max-width: 920px){
-      .grid3,.plans{grid-template-columns:1fr}
+
+    /* SVG sizing */
+    svg.ico{width:22px;height:22px;display:block}
+
+    @media (max-width: 980px){
+      .icon-strip{grid-template-columns: repeat(4, 1fr);}
+    }
+    @media (max-width: 520px){
+      .icon-strip{grid-template-columns: repeat(2, 1fr);}
+      .links .btn.ghost{display:none}
     }
   </style>
 </head>
@@ -164,7 +227,6 @@
           <div>Rivo</div>
         </div>
         <nav class="links" aria-label="Navigation">
-          <a href="#features">Fonctionnalités</a>
           <a href="#pricing">Tarifs</a>
           <a href="#contact">Contact</a>
           <a class="btn ghost" href="mailto:hello@synaptech.tn">hello@synaptech.tn</a>
@@ -178,10 +240,10 @@
     <section class="hero">
       <div class="container">
         <div class="kicker">Un produit Synaptech</div>
-        <h1>Gérez votre activité. <br/>Simplement.</h1>
+        <h1>Gérez votre activité. Simplement.</h1>
         <p class="lead">
           Facturation, dépenses, stock et trésorerie dans une interface claire.
-          <b>Prix par jour</b>, et moins cher pour démarrer.
+          <b>Tarifs affichés par jour</b> — plus abordables pour démarrer.
         </p>
 
         <div class="actions">
@@ -190,37 +252,111 @@
           <a class="btn" href="tel:+21622961115">+216 22 961 115</a>
         </div>
 
-        <div class="chips" aria-label="Points clés">
-          <div class="chip">Gratuit pour commencer</div>
-          <div class="chip">Mode service / commerce</div>
-          <div class="chip">Support Synaptech</div>
+        <!-- ICON STRIP -->
+        <div class="icon-strip-wrap" aria-label="Modules Rivo">
+          <div class="icon-strip">
+            <div class="icon-item active">
+              <div class="icon-box" aria-hidden="true">
+                <!-- Ventes -->
+                <svg class="ico" viewBox="0 0 24 24" fill="none">
+                  <path d="M7 7h13l-1 6H8L7 7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="M7 7 6 4H3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M8 19a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM18 19a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="icon-label">Ventes</div>
+            </div>
+
+            <div class="icon-item">
+              <div class="icon-box" aria-hidden="true">
+                <!-- Achats -->
+                <svg class="ico" viewBox="0 0 24 24" fill="none">
+                  <path d="M7 10V7a5 5 0 0 1 10 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M6 10h12l-1 10H7L6 10Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="icon-label">Achats</div>
+            </div>
+
+            <div class="icon-item">
+              <div class="icon-box" aria-hidden="true">
+                <!-- Stock -->
+                <svg class="ico" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 7.5 12 3l9 4.5-9 4.5-9-4.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="M3 12l9 4.5 9-4.5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="M3 16.5 12 21l9-4.5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="icon-label">Stock</div>
+            </div>
+
+            <div class="icon-item">
+              <div class="icon-box" aria-hidden="true">
+                <!-- POS -->
+                <svg class="ico" viewBox="0 0 24 24" fill="none">
+                  <path d="M6 6h12v12H6V6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="M8 9h8M8 12h8M8 15h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="icon-label">POS</div>
+            </div>
+
+            <div class="icon-item">
+              <div class="icon-box" aria-hidden="true">
+                <!-- Trésorerie -->
+                <svg class="ico" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 7h18v10H3V7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="M7 11h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M16 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="icon-label">Trésorerie</div>
+            </div>
+
+            <div class="icon-item">
+              <div class="icon-box" aria-hidden="true">
+                <!-- Rapports -->
+                <svg class="ico" viewBox="0 0 24 24" fill="none">
+                  <path d="M7 17V9M12 17V7M17 17v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M5 20h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="icon-label">Rapports</div>
+            </div>
+
+            <div class="icon-item">
+              <div class="icon-box" aria-hidden="true">
+                <!-- Dashboard -->
+                <svg class="ico" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 13a8 8 0 1 1 16 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M12 13 15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M6 19h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="icon-label">Dashboard</div>
+            </div>
+
+            <div class="icon-item">
+              <div class="icon-box" aria-hidden="true">
+                <!-- Banques -->
+                <svg class="ico" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 10h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M5 10V20M9 10V20M15 10V20M19 10V20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M3 20h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M12 4 3 10h18L12 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="icon-label">Banques</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="features">
+    <section id="pricing">
       <div class="container">
-        <div class="grid3">
-          <div class="card">
-            <h3>Factures</h3>
-            <p>Devis & factures en quelques clics. PDF pro.</p>
-          </div>
-          <div class="card">
-            <h3>Dépenses</h3>
-            <p>Suivi simple de l’argent qui sort, sans jargon.</p>
-          </div>
-          <div class="card">
-            <h3>Stock</h3>
-            <p>Alertes stock bas et mouvements faciles (commerce).</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="pricing" class="pricing">
-      <div class="container">
-        <h2>Tarifs (par jour)</h2>
-        <p class="sub">Des prix simples, affichés <b>par jour</b>. Facturation mensuelle ou annuelle possible.</p>
+        <h2 style="margin:0 0 10px;letter-spacing:-.4px;">Tarifs (par jour)</h2>
+        <p class="sub">Affichés par jour pour être simple. Facturation mensuelle/annuelle possible.</p>
 
         <div class="plans">
           <div class="plan">
@@ -269,16 +405,14 @@
             <a class="btn" href="#contact" style="width:100%;">Parler à Synaptech</a>
           </div>
         </div>
-
-     
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" style="padding-bottom:54px;">
       <div class="container">
-        <div class="card">
+        <div class="contact-card">
           <h3>Contact</h3>
-          <p style="margin:6px 0 0;color:var(--muted);font-weight:650;">
+          <p>
             Email : <a href="mailto:hello@synaptech.tn"><b>hello@synaptech.tn</b></a> &nbsp;•&nbsp;
             Téléphone : <a href="tel:+21622961115"><b>+216 22 961 115</b></a>
           </p>
@@ -287,13 +421,12 @@
     </section>
   </main>
 
-  <footer class="foot">
+  <footer>
     <div class="container">
       <div class="footin">
         <div>© <span id="year"></span> Rivo — Un produit Synaptech</div>
         <div>
-          <a href="mailto:hello@synaptech.tn">hello@synaptech.tn</a>
-          &nbsp;•&nbsp;
+          <a href="mailto:hello@synaptech.tn">hello@synaptech.tn</a> •
           <a href="tel:+21622961115">+216 22 961 115</a>
         </div>
       </div>
