@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Rivo — Conformité Tunisie | Facture électronique & Signature électronique</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Guide Rivo : procédure Tunisie pour la facture électronique et la signature électronique. Checklist, étapes, statuts et archivage." />
+
+  <!-- Favicons (pack favicon.io dans /rivo/) -->
+  <link rel="icon" href="./favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="manifest" href="./site.webmanifest">
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0b1220;
+      --muted:#5b6475;
+      --border:#e6e9ef;
+      --brand:#1f4fd8;
+      --green:#16a34a;
+      --soft:#f7f9ff;
+      --radius:18px;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:auto;padding:0 20px}
+
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      padding:16px 0;
+    }
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{height:72px;width:auto;display:block}
+    .nav-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .btn{
+      padding:10px 16px;
+      border-radius:12px;
+      font-weight:650;
+      border:1px solid var(--border);
+      background:#fff;
+      cursor:pointer;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(0,0,0,.06);
+      border-color: rgba(0,0,0,.10);
+    }
+    .btn.primary{
+      background:var(--brand);
+      color:#fff;border:none;
+    }
+
+    .hero{
+      padding:76px 0 44px;
+      background:
+        radial-gradient(900px 420px at 50% 0%, rgba(31,79,216,.10), transparent 60%),
+        radial-gradient(900px 420px at 10% 10%, rgba(22,163,74,.08), transparent 55%),
+        #fff;
+      border-bottom:1px solid var(--border);
+    }
+    .kicker{color:var(--muted);font-weight:750;font-size:13px;margin-bottom:10px}
+    h1{
+      margin:0 0 12px;
+      font-size: clamp(30px, 3.7vw, 48px);
+      letter-spacing:-1px;
+      line-height:1.08;
+    }
+    .lead{
+      margin:0;
+      color:var(--muted);
+      font-size: clamp(15px, 1.4vw, 18px);
+      max-width: 80ch;
+    }
+
+    section{padding:44px 0}
+    .section-title{
+      display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;
+      margin-bottom:14px;
+    }
+    .section-title h2{
+      margin:0;
+      font-size: clamp(20px, 2.2vw, 28px);
+      letter-spacing:-.4px;
+    }
+    .section-title p{margin:0;color:var(--muted);font-weight:650;max-width:78ch}
+
+    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+
+    .card{
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:20px;
+      background:#fff;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    }
+    .card:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 16px 38px rgba(0,0,0,.07);
+      border-color: rgba(31,79,216,.18);
+    }
+    .tag{
+      display:inline-flex;gap:8px;align-items:center;
+      border-radius:999px;padding:7px 10px;
+      font-weight:750;font-size:13px;
+      border:1px solid var(--border);
+      background: var(--soft);
+      color:#28324a;
+      margin-bottom:10px;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:999px;background:var(--green);
+      box-shadow: 0 0 0 6px rgba(22,163,74,.10);
+    }
+    .card h3{margin:0 0 6px;font-size:16px;letter-spacing:-.2px}
+    .card p{margin:0;color:var(--muted);font-weight:650}
+    .list{margin:12px 0 0;padding-left:18px;color:var(--muted);font-weight:650}
+    .list li{margin:6px 0}
+
+    .steps{
+      counter-reset: step;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+    .step{
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:18px;
+      background:#fff;
+    }
+    .step .num{
+      width:34px;height:34px;border-radius:12px;
+      background: rgba(31,79,216,.10);
+      border:1px solid rgba(31,79,216,.18);
+      color: var(--brand);
+      display:grid;place-items:center;
+      font-weight:900;
+      margin-bottom:10px;
+    }
+    .step h4{margin:0 0 6px;font-size:15px}
+    .step p{margin:0;color:var(--muted);font-weight:650;font-size:14px}
+
+    .notice{
+      border:1px solid rgba(31,79,216,.18);
+      background: rgba(31,79,216,.06);
+      border-radius: var(--radius);
+      padding:18px;
+      color:#22304d;
+      font-weight:650;
+    }
+    .notice b{color:var(--text)}
+
+    .contact{
+      display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:20px;
+      background:#fff;
+    }
+    .contact h3{margin:0 0 6px;font-size:16px}
+    .contact p{margin:0;color:var(--muted);font-weight:650}
+    .contact-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+    footer{padding:30px 0 40px;color:var(--muted);font-size:14px}
+
+    @media(max-width: 1020px){
+      .steps{grid-template-columns:1fr}
+      .grid3{grid-template-columns:1fr}
+    }
+    @media(max-width: 920px){
+      .grid2{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <a href="./index.html" title="Retour à Rivo">
+        <img class="logo" src="./assets/logo-rivo.png" alt="Rivo">
+      </a>
+    </div>
+    <div class="nav-actions">
+      <a class="btn" href="./index.html#pricing">Tarifs</a>
+      <a class="btn primary" href="#contact">Demander une démo</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="kicker">Rivo — Guide Conformité</div>
+      <h1>Facture électronique & signature électronique<br/>en Tunisie (mode conformité).</h1>
+      <p class="lead">
+        Cette page explique la démarche type pour passer d’une facturation “PDF” à une facturation
+        “conforme” (signature, transmission, statuts, archivage). Rivo est conçu pour démarrer simple,
+        puis activer la conformité quand nécessaire.
+      </p>
+    </div>
+  </section>
+
+  <!-- Modes -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Deux modes d’utilisation</h2>
+        <p>Vous pouvez démarrer en mode simple, puis activer le mode conformité quand vous êtes concerné.</p>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div class="tag"><span class="dot"></span> Mode simple</div>
+          <h3>PDF (gestion)</h3>
+          <p>Devis, factures et avoirs en PDF + suivi clients et paiements. Idéal pour commencer rapidement.</p>
+          <ul class="list">
+            <li>Numérotation & TVA</li>
+            <li>Envoi email et archivage</li>
+            <li>Rapports simples</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="tag"><span class="dot"></span> Mode conformité</div>
+          <h3>Signature + e-facture</h3>
+          <p>Activation du flux conformité : signature électronique, transmission, retours et preuves.</p>
+          <ul class="list">
+            <li>Certificat & signature</li>
+            <li>Statuts : transmis / accepté / rejeté</li>
+            <li>Archivage probant (preuves)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parcours -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Parcours type (étapes)</h2>
+        <p>Voici le parcours que Rivo vous aide à suivre : simple, guidé, et traçable.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h4>Vérifier le besoin</h4>
+          <p>Déterminer si vous devez activer la facture électronique (selon votre activité et vos clients).</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h4>Certificat de signature</h4>
+          <p>Mettre en place un certificat/solution de signature électronique pour signer vos factures.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h4>Activation du flux</h4>
+          <p>Configurer le mode conformité : contrôles, format, signature, transmission et journal d’audit.</p>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h4>Suivi & archivage</h4>
+          <p>Suivre les retours (accepté/rejeté) et archiver toutes les preuves (accusés, hash, logs).</p>
+        </div>
+      </div>
+
+      <div style="margin-top:14px" class="notice">
+        <b>Note :</b> Le périmètre et les exigences peuvent évoluer. Rivo est pensé pour rester flexible et vous accompagner.
+      </div>
+    </div>
+  </section>
+
+  <!-- Checklist -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Checklist entreprise (à préparer)</h2>
+        <p>Informations typiquement nécessaires pour paramétrer correctement la facturation et le mode conformité.</p>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <h3>Identité & fiscalité</h3>
+          <ul class="list">
+            <li>Raison sociale / adresse</li>
+            <li>Identifiants fiscaux</li>
+            <li>Régime TVA (si applicable)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Règles de facturation</h3>
+          <ul class="list">
+            <li>Séries & numérotation</li>
+            <li>Modèle de facture</li>
+            <li>Conditions de paiement</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Conformité</h3>
+          <ul class="list">
+            <li>Certificat / signature</li>
+            <li>Paramètres de transmission</li>
+            <li>Archivage des preuves</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statuts -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Statuts (mode conformité)</h2>
+        <p>Rivo affiche des statuts clairs pour éviter les erreurs et garantir la traçabilité.</p>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <h3>Brouillon</h3>
+          <p>Document en préparation, pas encore signé ni transmis.</p>
+        </div>
+        <div class="card">
+          <h3>Signée & transmise</h3>
+          <p>Facture signée puis envoyée via le circuit prévu, avec preuve d’envoi.</p>
+        </div>
+        <div class="card">
+          <h3>Acceptée / Rejetée</h3>
+          <p>Retour de traitement (acceptation ou rejet) et historique des raisons.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact">
+        <div>
+          <h3>Contact</h3>
+          <p>Email : <a href="mailto:hello@synaptech.tn"><b>hello@synaptech.tn</b></a></p>
+          <p>Téléphone : <a href="tel:+21622961115"><b>+216 22 961 115</b></a></p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn primary" href="mailto:hello@synaptech.tn?subject=Conformit%C3%A9%20Tunisie%20Rivo%20-%20Demande%20de%20d%C3%A9mo">Demander une démo</a>
+          <a class="btn" href="./index.html">Retour au site</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    © <span id="year"></span> Rivo — Un produit Synaptech • hello@synaptech.tn • +216 22 961 115
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
