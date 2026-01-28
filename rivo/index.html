@@ -2,11 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <title>Rivo — Logiciel de facturation simple | Synaptech</title>
+  <title>Rivo — Facturation & e-facture Tunisie | Signature électronique</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Rivo est un logiciel de facturation simple pour PME et commerçants. Factures, clients, dépenses et trésorerie. Prix par jour." />
+  <meta name="description" content="Rivo : facturation simple + option conformité Tunisie (facture électronique & signature électronique). Pensé pour PME et commerçants. Prix par jour." />
 
-  <!-- FAVICONS (pack favicon.io dans /rivo/) -->
+  <!-- Favicons (pack favicon.io dans /rivo/) -->
   <link rel="icon" href="./favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
@@ -20,8 +20,10 @@
       --muted:#5b6475;
       --border:#e6e9ef;
       --brand:#1f4fd8;
-      --radius:16px;
-      --max:1080px;
+      --green:#16a34a;
+      --soft:#f7f9ff;
+      --radius:18px;
+      --max:1120px;
     }
     *{box-sizing:border-box}
     body{
@@ -31,36 +33,22 @@
       color:var(--text);
       line-height:1.45;
     }
-    a{text-decoration:none;color:inherit}
+    a{color:inherit;text-decoration:none}
     .container{max-width:var(--max);margin:auto;padding:0 20px}
 
     /* NAV */
     header{
-      border-bottom:1px solid var(--border);
-      position:sticky;
-      top:0;
+      position:sticky;top:0;z-index:50;
       background:rgba(255,255,255,.92);
       backdrop-filter: blur(10px);
-      z-index:50;
+      border-bottom:1px solid var(--border);
     }
     .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
       padding:16px 0;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-    .logo{
-      height:96px;  /* ✅ logo plus grand */
-      width:auto;
-      display:block;
-    }
-
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{height:96px;width:auto;display:block} /* grand, car ton PNG a du blanc interne */
     .nav-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
     .btn{
       padding:10px 16px;
@@ -70,58 +58,55 @@
       background:#fff;
       cursor:pointer;
       transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+      white-space:nowrap;
     }
     .btn:hover{
       transform: translateY(-1px);
       box-shadow: 0 10px 26px rgba(0,0,0,.06);
-      border-color: rgba(0,0,0,.08);
+      border-color: rgba(0,0,0,.10);
     }
     .btn.primary{
       background:var(--brand);
       color:#fff;
       border:none;
     }
-    .btn.primary:hover{filter:brightness(.95)}
+    .btn.primary:hover{filter:brightness(.96)}
+    .btn.ghost{background:var(--soft)}
 
-    /* HERO (moins vide) */
+    /* HERO */
     .hero{
-      padding:110px 0 64px; /* ✅ plus de présence */
+      padding:96px 0 54px;
       background:
-        radial-gradient(900px 420px at 50% 0%, rgba(31,79,216,.10), transparent 60%),
-        radial-gradient(900px 420px at 10% 10%, rgba(31,79,216,.06), transparent 55%),
+        radial-gradient(900px 420px at 50% 0%, rgba(31,79,216,.12), transparent 60%),
+        radial-gradient(900px 420px at 10% 10%, rgba(22,163,74,.08), transparent 55%),
         #fff;
       border-bottom:1px solid var(--border);
     }
     .kicker{
       color:var(--muted);
-      font-weight:700;
+      font-weight:750;
       font-size:13px;
       margin-bottom:10px;
     }
     h1{
-      font-size: clamp(34px, 4.3vw, 56px);
-      letter-spacing:-1px;
       margin:0 0 12px;
+      font-size: clamp(34px, 4.3vw, 58px);
+      letter-spacing:-1px;
       line-height:1.05;
     }
     .lead{
-      font-size: clamp(15px, 1.5vw, 18px);
-      color:var(--muted);
-      max-width:720px;
       margin:0;
+      color:var(--muted);
+      font-size: clamp(15px, 1.5vw, 18px);
+      max-width: 75ch;
     }
     .hero-actions{
       margin-top:18px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
+      display:flex;gap:10px;flex-wrap:wrap;align-items:center;
     }
     .pills{
       margin-top:18px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
+      display:flex;gap:10px;flex-wrap:wrap;
     }
     .pill{
       border:1px solid var(--border);
@@ -132,123 +117,140 @@
       background:#fff;
     }
 
-    /* FEATURES */
+    /* SECTIONS */
     section{padding:44px 0}
-    .features{
-      display:grid;
-      grid-template-columns:repeat(6,1fr);
-      gap:14px;
-      margin-top:14px;
+    .section-title{
+      display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;
+      margin-bottom:14px;
     }
-    .feature{
+    .section-title h2{
+      margin:0;
+      font-size: clamp(20px, 2.4vw, 30px);
+      letter-spacing:-.4px;
+    }
+    .section-title p{margin:0;color:var(--muted);font-weight:650;max-width:78ch}
+
+    /* FEATURE CARDS */
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .card{
       border:1px solid var(--border);
-      border-radius:18px;
-      padding:20px 14px;
-      text-align:center;
+      border-radius:var(--radius);
+      padding:20px;
       background:#fff;
-      font-weight:700;
-      color:#1a2236;
       transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
     }
-    .feature:hover{
+    .card:hover{
       transform: translateY(-3px);
-      box-shadow: 0 14px 34px rgba(0,0,0,.07);
+      box-shadow: 0 16px 38px rgba(0,0,0,.07);
       border-color: rgba(31,79,216,.18);
     }
-    .section-note{
-      text-align:center;
-      color:var(--muted);
-      margin-top:18px;
+    .card h3{margin:0 0 6px;font-size:16px;letter-spacing:-.2px}
+    .card p{margin:0;color:var(--muted);font-weight:650}
+    .tag{
+      display:inline-flex;
+      gap:8px;align-items:center;
+      border-radius:999px;
+      padding:7px 10px;
+      font-weight:750;
+      font-size:13px;
+      border:1px solid var(--border);
+      background: var(--soft);
+      color: #28324a;
+      margin-bottom:10px;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:999px;background:var(--green);
+      box-shadow: 0 0 0 6px rgba(22,163,74,.10);
+    }
+
+    /* COMPLIANCE (Tunisia) */
+    .notice{
+      border:1px solid rgba(31,79,216,.18);
+      background: rgba(31,79,216,.06);
+      border-radius: var(--radius);
+      padding:18px;
+      color:#22304d;
       font-weight:650;
     }
+    .notice b{color:var(--text)}
+    .list{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:var(--muted);
+      font-weight:650;
+    }
+    .list li{margin:6px 0}
 
     /* PRICING */
     .pricing{
       padding:56px 0 64px;
-      background: linear-gradient(180deg, rgba(31,79,216,.04), transparent 38%);
+      background: linear-gradient(180deg, rgba(31,79,216,.05), transparent 40%);
       border-top:1px solid var(--border);
       border-bottom:1px solid var(--border);
     }
-    .pricing h2{
-      margin:0 0 10px;
-      letter-spacing:-.4px;
-      font-size: clamp(20px, 2.4vw, 30px);
-    }
-    .sub{
-      margin:0 0 18px;
-      color:var(--muted);
-      font-weight:650;
-      max-width: 70ch;
-    }
-    .plans{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
-      margin-top:14px;
-    }
+    .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
     .plan{
       border:1px solid var(--border);
-      border-radius:18px;
+      border-radius:var(--radius);
       padding:22px;
       background:#fff;
-      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
       position:relative;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
     }
     .plan:hover{
       transform: translateY(-3px);
       box-shadow: 0 18px 44px rgba(0,0,0,.08);
       border-color: rgba(0,0,0,.10);
     }
-    .plan h3{
-      margin:0 0 8px;
-      font-size:16px;
-      letter-spacing:-.2px;
-    }
-    .price{
-      display:flex;
-      align-items:baseline;
-      gap:8px;
-      margin:8px 0 6px;
-    }
-    .price strong{
-      font-size:36px;
-      letter-spacing:-.8px;
-    }
-    .price span{color:var(--muted);font-weight:650}
-    .plan p{margin:10px 0 0;color:var(--muted);font-weight:650}
-    .plan ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-weight:650}
-    .plan li{margin:6px 0}
-    .tag{
-      position:absolute;
-      top:14px; right:14px;
-      border:1px solid rgba(31,79,216,.22);
-      background: rgba(31,79,216,.08);
-      color: var(--brand);
-      font-weight:800;
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-    }
     .plan.featured{
       border:2px solid var(--brand);
       box-shadow: 0 22px 56px rgba(31,79,216,.12);
     }
+    .badge{
+      position:absolute;top:14px;right:14px;
+      border:1px solid rgba(31,79,216,.22);
+      background: rgba(31,79,216,.08);
+      color: var(--brand);
+      font-weight:850;
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+    }
+    .plan h3{margin:0 0 8px;font-size:16px}
+    .price{display:flex;align-items:baseline;gap:8px;margin:8px 0 6px}
+    .price strong{font-size:36px;letter-spacing:-.8px}
+    .price span{color:var(--muted);font-weight:650}
+    .plan p{margin:10px 0 0;color:var(--muted);font-weight:650}
+    .plan ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-weight:650}
+    .plan li{margin:6px 0}
+
+    /* FAQ */
+    details{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding:16px 18px;
+      background:#fff;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:800;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{margin:10px 0 0;color:var(--muted);font-weight:650}
 
     /* CONTACT */
     .contact{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      flex-wrap:wrap;
+      display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
       border:1px solid var(--border);
-      border-radius:18px;
+      border-radius:var(--radius);
       padding:20px;
       background:#fff;
     }
     .contact h3{margin:0 0 6px;font-size:16px}
     .contact p{margin:0;color:var(--muted);font-weight:650}
-    .contact-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .contact-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 
     /* FOOTER */
     footer{
@@ -257,15 +259,12 @@
       font-size:14px;
     }
 
-    /* RESPONSIVE */
     @media(max-width: 980px){
-      .features{grid-template-columns:repeat(3,1fr)}
       .plans{grid-template-columns:1fr}
-      .hero{padding:88px 0 54px}
-    }
-    @media(max-width: 520px){
-      .features{grid-template-columns:repeat(2,1fr)}
-      .logo{height:44px}
+      .grid3{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      .hero{padding:78px 0 50px}
+      .logo{height:86px}
     }
   </style>
 </head>
@@ -277,10 +276,10 @@
     <div class="brand">
       <img class="logo" src="./assets/logo-rivo.png" alt="Rivo">
     </div>
-
     <div class="nav-actions">
-      <a class="btn" href="#contact">Contact</a>
-      <a class="btn primary" href="#pricing">Tarifs</a>
+      <a class="btn ghost" href="#tunisie">Conformité Tunisie</a>
+      <a class="btn" href="#pricing">Tarifs</a>
+      <a class="btn primary" href="#contact">Demander une démo</a>
     </div>
   </div>
 </header>
@@ -291,10 +290,12 @@
     <div class="container">
       <div class="kicker">Un produit Synaptech</div>
 
-      <h1>La facturation, simplement.</h1>
+      <h1>Facturation simple.<br/>Option conforme Tunisie.</h1>
 
       <p class="lead">
-        Rivo aide les PME et commerçants à gérer leurs factures, clients, dépenses et trésorerie — sans complexité.
+        Rivo aide les PME et commerçants à gérer leurs factures, clients, dépenses et trésorerie.
+        Quand vous en avez besoin, activez la <b>facture électronique</b> et la <b>signature électronique</b>
+        (selon votre périmètre d’obligation).
       </p>
 
       <div class="hero-actions">
@@ -303,37 +304,103 @@
         <a class="btn" href="tel:+21622961115">+216 22 961 115</a>
       </div>
 
-      <div class="pills" aria-label="Points clés">
+      <div class="pills">
         <div class="pill">Gratuit pour démarrer</div>
         <div class="pill">Interface simple</div>
-        <div class="pill">Support Synaptech</div>
+        <div class="pill">Accompagnement Synaptech</div>
       </div>
     </div>
   </section>
 
+  <!-- Fonctionnalités core -->
   <section>
     <div class="container">
-      <div class="features" aria-label="Fonctionnalités">
-        <div class="feature">Facturation</div>
-        <div class="feature">Clients</div>
-        <div class="feature">Dépenses</div>
-        <div class="feature">Stock</div>
-        <div class="feature">Trésorerie</div>
-        <div class="feature">Rapports</div>
+      <div class="section-title">
+        <h2>Fonctionnalités essentielles</h2>
+        <p>Rivo va à l’essentiel : rapide, clair, et adapté aux PME & commerçants.</p>
       </div>
 
-      <div class="section-note">
-        Tout ce dont vous avez besoin pour facturer et suivre votre activité, sans modules inutiles.
+      <div class="grid3">
+        <div class="card">
+          <div class="tag"><span class="dot"></span> Facturation</div>
+          <h3>Devis & factures</h3>
+          <p>Créez et envoyez vos documents en quelques clics, avec un suivi clair.</p>
+        </div>
+        <div class="card">
+          <div class="tag"><span class="dot"></span> Clients</div>
+          <h3>Base clients</h3>
+          <p>Contacts, historique, documents, et statut des paiements.</p>
+        </div>
+        <div class="card">
+          <div class="tag"><span class="dot"></span> Dépenses</div>
+          <h3>Dépenses & charges</h3>
+          <p>Suivi simple des sorties d’argent (utile pour votre visibilité).</p>
+        </div>
+        <div class="card">
+          <div class="tag"><span class="dot"></span> Stock</div>
+          <h3>Produits & stock</h3>
+          <p>Pour le commerce : produits, mouvements, alertes de stock bas.</p>
+        </div>
+        <div class="card">
+          <div class="tag"><span class="dot"></span> Trésorerie</div>
+          <h3>Trésorerie</h3>
+          <p>Vue claire : à encaisser, à payer, et résumé du mois.</p>
+        </div>
+        <div class="card">
+          <div class="tag"><span class="dot"></span> Rapports</div>
+          <h3>Rapports</h3>
+          <p>Export & rapports simples pour piloter votre activité.</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Conformité Tunisie -->
+  <section id="tunisie">
+    <div class="container">
+      <div class="section-title">
+        <h2>Conformité Tunisie</h2>
+        <p>Rivo peut fonctionner en mode simple (PDF) ou en mode conformité (facture électronique & signature électronique) selon votre besoin.</p>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div class="tag"><span class="dot"></span> Mode simple</div>
+          <h3>Factures PDF (gestion)</h3>
+          <p>Idéal pour démarrer : documents pro, numérotation, TVA, archivage et suivi.</p>
+          <ul class="list">
+            <li>Devis → facture → avoir</li>
+            <li>PDF pro + envoi email</li>
+            <li>Historique & export</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="tag"><span class="dot"></span> Mode conformité</div>
+          <h3>Facture électronique & signature</h3>
+          <p>Activation quand nécessaire : signature électronique + intégration au circuit officiel (selon exigences applicables).</p>
+          <ul class="list">
+            <li>Signature électronique (certificat)</li>
+            <li>Traçabilité & journal d’audit</li>
+            <li>Statuts : transmis / accepté / rejeté</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top:14px" class="notice">
+        <b>Important :</b> l’obligation et le périmètre de la facture électronique peuvent dépendre de votre situation (secteur, type de clients, etc.).
+        Rivo inclut un accompagnement pour vous orienter et paramétrer correctement votre entreprise.
+      </div>
+    </div>
+  </section>
+
+  <!-- Tarifs -->
   <section id="pricing" class="pricing">
     <div class="container">
-      <h2>Tarifs (par jour)</h2>
-      <p class="sub">
-        Des prix simples affichés par jour. Facturation mensuelle ou annuelle possible.
-      </p>
+      <div class="section-title">
+        <h2>Tarifs (par jour)</h2>
+        <p>Des prix simples. Vous pouvez commencer en Free, puis activer la conformité si nécessaire.</p>
+      </div>
 
       <div class="plans">
         <div class="plan">
@@ -341,7 +408,7 @@
           <div class="price"><strong>0</strong><span>TND / jour</span></div>
           <p>Pour démarrer gratuitement.</p>
           <ul>
-            <li>Factures & devis</li>
+            <li>Devis & factures PDF</li>
             <li>Clients</li>
             <li>Produits / services</li>
             <li>1 utilisateur</li>
@@ -349,12 +416,12 @@
         </div>
 
         <div class="plan featured">
-          <div class="tag">Le plus choisi</div>
+          <div class="badge">Le plus choisi</div>
           <h3>Business</h3>
           <div class="price"><strong>0.99</strong><span>TND / jour</span></div>
-          <p>Pour les PME qui veulent gagner du temps.</p>
+          <p>Pour piloter l’activité au quotidien.</p>
           <ul>
-            <li>Dépenses avancées</li>
+            <li>Dépenses & catégories</li>
             <li>Trésorerie simplifiée</li>
             <li>Relances (email)</li>
             <li>Jusqu’à 5 utilisateurs</li>
@@ -362,20 +429,53 @@
         </div>
 
         <div class="plan">
-          <h3>Pro</h3>
+          <h3>Pro (Conformité)</h3>
           <div class="price"><strong>1.50</strong><span>TND / jour</span></div>
-          <p>Pour les équipes et besoins avancés.</p>
+          <p>Pour la conformité (signature / e-facture) + support.</p>
           <ul>
-            <li>Stock avancé</li>
-            <li>Exports avancés</li>
+            <li>Module conformité Tunisie</li>
+            <li>Signature électronique (certificat)</li>
+            <li>Journal d’audit & archivage</li>
             <li>Support prioritaire</li>
-            <li>Paramétrage sur mesure</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>FAQ</h2>
+        <p>Réponses courtes aux questions fréquentes.</p>
+      </div>
+
+      <div class="grid2">
+        <details>
+          <summary>Une facture PDF suffit-elle en Tunisie ?</summary>
+          <p>Pour la gestion interne et certains cas, oui. Pour la conformité “facture électronique”, il faut respecter les exigences applicables (signature/certificat, transmission, archivage, etc.).</p>
+        </details>
+
+        <details>
+          <summary>Est-ce que Rivo fournit la signature électronique ?</summary>
+          <p>Rivo s’intègre à un certificat de signature (selon votre configuration). Synaptech peut accompagner l’obtention et la mise en place.</p>
+        </details>
+
+        <details>
+          <summary>Je suis commerçant, je veux juste quelque chose de simple</summary>
+          <p>Vous commencez en Free/Business (factures + clients + stock optionnel). Le mode conformité s’active uniquement si vous en avez besoin.</p>
+        </details>
+
+        <details>
+          <summary>Puis-je migrer vers Odoo / aller plus loin ?</summary>
+          <p>Oui. Rivo peut s’appuyer sur une base robuste et évoluer avec votre entreprise (utilisateurs, modules, automatisations).</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
   <section id="contact">
     <div class="container">
       <div class="contact">
@@ -385,7 +485,7 @@
           <p>Téléphone : <a href="tel:+21622961115"><b>+216 22 961 115</b></a></p>
         </div>
         <div class="contact-actions">
-          <a class="btn primary" href="mailto:hello@synaptech.tn?subject=Demande%20de%20d%C3%A9mo%20Rivo">Demander une démo</a>
+          <a class="btn primary" href="mailto:hello@synaptech.tn?subject=Demande%20de%20d%C3%A9mo%20Rivo%20(Tunisie)">Demander une démo</a>
           <a class="btn" href="tel:+21622961115">Appeler</a>
         </div>
       </div>
