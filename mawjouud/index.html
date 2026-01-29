@@ -1,524 +1,201 @@
 <!doctype html>
-<html lang="fr-TN">
+<html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- ✅ TITLE (très important) -->
-  <title>Créer un mini site web en Tunisie (pas cher) | Mawjouud by Synaptech</title>
-
-  <!-- ✅ META DESCRIPTION (très important) -->
-  <meta name="description" content="Mawjouud (Synaptech) : création de mini sites web en Tunisie à bas prix. Site officiel 1 page avec WhatsApp + Google Maps + horaires + photos + prix. Devis rapide sur WhatsApp." />
-
-  <!-- ✅ Canonical (évite duplication si plusieurs URLs) -->
-  <link rel="canonical" href="https://synaptech.tn/mawjouud/" />
-
-  <!-- ✅ Robots -->
-  <meta name="robots" content="index,follow,max-image-preview:large" />
-
-  <!-- ✅ Open Graph (partage Facebook/WhatsApp) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="fr_TN" />
-  <meta property="og:title" content="Créer un mini site web en Tunisie | Mawjouud by Synaptech" />
-  <meta property="og:description" content="Mini site officiel à bas prix : WhatsApp + Maps + horaires + photos + prix. Idéal pour petits commerces en Tunisie." />
-  <meta property="og:url" content="https://synaptech.tn/mawjouud/" />
-  <!-- Si tu as une image de partage, mets-la ici :
-  <meta property="og:image" content="https://synaptech.tn/mawjouud/og-image.jpg" />
-  -->
-
-  <!-- ✅ Twitter (optionnel) -->
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Favicon (si tu l’as à la racine) -->
-  <link rel="icon" href="../favicon.ico" />
-
-  <!-- ✅ JSON-LD: LocalBusiness (SEO local + confiance) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"Mawjouud by Synaptech",
-    "url":"https://synaptech.tn/mawjouud/",
-    "telephone":"+21622961115",
-    "email":"hello@synaptech.tn",
-    "areaServed":"TN",
-    "description":"Création de mini sites web en Tunisie (site vitrine 1 page) avec WhatsApp, Google Maps, horaires, photos et prix.",
-    "brand":{"@type":"Brand","name":"Synaptech"},
-    "sameAs":[
-      "https://synaptech.tn/"
-    ]
-  }
-  </script>
-
-  <!-- ✅ JSON-LD: FAQ (peut afficher des FAQ dans Google) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"Quel est le prix pour créer un mini site web en Tunisie ?",
-        "acceptedAnswer":{"@type":"Answer","text":"Avec Mawjouud, le mini site 1 page démarre à 350 TND. Il inclut WhatsApp, Google Maps, horaires, photos et prix."}
-      },
-      {
-        "@type":"Question",
-        "name":"Le mini site est-il adapté aux petits commerces en Tunisie ?",
-        "acceptedAnswer":{"@type":"Answer","text":"Oui. Mawjouud est pensé pour les mini-projets : un site officiel simple à partager (Facebook, Instagram, WhatsApp) avec les infos essentielles."}
-      },
-      {
-        "@type":"Question",
-        "name":"Est-ce que le site inclut WhatsApp et Google Maps ?",
-        "acceptedAnswer":{"@type":"Answer","text":"Oui. Le site inclut un bouton WhatsApp direct et un lien Google Maps pour que les clients vous contactent et vous trouvent facilement."}
-      },
-      {
-        "@type":"Question",
-        "name":"Puis-je modifier les photos et les prix après livraison ?",
-        "acceptedAnswer":{"@type":"Answer","text":"Oui. Vous pouvez demander des modifications. Une option d’abonnement mensuel est disponible pour maintenance et petites mises à jour."}
-      }
-    ]
-  }
-  </script>
-
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Créer un site web facilement | Synaptech Builder</title>
+  <meta name="description" content="Crée ton site web en quelques minutes : templates, édition facile, publication et domaine. Synaptech Builder."/>
+  <link rel="canonical" href="https://synaptech.tn/builder/"/>
   <style>
     :root{
-      --bg:#ffffff;
-      --text:#0b1220;
-      --muted:#5b6475;
-      --border:#e6e9ef;
-      --brand:#1f4fd8;
-      --soft:#f6f8ff;
-      --radius:18px;
-      --max:1120px;
+      --bg:#fff;--text:#0b1220;--muted:#5b6475;--border:#e6e9ef;
+      --brand:#116dff;--soft:#f6f8ff;--radius:18px;--max:1160px;
     }
     *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.55;
-    }
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg);line-height:1.55}
     a{color:inherit;text-decoration:none}
     .container{max-width:var(--max);margin:auto;padding:0 18px}
-
-    header{
-      position:sticky;top:0;z-index:20;
-      background:rgba(255,255,255,.95);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid rgba(0,0,0,.04);
-      box-shadow: 0 6px 20px rgba(0,0,0,.06);
-    }
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;gap:12px;
-      padding:20px 0;
-    }
-    .brand{
-      display:flex;align-items:center;gap:10px;
-      font-weight:950;letter-spacing:-.4px;
-      font-size:20px;
-    }
-    .mark{
-      width:40px;height:40px;border-radius:16px;
-      display:grid;place-items:center;
-      background:linear-gradient(135deg,var(--brand),#16a34a);
-      color:#fff;font-weight:950;
-    }
+    header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.05)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:950;letter-spacing:-.4px}
+    .logo{width:38px;height:38px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),#16a34a);color:#fff}
     .nav-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-    .btn{
-      padding:12px 18px;border-radius:14px;
-      border:1px solid var(--border);
-      background:#fff;font-weight:800;
-      transition: all .15s ease;
-      white-space:nowrap;
-      display:inline-flex;align-items:center;justify-content:center;
-    }
-    .btn:hover{
-      transform:translateY(-1px);
-      box-shadow:0 12px 30px rgba(0,0,0,.08);
-      border-color:rgba(0,0,0,.10);
-    }
-    .btn.primary{background:var(--brand);color:#fff;border:none}
-    .btn.primary:hover{filter:brightness(.96)}
+    .btn{padding:11px 16px;border-radius:14px;border:1px solid var(--border);background:#fff;font-weight:800;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center}
+    .btn.primary{background:var(--brand);border:none;color:#fff}
     .btn.ghost{background:var(--soft)}
-
-    .hero{
-      padding:86px 0 56px;
-      background:
-        radial-gradient(900px 420px at 50% 0%, rgba(31,79,216,.12), transparent 60%),
-        radial-gradient(900px 420px at 10% 10%, rgba(22,163,74,.08), transparent 55%),
-        #fff;
+    .btn:hover{transform:translateY(-1px);box-shadow:0 12px 30px rgba(0,0,0,.08);transition:.15s}
+    .hero{padding:82px 0 56px;background:
+      radial-gradient(900px 420px at 50% 0%, rgba(17,109,255,.14), transparent 60%),
+      radial-gradient(900px 420px at 10% 10%, rgba(22,163,74,.10), transparent 55%), #fff;
       border-bottom:1px solid var(--border);
     }
-    h1{
-      margin:0 0 12px;
-      font-size: clamp(34px, 4.8vw, 60px);
-      letter-spacing:-1px;
-      line-height:1.05;
-    }
-    .lead{
-      margin:0;
-      color:var(--muted);
-      font-size: clamp(16px, 1.6vw, 19px);
-      max-width: 82ch;
-    }
-    .hero-actions{
-      margin-top:22px;
-      display:flex;gap:12px;flex-wrap:wrap;align-items:center;
-    }
-    .pills{
-      margin-top:18px;
-      display:flex;gap:10px;flex-wrap:wrap;
-    }
-    .pill{
-      border:1px solid var(--border);
-      background:#fff;
-      padding:8px 12px;
-      border-radius:999px;
-      color:var(--muted);
-      font-weight:700;
-    }
+    h1{margin:0 0 10px;font-size:clamp(34px,4.8vw,62px);letter-spacing:-1px;line-height:1.03}
+    .lead{margin:0;color:var(--muted);font-size:clamp(16px,1.6vw,19px);max-width:78ch}
+    .hero-actions{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+    .pills{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+    .pill{border:1px solid var(--border);background:#fff;padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:700}
 
-    section{padding:54px 0}
-    .section-title h2{
-      margin:0 0 6px;
-      font-size: clamp(22px,2.6vw,32px);
-      letter-spacing:-.4px;
-    }
-    .section-title p{
-      margin:0;
-      color:var(--muted);
-      font-weight:650;
-      max-width: 88ch;
-    }
-    .grid3{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-      margin-top:16px;
-    }
-    .grid2{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:16px;
-      margin-top:16px;
-    }
-    .card{
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:22px;
-      background:#fff;
-      transition: all .15s ease;
-    }
-    .card:hover{
-      transform:translateY(-3px);
-      box-shadow:0 18px 44px rgba(0,0,0,.08);
-      border-color: rgba(31,79,216,.18);
-    }
+    section{padding:56px 0}
+    .section-title{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+    .section-title h2{margin:0;font-size:clamp(22px,2.6vw,34px);letter-spacing:-.5px}
+    .section-title p{margin:0;color:var(--muted);font-weight:650;max-width:82ch}
+
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{border:1px solid var(--border);border-radius:var(--radius);padding:22px;background:#fff}
+    .card:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(0,0,0,.08);transition:.15s}
     .card h3{margin:0 0 6px}
     .card p{margin:0;color:var(--muted);font-weight:650}
 
-    .pricing{
-      background: linear-gradient(180deg, rgba(31,79,216,.05), transparent 40%);
-      border-top:1px solid var(--border);
-      border-bottom:1px solid var(--border);
-    }
-    .plans{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-      margin-top:16px;
-    }
-    .plan{position:relative}
-    .badge{
-      position:absolute;top:16px;right:16px;
-      background:rgba(31,79,216,.10);
-      color:var(--brand);
-      padding:6px 10px;border-radius:999px;
-      font-weight:850;font-size:12px;
-      border:1px solid rgba(31,79,216,.18);
-    }
-    .price{
-      display:flex;align-items:baseline;gap:8px;
-      margin-top:12px;font-weight:950;
-    }
+    .templates{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .tpl{border:1px solid var(--border);border-radius:18px;overflow:hidden;background:#fff}
+    .tpl .shot{height:150px;background:linear-gradient(180deg,#eef2ff,#f8fafc);border-bottom:1px solid var(--border)}
+    .tpl .meta{padding:14px}
+    .tpl .meta b{display:block}
+    .tpl .meta span{color:var(--muted);font-weight:650}
+
+    .pricing{background:linear-gradient(180deg, rgba(17,109,255,.06), transparent 40%);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .price{display:flex;align-items:baseline;gap:8px;margin-top:10px;font-weight:950}
     .price strong{font-size:38px;letter-spacing:-.8px}
     .price span{color:var(--muted);font-weight:700}
-    ul{
-      margin:12px 0 0;
-      padding-left:18px;
-      color:var(--muted);
-      font-weight:650;
-    }
+    ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-weight:650}
     li{margin:6px 0}
 
-    details{
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      padding:16px 18px;
-      background:#fff;
-    }
-    summary{cursor:pointer;font-weight:900;list-style:none}
-    summary::-webkit-details-marker{display:none}
-    details p{margin:10px 0 0;color:var(--muted);font-weight:650}
-
-    .note{
-      border:1px solid rgba(31,79,216,.18);
-      background: rgba(31,79,216,.06);
-      border-radius: var(--radius);
-      padding:18px;
-      color:#22304d;
-      font-weight:650;
-      margin-top:16px;
-    }
-    .contact{
-      display:flex;justify-content:space-between;align-items:center;
-      gap:16px;flex-wrap:wrap;
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:22px;background:#fff;
-    }
-    footer{padding:32px 0 40px;color:var(--muted);font-size:14px}
-
-    @media(max-width: 980px){
-      .grid3,.grid2,.plans{grid-template-columns:1fr}
-      .hero{padding:72px 0 52px}
-    }
+    .cta{border:1px solid var(--border);border-radius:22px;padding:22px;background:#fff;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+    footer{padding:30px 0 44px;color:var(--muted);font-size:14px}
+    @media(max-width:1000px){.templates{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:900px){.grid3,.plans{grid-template-columns:1fr}}
   </style>
 </head>
-
 <body>
 
 <header>
   <div class="container nav">
     <div class="brand">
-      <div class="mark">M</div>
-      <div>
-        Mawjouud <span style="color:#5b6475;font-weight:800;">by Synaptech</span>
-      </div>
+      <div class="logo">S</div>
+      <div>Synaptech Builder</div>
     </div>
     <div class="nav-actions">
-      <a class="btn ghost" href="#mini-site">Mini site</a>
+      <a class="btn ghost" href="./templates.html">Templates</a>
       <a class="btn" href="#prix">Prix</a>
-      <a class="btn ghost" href="/mawjouud/ar.html" title="Version عربية">AR</a>
-      <a class="btn primary" href="https://wa.me/21622961115?text=Salut%20Synaptech%2C%20je%20veux%20cr%C3%A9er%20un%20mini%20site%20web%20en%20Tunisie">WhatsApp</a>
+      <a class="btn" href="./app.html">Se connecter</a>
+      <a class="btn primary" href="./templates.html">Créer un site</a>
     </div>
   </div>
 </header>
 
 <main>
-
-  <!-- ✅ H1 contient la requête cible (naturel) -->
-  <section class="hero" id="top">
+  <section class="hero">
     <div class="container">
-      <h1>Créer un mini site web en Tunisie,<br/>simple et pas cher.</h1>
-
+      <h1>Crée ton site web<br/>comme Wix — en version simple.</h1>
       <p class="lead">
-        <b>Mawjouud</b> est une offre de <b>création de mini site web en Tunisie</b> pour les commerces et mini-projets :
-        un <b>site officiel 1 page</b> avec <b>WhatsApp</b>, <b>Google Maps</b>, horaires, photos et prix.
-        Idéal si tu veux un lien propre à mettre sur Facebook / Instagram / WhatsApp.
+        Choisis un template, modifie le texte et les images, puis publie un lien à partager.
+        Parfait pour mini-projets (Tunisie) : WhatsApp, Maps, photos, prix.
       </p>
-
       <div class="hero-actions">
-        <a class="btn primary" href="https://wa.me/21622961115?text=Salut%20Synaptech%2C%20je%20veux%20cr%C3%A9er%20un%20mini%20site%20web%20en%20Tunisie">Demander un devis</a>
-        <a class="btn" href="tel:+21622961115">+216 22 961 115</a>
-        <a class="btn" href="mailto:hello@synaptech.tn">hello@synaptech.tn</a>
+        <a class="btn primary" href="./templates.html">Commencer gratuitement</a>
+        <a class="btn" href="./editor.html">Ouvrir l’éditeur</a>
+        <a class="btn" href="https://wa.me/21622961115?text=Salut%20Synaptech%2C%20je%20veux%20un%20site">WhatsApp</a>
       </div>
-
       <div class="pills">
-        <div class="pill">Site officiel (lien unique)</div>
-        <div class="pill">WhatsApp + Maps inclus</div>
-        <div class="pill">Prix en TND</div>
-      </div>
-
-      <div class="note">
-        <b>Objectif :</b> présence officielle immédiate (site + WhatsApp + Maps).  
-        Le référencement Google se construit avec le temps, mais ce site est optimisé correctement (titres, contenu, FAQ, performance).
+        <div class="pill">Templates prêts</div>
+        <div class="pill">Éditeur drag-and-drop</div>
+        <div class="pill">Publication rapide</div>
       </div>
     </div>
   </section>
 
-  <!-- ✅ Section ciblée “mini site web” -->
-  <section id="mini-site">
+  <section>
     <div class="container">
       <div class="section-title">
-        <h2>Mini site web Tunisie : l’essentiel, rien d’inutile</h2>
-        <p>Pour un mini projet en Tunisie, ce qui convertit le plus : WhatsApp, Maps, infos claires, photos et prix.</p>
+        <h2>Tout ce qu’il faut pour démarrer</h2>
+        <p>Le but : un site officiel propre + conversion (WhatsApp / appel / Maps). Pas de modules inutiles.</p>
       </div>
-
       <div class="grid3">
         <div class="card">
-          <h3>1) Bouton WhatsApp</h3>
-          <p>Un bouton “Contacter” qui ouvre WhatsApp avec un message prêt.</p>
+          <h3>Templates</h3>
+          <p>Barber, restaurant, artisan, location voiture, immobilier…</p>
         </div>
         <div class="card">
-          <h3>2) Google Maps</h3>
-          <p>Lien Maps + adresse : tes clients trouvent ton local facilement.</p>
+          <h3>Éditeur simple</h3>
+          <p>Drag-and-drop : titres, textes, boutons, images.</p>
         </div>
         <div class="card">
-          <h3>3) Photos & prix</h3>
-          <p>Galerie + liste services/prix : simple, vendeur, efficace.</p>
-        </div>
-      </div>
-
-      <div class="grid3" style="margin-top:16px">
-        <div class="card">
-          <h3>Horaires & contact</h3>
-          <p>Jours + heures d’ouverture + téléphone + email.</p>
-        </div>
-        <div class="card">
-          <h3>Lien unique à partager</h3>
-          <p>Tu le mets sur Facebook / Insta / WhatsApp et c’est tout.</p>
-        </div>
-        <div class="card">
-          <h3>Rapide & mobile</h3>
-          <p>Design propre et lisible sur téléphone (le plus important en Tunisie).</p>
+          <h3>Publication</h3>
+          <p>Un lien unique à partager sur Facebook / Instagram / WhatsApp.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ✅ Prix -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Templates populaires</h2>
+        <p>Choisis un modèle puis ouvre l’éditeur.</p>
+      </div>
+      <div class="templates">
+        <a class="tpl" href="./editor.html#tpl=barber"><div class="shot"></div><div class="meta"><b>Barber</b><span>WhatsApp + prix</span></div></a>
+        <a class="tpl" href="./editor.html#tpl=restaurant"><div class="shot"></div><div class="meta"><b>Restaurant</b><span>Menu + Maps</span></div></a>
+        <a class="tpl" href="./editor.html#tpl=car"><div class="shot"></div><div class="meta"><b>Location voiture</b><span>Réservation</span></div></a>
+        <a class="tpl" href="./editor.html#tpl=artisan"><div class="shot"></div><div class="meta"><b>Artisan</b><span>Services + contact</span></div></a>
+      </div>
+    </div>
+  </section>
+
   <section id="prix" class="pricing">
     <div class="container">
       <div class="section-title">
-        <h2>Prix création site web en Tunisie (TND)</h2>
-        <p>Choisis un pack selon ton besoin : mini site 1 page, site pro, ou premium.</p>
+        <h2>Prix</h2>
+        <p>Tu peux commencer simple, puis ajouter publication/domaine quand tu veux.</p>
       </div>
-
       <div class="plans">
-        <div class="card plan">
-          <h3>Express (1 page)</h3>
-          <div class="price"><strong>350</strong><span>TND</span></div>
+        <div class="card">
+          <h3>Gratuit</h3>
+          <div class="price"><strong>0</strong><span>TND</span></div>
           <ul>
-            <li>Mini site web 1 page</li>
-            <li>WhatsApp + Google Maps</li>
-            <li>Horaires + photos</li>
-            <li>Services & prix</li>
+            <li>Accès templates</li>
+            <li>Éditeur</li>
+            <li>Export HTML</li>
           </ul>
         </div>
-
-        <div class="card plan">
-          <div class="badge">Le plus demandé</div>
-          <h3>Pro (3 pages)</h3>
-          <div class="price"><strong>600</strong><span>TND</span></div>
+        <div class="card">
+          <h3>Pro</h3>
+          <div class="price"><strong>30</strong><span>TND / mois</span></div>
           <ul>
-            <li>Accueil + Services + Contact</li>
-            <li>Formulaire simple</li>
-            <li>Design plus complet</li>
-            <li>SEO basique (title/description)</li>
+            <li>Hébergement + publication</li>
+            <li>Petites modifications</li>
+            <li>Support WhatsApp</li>
           </ul>
         </div>
-
-        <div class="card plan">
-          <h3>Premium (5 pages)</h3>
-          <div class="price"><strong>1000</strong><span>TND</span></div>
+        <div class="card">
+          <h3>Business</h3>
+          <div class="price"><strong>60</strong><span>TND / mois</span></div>
           <ul>
-            <li>Galerie + avis clients</li>
-            <li>Réservation WhatsApp</li>
-            <li>Optimisation performance</li>
-            <li>Pages supplémentaires</li>
+            <li>Domaine + SSL</li>
+            <li>Pages multiples</li>
+            <li>Priorité support</li>
           </ul>
         </div>
       </div>
 
-      <div class="card" style="margin-top:16px">
-        <h3>Abonnement mensuel (optionnel)</h3>
-        <p style="margin:0;color:#5b6475;font-weight:650">
-          Hébergement + petites modifications + maintenance + support WhatsApp.
-        </p>
-        <div class="price" style="margin-top:10px">
-          <strong>30</strong><span>TND / mois</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ✅ Process (contenu utile = bon SEO) -->
-  <section>
-    <div class="container">
-      <div class="section-title">
-        <h2>Comment créer ton mini site web ?</h2>
-        <p>Tu envoies les infos, on publie le site, tu reçois ton lien officiel.</p>
-      </div>
-
-      <div class="grid3">
-        <div class="card">
-          <h3>1) Tu envoies</h3>
-          <p>Nom, adresse, lien Maps, WhatsApp, horaires, photos, prix.</p>
-        </div>
-        <div class="card">
-          <h3>2) On crée</h3>
-          <p>Mini site web propre et mobile, prêt à partager.</p>
-        </div>
-        <div class="card">
-          <h3>3) Tu publies</h3>
-          <p>Tu mets le lien sur tes pages et tu reçois plus de demandes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ✅ FAQ visible + déjà en schema -->
-  <section>
-    <div class="container">
-      <div class="section-title">
-        <h2>FAQ — Mini site web Tunisie</h2>
-        <p>Des réponses rapides avant de te lancer.</p>
-      </div>
-
-      <div class="grid2">
-        <details>
-          <summary>Quel est le prix pour créer un mini site web en Tunisie ?</summary>
-          <p>Le pack Express (1 page) démarre à <b>350 TND</b> et inclut WhatsApp, Google Maps, horaires, photos et prix.</p>
-        </details>
-
-        <details>
-          <summary>Pour quel type de business c’est adapté ?</summary>
-          <p>Barber, salon, fast-food, location voiture, artisan, boutique, immobilier… Tout mini projet qui veut un lien officiel.</p>
-        </details>
-
-        <details>
-          <summary>Est-ce que le site inclut WhatsApp et Maps ?</summary>
-          <p>Oui. Le bouton WhatsApp et le lien Google Maps sont inclus dans le mini site.</p>
-        </details>
-
-        <details>
-          <summary>Puis-je modifier les photos et les prix après ?</summary>
-          <p>Oui. Tu peux demander des mises à jour. Avec l’abonnement mensuel, les petites modifications sont gérées plus facilement.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <div class="contact">
+      <div style="margin-top:16px" class="cta">
         <div>
-          <h3>Contact</h3>
-          <p style="margin:0;color:#5b6475;font-weight:650">Email : <b>hello@synaptech.tn</b></p>
-          <p style="margin:0;color:#5b6475;font-weight:650">WhatsApp / Téléphone : <b>+216 22 961 115</b></p>
+          <div style="font-weight:950;font-size:18px;letter-spacing:-.3px">Tu veux qu’on te le fasse ?</div>
+          <div style="color:var(--muted);font-weight:650">On crée ton site officiel rapidement (WhatsApp + Maps + photos + prix).</div>
         </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="https://wa.me/21622961115?text=Salut%20Synaptech%2C%20je%20veux%20cr%C3%A9er%20un%20mini%20site%20web%20en%20Tunisie">WhatsApp</a>
-          <a class="btn" href="tel:+21622961115">Appeler</a>
-        </div>
+        <a class="btn primary" href="https://wa.me/21622961115?text=Salut%20Synaptech%2C%20je%20veux%20cr%C3%A9er%20un%20site%20comme%20Wix">Demander sur WhatsApp</a>
       </div>
     </div>
   </section>
-
 </main>
 
 <footer>
   <div class="container">
-    © <span id="year"></span> Mawjouud by Synaptech • Création mini site web Tunisie • hello@synaptech.tn • +216 22 961 115
+    © <span id="y"></span> Synaptech Builder • hello@synaptech.tn • +216 22 961 115
   </div>
 </footer>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
 </body>
 </html>
