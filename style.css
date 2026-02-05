@@ -269,4 +269,71 @@ h1 {
     transform: translateY(0);
 }
 
+/* Mise en page de la section */
+.grid-contact {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* La colonne du formulaire est plus petite */
+    gap: 60px;
+    align-items: center;
+    padding: 80px 5%;
+}
+
+/* Infos à gauche */
+.contact-info h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.contact-details {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.detail-item span {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.detail-item a {
+    font-size: 1.2rem;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Formulaire à droite (Petit et Propre) */
+.contact-form-wrapper {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+    width: 100%;
+    max-width: 450px; /* Limite la largeur du formulaire */
+    margin-left: auto; /* Force l'alignement à droite */
+}
+
+/* Responsive pour Mobile */
+@media (max-width: 991px) {
+    .grid-contact {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .contact-form-wrapper {
+        margin: 0 auto;
+    }
+    
+    .contact-info h2 {
+        font-size: 2.2rem;
+    }
+}
 
