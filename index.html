@@ -14,10 +14,7 @@
 <nav class="main-nav">
     <div class="container nav-container">
         <div class="brand">
-            <div class="brand">
-    <img src="img/logo-synaptech.png" alt="Synaptech Logo" style="height: 32px; width: auto; display: block;">
-    <span>SYNAPTECH</span>
-</div>
+            <img src="img/logo-synaptech.png" alt="Synaptech Logo" style="height: 32px; width: auto;">
             <span>SYNAPTECH</span>
         </div>
 
@@ -35,16 +32,7 @@
     </div>
 </nav>
 
-<script>
-    const burgerBtn = document.getElementById('burger-btn');
-    const navMenu = document.getElementById('nav-menu');
-
-    burgerBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        burgerBtn.classList.toggle('open');
-    });
-</script>
-
+<main>
     <header class="hero-cloud">
         <div class="container grid-hero">
             <div class="hero-text">
@@ -97,10 +85,10 @@
                     <a href="https://synaptech.tn/mawjoud/" class="btn-primary">Découvrir Mawjoud</a>
                 </div>
                 <div class="m-image">
-    <a href="https://synaptech.tn/mawjoud/" title="Visiter le site Mawjoud">
-        <img src="logo.jpg" alt="Mawjoud Logo" class="mawjoud-logo-img">
-    </a>
-</div>
+                    <a href="https://synaptech.tn/mawjoud/" title="Visiter le site Mawjoud">
+                        <img src="logo.jpg" alt="Mawjoud Logo" class="mawjoud-logo-img">
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -119,34 +107,45 @@
                 <form action="https://formspree.io/f/xkozdlzj" method="POST" class="modern-form">
                     <input type="hidden" name="_next" value="https://synaptech.tn/merci-fr.html">
                     <div class="form-group">
-                        <label>Nom complet</label>
-                        <input type="text" name="name" required>
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" name="email" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label>Message</label>
-                        <textarea name="message" rows="4" required></textarea>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
                     </div>
                     <button type="submit" class="btn-submit">Envoyer</button>
                 </form>
             </div>
         </div>
     </section>
+</main>
 
-    <footer class="cloud-footer">
-        <div class="container">
-            <p>© 2026 Synaptech.tn • Support IT • Tunis</p>
-        </div>
-    </footer>
-
-    <div class="wa-container">
-        <a href="https://wa.me/21622961115" class="wa-btn" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-        </a>
+<footer class="cloud-footer">
+    <div class="container">
+        <p>© 2026 Synaptech.tn • Support IT • Tunis</p>
     </div>
+</footer>
+
+<div class="wa-container">
+    <a href="https://wa.me/21622961115" class="wa-btn" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Contactez-nous sur WhatsApp">
+    </a>
+</div>
+
+<script>
+    const burgerBtn = document.getElementById('burger-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    burgerBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        burgerBtn.classList.toggle('open');
+    });
+</script>
 
 </body>
 </html>
