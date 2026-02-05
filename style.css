@@ -194,5 +194,79 @@ h1 {
     .mawjoud-flex { flex-direction: column; text-align: center; }
 }
 
+/* Conteneur du formulaire */
+.contact-form-wrapper {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05); /* Ombre très douce */
+    border: 1px solid #f0f0f0;
+}
+
+.modern-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Groupes de champs */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #333;
+    margin-left: 5px;
+}
+
+/* Inputs et Textarea */
+.modern-form input, 
+.modern-form textarea {
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 2px solid #f4f4f4;
+    background: #f9f9f9;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.modern-form input:focus, 
+.modern-form textarea:focus {
+    border-color: #0052FF; /* Couleur Synaptech */
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(0, 82, 255, 0.1);
+}
+
+/* Bouton Envoyer */
+.btn-submit {
+    background: #0052FF;
+    color: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    border: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background: #0041cc;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 82, 255, 0.2);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
 
 
