@@ -75,23 +75,47 @@
         </div>
     </section>
 
-    <section id="mawjoud" class="mawjoud-banner">
-        <div class="container">
-            <div class="mawjoud-flex">
-                <div class="m-info">
-                    <span class="badge-product">Projet Phare</span>
-                    <h2>Mawjoud : Mini-sites web <span class="blue-text">pour commerçants.</span></h2>
-                    <p>Un lien unique, WhatsApp, Google Maps et vos prix. Simple et professionnel.</p>
-                    <a href="https://synaptech.tn/mawjoud/" class="btn-primary">Découvrir Mawjoud</a>
-                </div>
-                <div class="m-image">
-                    <a href="https://synaptech.tn/mawjoud/" title="Visiter le site Mawjoud">
-                        <img src="mawjoud/logo.png" alt="Mawjoud Logo" class="mawjoud-logo-img">
-                    </a>
-                </div>
+    <style>
+    /* Contrôle de la taille du logo Mawjoud */
+    .mawjoud-logo-img {
+        width: 100%;            /* L'image s'adapte au conteneur */
+        max-width: 350px;       /* Taille maximale sur PC (ajustez ce chiffre au besoin) */
+        height: auto;           /* Garde les proportions intactes */
+        display: block;
+        margin: 0 auto;         /* Centre l'image si nécessaire */
+        transition: transform 0.3s ease;
+    }
+
+    /* Effet de survol (optionnel) */
+    .mawjoud-logo-img:hover {
+        transform: scale(1.02);
+    }
+
+    /* Ajustement pour mobile */
+    @media (max-width: 768px) {
+        .mawjoud-logo-img {
+            max-width: 250px;   /* Plus petit sur téléphone */
+        }
+    }
+</style>
+
+<section id="mawjoud" class="mawjoud-banner">
+    <div class="container">
+        <div class="mawjoud-flex">
+            <div class="m-info">
+                <span class="badge-product">Projet Phare</span>
+                <h2>Mawjoud : Mini-sites web <span class="blue-text">pour commerçants.</span></h2>
+                <p>Un lien unique, WhatsApp, Google Maps et vos prix. Simple et professionnel.</p>
+                <a href="https://synaptech.tn/mawjoud/" class="btn-primary">Découvrir Mawjoud</a>
+            </div>
+            <div class="m-image">
+                <a href="https://synaptech.tn/mawjoud/" title="Visiter le site Mawjoud">
+                    <img src="mawjoud/logo.png" alt="Mawjoud Logo" class="mawjoud-logo-img">
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="contact" class="contact-section">
         <div class="container grid-contact">
