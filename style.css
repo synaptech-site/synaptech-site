@@ -54,13 +54,12 @@ body {
 .brand {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-weight: 700;
-    font-size: 1.3rem;
-    color: var(--ovh-blue);
-    text-decoration: none;
+    gap: 12px; /* Espace entre l'image et le texte */
 }
 
+.brand img {
+    object-fit: contain; /* Évite de déformer le logo */
+}
 .menu {
     display: flex;
     align-items: center;
@@ -194,3 +193,4 @@ h1 {
     
     .mawjoud-flex { flex-direction: column; text-align: center; }
 }
+
