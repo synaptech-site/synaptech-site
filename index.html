@@ -1,128 +1,183 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Synaptech – Support IT & Solutions digitales en Tunisie</title>
-  <meta name="description" content="Synaptech : maintenance IT, support client et solutions digitales en Tunisie. Découvrez Mawjoud, mini-sites web pour commerçants.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Synaptech : L’intelligence connectée au service de votre support IT en Tunisie. Maintenance proactive, réseaux et solutions digitales Mawjoud.">
+    <title>Synaptech | Maintenance IT & Support Connecté Tunisie</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="main-nav">
-  <div class="container nav-container">
+    <div class="container nav-container">
+        <div class="brand">
+            <img src="logo-synaptech.png" alt="Synaptech Logo" style="height: 109px; width: auto;">
+           
+        </div>
 
-    <div class="brand">
-      <img src="logo-synaptech.png" alt="Synaptech" class="logo-img">
+        <button class="burger-menu" id="burger-btn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="menu" id="nav-menu">
+            <a href="#solutions">Maintenance</a>
+            <a href="#mawjoud" class="mawjoud-link">Mawjoud</a>
+            <a href="tel:+21622961115" class="btn-support">Support Client</a>
+        </div>
     </div>
-
-    <div class="menu">
-      <a href="#solutions">Maintenance</a>
-      <a href="#mawjoud">Mawjoud</a>
-      <a href="https://wa.me/21622961115" class="btn-support">Support Client</a>
-    </div>
-
-  </div>
 </nav>
 
-<!-- HERO -->
-<header class="hero">
-  <div class="container hero-grid">
+<main>
+    <header class="hero-cloud">
+        <div class="container grid-hero">
+            <div class="hero-text">
+                <span class="tag-top">Expert IT en Tunisie</span>
+                <h1>L’intelligence connectée pour une informatique <span class="blue-text">qui ne s'arrête jamais.</span></h1>
+                <p>Maintenance proactive et infogérance critique pour les entreprises tunisiennes.</p>
+                <div class="hero-btns">
+                    <a href="#solutions" class="btn-primary">Nos solutions IT</a>
+                    <a href="https://wa.me/21622961115" class="btn-secondary">Parler à un conseiller</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#0052FF" d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-46.2C87.4,-33.3,90,-16.6,89.1,-0.5C88.2,15.6,83.8,31.2,75.3,44.7C66.8,58.2,54.2,69.5,39.9,76.4C25.6,83.3,9.5,85.8,-6.2,85.5C-21.8,85.1,-43.6,81.9,-58.5,72.1C-73.4,62.3,-81.4,45.8,-86.3,28.9C-91.2,12.1,-93,-5.2,-88.4,-20.5C-83.8,-35.8,-72.8,-49.2,-59.7,-57.4C-46.6,-65.7,-31.4,-68.8,-17.1,-75.2C-2.8,-81.5,10.7,-91.1,25.4,-89.4C40.1,-87.7,28.5,-73.6,44.7,-76.4Z" transform="translate(100 100)" opacity="0.1" />
+                </svg>
+            </div>
+        </div>
+    </header>
 
-    <div class="hero-text">
-      <span class="tag">Expert IT en Tunisie</span>
-      <h1>
-        L’intelligence connectée<br>
-        pour une informatique <span class="blue">fiable</span>.
-      </h1>
-      <p>
-        Maintenance proactive, support IT et solutions digitales
-        pour entreprises et commerçants.
-      </p>
+    <section id="solutions" class="solutions-section">
+        <div class="container">
+            <h2 class="title-main">Expertise & Support</h2>
+            <div class="bento-grid">
+                <div class="bento-card">
+                    <div class="card-icon blue">🛡️</div>
+                    <h3>Maintenance & Sécurité</h3>
+                    <p>Monitoring 24/7 de vos serveurs et parcs informatiques.</p>
+                </div>
+                <div class="bento-card">
+                    <div class="card-icon green">⚡</div>
+                    <h3>Support Direct</h3>
+                    <p>Assistance technique rapide à Tunis et à distance.</p>
+                </div>
+                <div class="bento-card">
+                    <div class="card-icon orange">🌐</div>
+                    <h3>Réseaux & Cloud</h3>
+                    <p>Optimisation de votre infrastructure connectée.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div class="hero-actions">
-        <a href="#solutions" class="btn-primary">Nos services</a>
-        <a href="https://wa.me/21622961115" class="btn-secondary">WhatsApp</a>
-      </div>
+    <style>
+    /* Contrôle de la taille du logo Mawjoud */
+    .mawjoud-logo-img {
+        width: 100%;            /* L'image s'adapte au conteneur */
+        max-width: 350px;       /* Taille maximale sur PC (ajustez ce chiffre au besoin) */
+        height: auto;           /* Garde les proportions intactes */
+        display: block;
+        margin: 0 auto;         /* Centre l'image si nécessaire */
+        transition: transform 0.3s ease;
+    }
+
+    /* Effet de survol (optionnel) */
+    .mawjoud-logo-img:hover {
+        transform: scale(1.02);
+    }
+
+    /* Ajustement pour mobile */
+    @media (max-width: 768px) {
+        .mawjoud-logo-img {
+            max-width: 250px;   /* Plus petit sur téléphone */
+        }
+    }
+</style>
+
+<section id="mawjoud" class="mawjoud-banner">
+    <div class="container">
+        <div class="mawjoud-flex">
+            <div class="m-info">
+                <span class="badge-product">Projet Phare</span>
+                <h2>Mawjoud : Mini-sites web <span class="blue-text">pour commerçants.</span></h2>
+                <p>Un lien unique, WhatsApp, Google Maps et vos prix. Simple et professionnel.</p>
+                <a href="https://synaptech.tn/mawjoud/" class="btn-primary">Découvrir Mawjoud</a>
+            </div>
+            <div class="m-image">
+                <a href="https://synaptech.tn/mawjoud/" title="Visiter le site Mawjoud">
+                    <img src="mawjoud/logo.png" alt="Mawjoud Logo" class="mawjoud-logo-img">
+                </a>
+            </div>
+        </div>
     </div>
-
-  </div>
-</header>
-
-<!-- SOLUTIONS -->
-<section id="solutions" class="section">
-  <div class="container">
-    <h2 class="section-title">Nos expertises</h2>
-
-    <div class="cards">
-      <div class="card">
-        <h3>🛡️ Maintenance IT</h3>
-        <p>Support technique rapide à Tunis et à distance.</p>
-      </div>
-
-      <div class="card">
-        <h3>⚡ Support Direct</h3>
-        <p>Assistance WhatsApp & téléphone.</p>
-      </div>
-
-      <div class="card">
-        <h3>🌐 Réseaux & Cloud</h3>
-        <p>Infrastructure fiable et sécurisée.</p>
-      </div>
-    </div>
-  </div>
 </section>
 
-<!-- MAWJOUD -->
-<section id="mawjoud" class="mawjoud">
-  <div class="container mawjoud-grid">
+   <section id="contact" class="contact-section">
+    <div class="container grid-contact">
+        <div class="contact-info">
+            <span class="tag-top">Contact</span>
+            <h2>Discutons de <br><span class="blue-text">votre projet.</span></h2>
+            <p>Une question ? Notre équipe est à votre écoute pour vous accompagner dans votre transformation digitale.</p>
+            
+            <div class="contact-details">
+                <div class="detail-item">
+                    <span>📧 Email</span>
+                    <a href="mailto:hello@synaptech.tn">hello@synaptech.tn</a>
+                </div>
+                <div class="detail-item">
+                    <span>📞 Tel / WhatsApp</span>
+                    <a href="tel:+21622961115">+216 22 961 115</a>
+                </div>
+            </div>
+        </div>
 
-    <div class="mawjoud-text">
-      <span class="badge">Projet phare</span>
-      <h2>Mawjoud – Mini-sites web</h2>
-      <p>
-        Un site simple pour commerçants :
-        WhatsApp, Google Maps, horaires, photos et prix.
-      </p>
-      <a href="/mawjoud/" class="btn-primary">Découvrir Mawjoud</a>
+        <div class="contact-form-wrapper">
+            <form action="https://formspree.io/f/xkozdlzj" method="POST" class="modern-form">
+                <div class="form-group">
+                    <label>Nom complet</label>
+                    <input type="text" name="name" placeholder="Ex: Ahmed Ben Ali" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="votre@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" rows="3" placeholder="Votre message..." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Envoyer le message</button>
+            </form>
+        </div>
     </div>
+</section>
+</main>
 
-    <div class="mawjoud-image">
-      <img src="mawjoud/logo.png" alt="Mawjoud" class="mawjoud-logo-img">
+<footer class="cloud-footer">
+    <div class="container">
+        <p>© 2026 Synaptech.tn • Support IT • Tunis</p>
     </div>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="section contact">
-  <div class="container">
-    <h2 class="section-title">Contact</h2>
-
-    <p class="contact-text">
-      📧 hello@synaptech.tn <br>
-      📞 +216 22 961 115
-    </p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    © 2026 Synaptech.tn – Tunis
-  </div>
 </footer>
 
-<!-- WhatsApp Floating -->
-<a href="https://wa.me/21622961115" class="wa-float" target="_blank">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</a>
+<div class="wa-container">
+    <a href="https://wa.me/21622961115" class="wa-btn" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Contactez-nous sur WhatsApp">
+    </a>
+</div>
+
+<script>
+    const burgerBtn = document.getElementById('burger-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    burgerBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        burgerBtn.classList.toggle('open');
+    });
+</script>
 
 </body>
 </html>
