@@ -1,206 +1,266 @@
-:root{
-  --primary:#0052ff;
-  --dark:#12284c;
-  --bg:#f6f8ff;
+/* ==========================================================================
+   SYNAPTECH 2026 - FICHIER FINAL SÉCURISÉ ET RESPONSIVE
+   ========================================================================== */
+
+:root {
+    --primary: #0052FF;
+    --dark: #002595;
+    --text-main: #12284c;
+    --text-dim: #4c5d7e;
+    --bg-light: #f8fafd;
+    --white: #ffffff;
 }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body{
-  font-family:'Source Sans Pro',sans-serif;
-  color:var(--dark);
-  background:#fff;
-  line-height:1.6;
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--text-main);
+    background-color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden; /* Empêche le bug du défilement horizontal sur mobile */
 }
 
-img{
-  max-width:100%;
-  height:auto;
-  display:block;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* CONTAINER */
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:0 20px;
+/* ==========================================================================
+   NAVIGATION (Disparaît au défilement)
+   ========================================================================== */
+.main-nav {
+    border-bottom: 1px solid #e1e8f2;
+    padding: 15px 0;
+    background: var(--white);
+    /* Changement : position absolute pour disparaître au scroll */
+    position: absolute; 
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-/* NAV */
-.main-nav{
-  border-bottom:1px solid #e5ecf6;
-  background:#fff;
-  position:sticky;
-  top:0;
-  z-index:1000;
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.nav-container{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:12px 0;
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Espace entre l'image et le texte */
 }
 
-/* LOGO */
-.logo-img{
-  height:40px;
-  width:auto;
+.brand img {
+    object-fit: contain; /* Évite de déformer le logo */
+}
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-/* MENU */
-.menu{
-  display:flex;
-  gap:14px;
-  align-items:center;
+.menu a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.95rem;
 }
 
-.menu a{
-  text-decoration:none;
-  color:var(--dark);
-  font-weight:600;
-  font-size:0.9rem;
+.mawjoud-link {
+    color: var(--primary) !important;
 }
 
-.btn-support{
-  background:var(--primary);
-  color:#fff !important;
-  padding:8px 14px;
-  border-radius:10px;
+.btn-support {
+    background: var(--primary);
+    color: var(--white) !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background 0.2s;
 }
 
-/* HERO */
-.hero{
-  background:linear-gradient(180deg,var(--bg),#fff);
-  padding:80px 0;
+/* ==========================================================================
+   HERO SECTION (Ajustée pour la nav absolue)
+   ========================================================================== */
+.hero-cloud {
+    background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 100%);
+    padding: 140px 0 80px; /* Padding top augmenté pour compenser la nav */
+    text-align: left;
 }
 
-.hero-grid{
-  max-width:800px;
+.grid-hero {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
 }
 
-.hero h1{
-  font-size:2.2rem;
-  line-height:1.2;
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
 }
 
-.hero p{
-  margin-top:12px;
-  color:#555;
+.blue-text {
+    color: var(--primary);
 }
 
-.blue{
-  color:var(--primary);
+/* ==========================================================================
+   BENTO GRID & MAWJOUD
+   ========================================================================== */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 50px;
 }
 
-.hero-actions{
-  margin-top:20px;
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
+.bento-card {
+    background: var(--white);
+    padding: 40px;
+    border: 1px solid #e1e8f2;
+    border-radius: 12px;
 }
 
-/* BUTTONS */
-.btn-primary{
-  background:var(--primary);
-  color:#fff;
-  padding:12px 18px;
-  border-radius:12px;
-  text-decoration:none;
+.mawjoud-banner {
+    padding: 60px 0;
+    background: var(--bg-light);
+    border-radius: 30px;
+    margin: 40px 0;
 }
 
-.btn-secondary{
-  border:1px solid var(--primary);
-  color:var(--primary);
-  padding:12px 18px;
-  border-radius:12px;
-  text-decoration:none;
+.mawjoud-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
 }
 
-/* SECTIONS */
-.section{
-  padding:70px 0;
+/* ==========================================================================
+   WHATSAPP & FOOTER
+   ========================================================================== */
+.wa-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
 }
 
-.section-title{
-  font-size:1.8rem;
-  margin-bottom:30px;
+.wa-btn {
+    width: 65px;
+    height: 65px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(37,211,102,0.4);
 }
 
-/* CARDS */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+.cloud-footer {
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid #e1e8f2;
 }
 
-.card{
-  background:#fff;
-  border:1px solid #e5ecf6;
-  border-radius:16px;
-  padding:20px;
+/* ==========================================================================
+   FIX RÉVERSIBLE MOBILE (Anti-chevauchement)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .grid-hero, .bento-grid { grid-template-columns: 1fr; }
 }
 
-/* MAWJOUD */
-.mawjoud{
-  background:#f9fbff;
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    h1 { font-size: 2.2rem !important; text-align: center; }
+    
+    .mawjoud-flex { flex-direction: column; text-align: center; }
 }
 
-.mawjoud-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-  align-items:center;
+
+
+/* Mise en page de la section */
+.grid-contact {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* La colonne du formulaire est plus petite */
+    gap: 60px;
+    align-items: center;
+    padding: 80px 5%;
 }
 
-.mawjoud-logo-img{
-  max-width:220px;
-  margin:auto;
+/* Infos à gauche */
+.contact-info h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.1;
 }
 
-.badge{
-  display:inline-block;
-  background:#e6eeff;
-  color:var(--primary);
-  padding:6px 12px;
-  border-radius:999px;
-  font-size:0.8rem;
-  margin-bottom:10px;
+.contact-details {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* CONTACT */
-.contact-text{
-  font-size:1.1rem;
+.detail-item span {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 5px;
 }
 
-/* FOOTER */
-.footer{
-  border-top:1px solid #e5ecf6;
-  padding:20px 0;
-  text-align:center;
-  font-size:0.85rem;
+.detail-item a {
+    font-size: 1.2rem;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
 }
 
-/* WHATSAPP FLOAT */
-.wa-float{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  z-index:2000;
+/* Formulaire à droite (Petit et Propre) */
+.contact-form-wrapper {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+    width: 100%;
+    max-width: 450px; /* Limite la largeur du formulaire */
+    margin-left: auto; /* Force l'alignement à droite */
 }
 
-.wa-float img{
-  width:52px;
+/* Responsive pour Mobile */
+@media (max-width: 991px) {
+    .grid-contact {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .contact-form-wrapper {
+        margin: 0 auto;
+    }
+    
+    .contact-info h2 {
+        font-size: 2.2rem;
+    }
 }
 
-/* MOBILE */
-@media(max-width:768px){
-  .logo-img{height:32px;}
-  .hero h1{font-size:1.7rem;}
-  .mawjoud-grid{grid-template-columns:1fr;}
-  .mawjoud-logo-img{max-width:170px;}
-}
