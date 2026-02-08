@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SYNAPTECH 2026 - FICHIER CSS COMPLET CORRIGÉ
+   SYNAPTECH 2026 - FICHIER FINAL SÉCURISÉ ET RESPONSIVE (LOGO FIX)
    ========================================================================== */
 
 :root {
@@ -32,13 +32,13 @@ body {
 }
 
 /* ==========================================================================
-   NAVIGATION (PC : Fixe / Mobile : Relative)
+   NAVIGATION
    ========================================================================== */
 .main-nav {
     border-bottom: 1px solid #e1e8f2;
-    padding: 10px 0;
+    padding: 15px 0;
     background: var(--white);
-    position: absolute; /* Position par défaut sur PC */
+    position: absolute; 
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -50,14 +50,18 @@ body {
     align-items: center;
 }
 
-/* CORRECTION LOGO PC : Empêche la taille géante */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* CORRECTION LOGO PC : Taille stable */
 .brand img {
-    height: 70px;            /* Hauteur stable sur PC */
-    width: auto;             /* Garde les proportions */
-    max-width: 250px;        /* Limite de largeur pour éviter l'explosion visuelle */
+    height: 75px; /* Hauteur optimale pour PC */
+    width: auto;
+    max-width: 250px; /* Sécurité anti-débordement */
     object-fit: contain;
-    display: block;
-    transition: all 0.3s ease;
 }
 
 .menu {
@@ -73,6 +77,10 @@ body {
     font-size: 0.95rem;
 }
 
+.mawjoud-link {
+    color: var(--primary) !important;
+}
+
 .btn-support {
     background: var(--primary);
     color: var(--white) !important;
@@ -86,7 +94,8 @@ body {
    ========================================================================== */
 .hero-cloud {
     background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 100%);
-    padding: 160px 0 80px; /* Espace pour la nav sur PC */
+    padding: 140px 0 80px; 
+    text-align: left;
 }
 
 .grid-hero {
@@ -108,8 +117,153 @@ h1 {
 }
 
 /* ==========================================================================
-   FORMULAIRE DE CONTACT (Alignement vertical)
+   BENTO GRID & MAWJOUD
    ========================================================================== */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.bento-card {
+    background: var(--white);
+    padding: 40px;
+    border: 1px solid #e1e8f2;
+    border-radius: 12px;
+}
+
+.mawjoud-banner {
+    padding: 60px 0;
+    background: var(--bg-light);
+    border-radius: 30px;
+    margin: 40px 0;
+}
+
+.mawjoud-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+/* ==========================================================================
+   WHATSAPP & FOOTER
+   ========================================================================== */
+.wa-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
+}
+
+.wa-btn {
+    width: 65px;
+    height: 65px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(37,211,102,0.4);
+}
+
+.cloud-footer {
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid #e1e8f2;
+}
+
+/* ==========================================================================
+   FIX MOBILE (Correction Logo & Chevauchement)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .grid-hero, .bento-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    /* CORRECTION : On repasse en position relative pour que la nav pousse le texte */
+    .main-nav {
+        position: relative;
+        padding: 10px 0;
+    }
+
+    .hero-cloud {
+        padding: 40px 0 60px; /* Ajustement car la nav n'est plus absolue */
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* CORRECTION LOGO MOBILE : Empêche la taille géante sur iPhone */
+    .brand img {
+        height: 45px !important;
+        width: auto !important;
+        max-width: 180px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    h1 { font-size: 2.2rem !important; text-align: center; }
+    
+    .mawjoud-flex { flex-direction: column; text-align: center; }
+}
+
+/* CONTACT SECTION */
+.grid-contact {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+    padding: 80px 5%;
+}
+
+.contact-info h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.contact-details {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.detail-item span {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.detail-item a {
+    font-size: 1.2rem;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-section { 
+    padding: 60px 0; 
+}
+
+.grid-contact { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px; 
+    align-items: start; 
+}
+
 .contact-form-wrapper {
     background: #ffffff;
     padding: 30px;
@@ -120,7 +274,7 @@ h1 {
 
 .modern-form {
     display: flex;
-    flex-direction: column; /* Force l'alignement vertical sur PC et Mobile */
+    flex-direction: column;
     gap: 15px;
 }
 
@@ -130,73 +284,36 @@ h1 {
     text-align: left;
 }
 
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
 .form-group input, 
 .form-group textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
 }
 
 .btn-submit {
-    background: var(--primary);
+    background: #0052FF;
     color: white;
     border: none;
     padding: 14px;
     border-radius: 6px;
     font-weight: 700;
     cursor: pointer;
+    margin-top: 10px;
     width: 100%;
 }
 
-/* ==========================================================================
-   FIX MOBILE FINAL (Correction chevauchement texte)
-   ========================================================================== */
 @media (max-width: 768px) {
-    /* La nav devient un bloc qui pousse le contenu au lieu de le couvrir */
-    .main-nav {
-        position: relative; 
-        padding: 15px 0;
-    }
-
-    .nav-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    /* Le logo devient discret sur mobile */
-    .brand img {
-        height: 45px !important; 
-        max-width: 180px;
-    }
-
-    .menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    /* Réduction des espaces Hero sur mobile */
-    .hero-cloud {
-        padding: 40px 0 60px; 
-    }
-
-    h1 {
-        font-size: 1.9rem !important;
-        text-align: center;
-        line-height: 1.2;
-    }
-
-    .grid-hero, .grid-contact {
+    .grid-contact {
         grid-template-columns: 1fr;
-        text-align: center;
     }
-}
-
-/* WHATSAPP */
-.wa-container {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 2000;
 }
