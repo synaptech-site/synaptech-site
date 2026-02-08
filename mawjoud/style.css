@@ -1,124 +1,266 @@
 /* ==========================================================================
-   MAWJOUD PREMIUM CSS - DARK & MINIMALIST
+   MAWJOUD PREMIUM - FICHIER FINAL COMPLET 2026
    ========================================================================== */
 
 :root {
     --bg: #050505;
     --card: #0d0d0f;
     --text: #ffffff;
-    --dim-text: rgba(255, 255, 255, 0.5);
+    --dim-text: rgba(255, 255, 255, 0.6);
     --primary: #8b5cf6;
+    --neon: #22c55e;
     --border: rgba(255, 255, 255, 0.08);
-    --radius: 8px;
+    --radius: 12px;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
 
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg);
     color: var(--text);
+    line-height: 1.6;
     font-weight: 300;
 }
 
-[dir="rtl"] body { font-family: 'Tajawal', sans-serif; text-align: right; }
+/* --- AJUSTEMENT ARABE --- */
+[dir="rtl"] body {
+    font-family: 'Tajawal', sans-serif;
+    text-align: right;
+}
 
-.container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
 
-/* Navigation */
+/* --- NAVIGATION GLASS --- */
 .glass-nav {
-    position: sticky; top: 0; z-index: 1000; padding: 25px 0;
-    background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(20px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    background: rgba(5, 5, 5, 0.8);
+    backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
 }
-.nav-flex { display: flex; justify-content: space-between; align-items: center; }
-[dir="rtl"] .nav-flex { flex-direction: row-reverse; }
 
-.logo-nav { height: 32px; }
-/* --- BOUTON LANGUE MODERNE --- */
+.nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+[dir="rtl"] .nav-flex {
+    flex-direction: row-reverse;
+}
+
+/* LOGO TEXTUEL PREMIUM */
+.brand-modern {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo-txt-fr {
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    font-size: 1.1rem;
+}
+
+.logo-divider {
+    opacity: 0.3;
+    font-weight: 100;
+}
+
+.logo-txt-ar {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+/* BOUTON LANGUE MODERNE */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
 .btn-lang {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: rgba(255, 255, 255, 0.05);
+    gap: 10px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.07);
     border: 1px solid var(--border);
-    border-radius: 100px; /* Forme capsule */
+    border-radius: 100px;
     text-decoration: none;
     transition: all 0.3s ease;
     margin-right: 20px;
 }
 
-.btn-lang .icon {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
 .btn-lang .text {
-    font-size: 0.7rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
     color: var(--text);
 }
 
 .btn-lang:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     border-color: var(--primary);
-    transform: translateY(-1px);
 }
 
-/* Ajustement pour la version Arabe (RTL) */
 [dir="rtl"] .btn-lang {
     margin-right: 0;
     margin-left: 20px;
-    flex-direction: row-reverse; /* Aligne l'icône correctement en Arabe */
+    flex-direction: row-reverse;
 }
 
-/* Responsive : On cache le texte sur petit mobile pour ne garder que l'icône */
-@media (max-width: 480px) {
-    .btn-lang .text {
-        display: none;
-    }
-    .btn-lang {
-        padding: 8px 10px;
-        margin-right: 10px;
-    }
+/* --- HERO SECTION --- */
+.hero-modern {
+    padding: 100px 0 80px;
+    text-align: center;
 }
 
-/* Hero */
-.hero-modern { padding: 120px 0 80px; text-align: center; }
-.badge-new { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.2em; padding: 8px 20px; border: 1px solid var(--border); border-radius: 100px; color: var(--dim-text); }
-h1 { font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 200; letter-spacing: -0.03em; margin: 30px 0; line-height: 1.1; }
-.gradient-text { color: var(--primary); }
-.hero-modern p { font-size: 1.1rem; font-weight: 200; color: var(--dim-text); max-width: 600px; margin: 0 auto 50px; }
+.badge-new {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding: 8px 20px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    color: var(--dim-text);
+}
 
-/* Buttons */
-.btn-primary { background: #fff; color: #000; padding: 16px 40px; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; text-decoration: none; border-radius: 4px; }
-.btn-secondary { color: #fff; padding: 16px 40px; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; text-decoration: none; border: 1px solid var(--border); border-radius: 4px; margin-left: 15px; }
-[dir="rtl"] .btn-secondary { margin-left: 0; margin-right: 15px; }
+h1 {
+    font-size: clamp(2.5rem, 8vw, 4.8rem);
+    font-weight: 200;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 35px 0;
+}
 
-/* Bento Grid */
-.bento-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 220px); gap: 15px; margin: 50px 0 100px; }
-.bento-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 35px; }
+[dir="rtl"] h1 {
+    font-size: clamp(2.8rem, 9vw, 5.2rem);
+    line-height: 1.2;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #fff, var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-modern p {
+    font-size: 1.35rem;
+    font-weight: 200;
+    color: var(--dim-text);
+    max-width: 800px;
+    margin: 0 auto 60px;
+    line-height: 1.6;
+}
+
+[dir="rtl"] .hero-modern p {
+    font-size: 1.5rem;
+}
+
+/* --- BOUTONS D'ACTION --- */
+.btn-primary {
+    background: #fff;
+    color: #000;
+    padding: 18px 45px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-secondary {
+    color: #fff;
+    padding: 18px 45px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-left: 15px;
+    display: inline-block;
+}
+
+[dir="rtl"] .btn-secondary {
+    margin-left: 0;
+    margin-right: 15px;
+}
+
+/* --- BENTO GRID --- */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 250px);
+    gap: 15px;
+    margin: 80px 0;
+}
+
+.bento-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px;
+    position: relative;
+}
+
 .card-lg { grid-column: span 2; grid-row: span 2; display: flex; flex-direction: column; justify-content: flex-end; }
 .card-mid { grid-column: span 2; }
 
-/* Pricing */
-.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-.pack-card { background: var(--card); padding: 50px 30px; border: 1px solid var(--border); border-radius: var(--radius); text-align: center; }
-.pack-card.featured { border: 1px solid var(--primary); }
-.price { font-size: 3.5rem; font-weight: 200; margin-bottom: 20px; }
-.price span { font-size: 0.9rem; color: var(--dim-text); }
-
-/* Footer */
-.modern-footer { padding: 60px 0; border-top: 1px solid var(--border); text-align: center; color: var(--dim-text); font-size: 0.75rem; font-weight: 200; }
-
-/* Mobile */
-@media (max-width: 800px) {
-    .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
-    .card-lg, .card-mid { grid-column: span 1; height: 300px; }
-    .hero-btns { display: flex; flex-direction: column; gap: 15px; }
-    .btn-secondary { margin-left: 0; margin-right: 0; }
+/* --- PRICING --- */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
+.pack-card {
+    background: var(--card);
+    padding: 60px 40px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.pack-card.featured { border: 1px solid var(--primary); }
+
+.price { font-size: 4rem; font-weight: 200; margin: 20px 0; }
+.price span { font-size: 1rem; color: var(--dim-text); }
+
+/* --- FOOTER --- */
+.modern-footer {
+    padding: 80px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--dim-text);
+    font-size: 0.85rem;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .hero-modern { padding: 60px 0; }
+    .hero-btns { display: flex; flex-direction: column; gap: 15px; }
+    .btn-secondary { margin-left: 0; margin-right: 0; }
+    .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .card-lg, .card-mid { grid-column: span 1; height: 320px; }
+    .logo-txt-fr { font-size: 0.9rem; }
+    .logo-txt-ar { font-size: 1.4rem; }
+}
