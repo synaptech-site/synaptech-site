@@ -7,58 +7,57 @@
     <title>Mawjoud | Ton business, enfin présent en ligne.</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="glass-nav">
         <div class="container nav-flex">
-            <img src="mawjoud/logosite.png" alt="Mawjoud" class="logo-nav">
+            <a href="index.html" class="brand-modern">
+                <span class="logo-txt-fr">MAWJOUD</span>
+                <span class="logo-divider">|</span>
+                <span class="logo-txt-ar">موجود</span>
+            </a>
             <div class="nav-links">
-    <a href="ar.html" class="btn-lang">
-        <span class="icon">🌐</span>
-        <span class="text">العربية</span>
-    </a>
-    <a href="https://wa.me/21622961115" class="btn-primary">Mon site maintenant</a>
-</div>
+                <a href="ar.html" class="btn-lang">
+                    <span class="icon">🌐</span>
+                    <span class="text">العربية</span>
+                </a>
+                <a href="https://wa.me/21622961115" class="btn-primary">Mon site maintenant</a>
+            </div>
         </div>
     </nav>
 
-    <header class="hero-modern">
+    <header class="hero-modern" data-aos="fade-up">
         <div class="container">
-            <div class="hero-content">
-                <span class="badge-new">Disponible en Tunisie 🇹🇳</span>
-                <h1>Plus qu'un site, <br><span class="gradient-text">ta vitrine 24/7.</span></h1>
-                <p>Mawjoud transforme ton commerce en une expérience digitale fluide. Zéro code, 100% impact.</p>
-                <div class="hero-btns">
-                    <a href="#packs" class="btn-primary">Voir les packs</a>
-                    <a href="https://wa.me/21622961115" class="btn-secondary">Parler avec nous</a>
-                </div>
+            <span class="badge-new">Disponible en Tunisie 🇹🇳</span>
+            <h1>Plus qu'un site, <br><span class="gradient-text">ta vitrine 24/7.</span></h1>
+            <p>Mawjoud transforme ton commerce en une expérience digitale fluide. Zéro code, 100% impact.</p>
+            <div class="hero-btns">
+                <a href="#packs" class="btn-primary">Voir les packs</a>
+                <a href="https://wa.me/21622961115" class="btn-secondary">Parler avec nous</a>
             </div>
         </div>
     </header>
 
     <section class="bento-container container">
-        <h2 class="section-title">Minimaliste. Efficace.</h2>
         <div class="bento-grid">
-            <div class="bento-card card-lg" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=2070&auto=format&fit=crop'); background-size: cover;">
+            <div class="bento-card card-lg" data-aos="fade-up" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=2070&auto=format&fit=crop'); background-size: cover;">
                 <div class="card-text">
                     <h3>WhatsApp Direct</h3>
                     <p>Tes clients te parlent sans intermédiaire.</p>
                 </div>
-                <div class="bento-icon">📲</div>
             </div>
-            <div class="bento-card">
+            <div class="bento-card" data-aos="fade-up" data-aos-delay="100">
                 <h3>Google Maps</h3>
                 <p>On te trouve en un clic.</p>
-                <div class="bento-icon">📍</div>
             </div>
-            <div class="bento-card">
+            <div class="bento-card" data-aos="fade-up" data-aos-delay="200">
                 <h3>Galerie Pro</h3>
                 <p>Tes produits sous leur meilleur jour.</p>
-                <div class="bento-icon">📸</div>
             </div>
-            <div class="bento-card card-mid">
+            <div class="bento-card card-mid" data-aos="fade-up" data-aos-delay="300">
                 <h3>Mobile-First</h3>
                 <p>Chargement instantané sur smartphone.</p>
             </div>
@@ -68,18 +67,18 @@
     <section id="packs" class="pricing-section">
         <div class="container">
             <div class="pricing-grid">
-                <div class="pack-card">
+                <div class="pack-card" data-aos="zoom-in">
                     <h4>Express</h4>
                     <div class="price">350<span>TND</span></div>
                     <a href="https://wa.me/21622961115" class="btn-secondary">Choisir</a>
                 </div>
-                <div class="pack-card featured">
+                <div class="pack-card featured" data-aos="zoom-in" data-aos-delay="100">
                     <div class="tag">Plus prisé</div>
                     <h4>Pro</h4>
                     <div class="price">600<span>TND</span></div>
                     <a href="https://wa.me/21622961115" class="btn-primary">Prendre le Pro</a>
                 </div>
-                <div class="pack-card">
+                <div class="pack-card" data-aos="zoom-in" data-aos-delay="200">
                     <h4>Premium</h4>
                     <div class="price">1000<span>TND</span></div>
                     <a href="https://wa.me/21622961115" class="btn-secondary">Choisir</a>
@@ -89,10 +88,10 @@
     </section>
 
     <footer class="modern-footer">
-        <div class="container">
-            <p>© 2026 Mawjoud by Synaptech</p>
-        </div>
+        <p>© 2026 Mawjoud by Synaptech</p>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 </html>
