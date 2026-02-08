@@ -5,52 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mawjoud | ورّي خدمتك للعالم</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Tajawal:wght@200;300;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="glass-nav">
         <div class="container nav-flex">
-            <img src="mawjoud/logosite.png" alt="Mawjoud" class="logo-nav">
-           <div class="nav-links">
-    <a href="index.html" class="btn-lang">
-        <span class="icon">🌐</span>
-        <span class="text">Français</span>
-    </a>
-    <a href="https://wa.me/21622961115" class="btn-primary">بداية مشروعك هنا</a>
-</div>
+            <a href="ar.html" class="brand-modern">
+                <span class="logo-txt-ar">موجود</span>
+                <span class="logo-divider">|</span>
+                <span class="logo-txt-fr">MAWJOUD</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="btn-lang">
+                    <span class="icon">🌐</span>
+                    <span class="text">Français</span>
+                </a>
+                <a href="https://wa.me/21622961115" class="btn-primary">بداية مشروعك هنا</a>
+            </div>
         </div>
     </nav>
 
-    <header class="hero-modern">
+    <header class="hero-modern" data-aos="fade-up">
         <div class="container">
-            <div class="hero-content">
-                <span class="badge-new">صُنع في تونس 🇹🇳</span>
-                <h1>موش لازم تكون مهندس <br><span class="gradient-text">باش تعمل site pro.</span></h1>
-                <p>Mawjoud يعملك حضورك الرسمي في أسرع وقت ممكن. WhatsApp، Maps، وتصاور خدمتك. كل شي ساهل.</p>
-                <div class="hero-btns">
-                    <a href="#packs" class="btn-primary">شوف الـ Packs</a>
-                    <a href="https://wa.me/21622961115" class="btn-secondary">احكي معانا WhatsApp</a>
-                </div>
+            <span class="badge-new">صُنع في تونس 🇹🇳</span>
+            <h1>موش لازم تكون مهندس <br><span class="gradient-text">باش تعمل site pro.</span></h1>
+            <p>Mawjoud يعملك حضورك الرسمي في أسرع وقت. WhatsApp، Maps، وتصاور خدمتك. كل شي ساهل.</p>
+            <div class="hero-btns">
+                <a href="#packs" class="btn-primary">شوف الـ Packs</a>
+                <a href="https://wa.me/21622961115" class="btn-secondary">احكي معانا</a>
             </div>
         </div>
     </header>
 
     <section class="bento-container container">
         <div class="bento-grid">
-            <div class="bento-card card-lg" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=2070&auto=format&fit=crop');">
+            <div class="bento-card card-lg" data-aos="fade-up">
                 <h3>WhatsApp Direct</h3>
                 <p>الكليون يكلمك طول، من غير تكسير راس.</p>
             </div>
-            <div class="bento-card">
+            <div class="bento-card" data-aos="fade-up" data-aos-delay="100">
                 <h3>Google Maps</h3>
-                <p>يجيوك لدارك، حانوتك، ولا الـ bureau متاعك.</p>
+                <p>يجيوك لدارك ولا حانوتك.</p>
             </div>
-            <div class="bento-card">
+            <div class="bento-card" data-aos="fade-up" data-aos-delay="200">
                 <h3>تصاور و أسوام</h3>
                 <p>ورّي سلعتك بأبهى حلّة.</p>
             </div>
-            <div class="bento-card card-mid">
+            <div class="bento-card card-mid" data-aos="fade-up" data-aos-delay="300">
                 <h3>خفيف كيف الريشة</h3>
                 <p>يتحل في رمشة عين على التليفون.</p>
             </div>
@@ -58,10 +61,10 @@
     </section>
 
     <footer class="modern-footer">
-        <div class="container">
-            <p>© 2026 Mawjoud • Synaptech</p>
-        </div>
+        <p>© 2026 Mawjoud • Synaptech</p>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 </html>
