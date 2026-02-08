@@ -79,3 +79,15 @@ h1 { font-family: 'Google Sans', sans-serif; font-size: clamp(2.2rem, 6vw, 3.8re
     .btn-google-outline { margin-left: 0; }
     .pack-google.featured { transform: scale(1); }
 }
+.logo-img {
+    height: 40px; /* Ajustez la hauteur selon vos besoins */
+    width: auto;
+    display: block;
+}
+
+/* Sur mobile, on peut le réduire un peu */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 32px;
+    }
+}
