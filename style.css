@@ -1,6 +1,7 @@
 /* ==========================================================================
-   SYNAPTECH 2026 - CONFIGURATION GLOBALE
+   SYNAPTECH 2026 - FICHIER CSS COMPLET CORRIGÉ
    ========================================================================== */
+
 :root {
     --primary: #0052FF;
     --dark: #002595;
@@ -31,11 +32,11 @@ body {
 }
 
 /* ==========================================================================
-   NAVIGATION (CORRIGÉE POUR MOBILE)
+   NAVIGATION (PC : Fixe / Mobile : Relative)
    ========================================================================== */
 .main-nav {
     border-bottom: 1px solid #e1e8f2;
-    padding: 15px 0;
+    padding: 10px 0;
     background: var(--white);
     position: absolute; /* Position par défaut sur PC */
     top: 0;
@@ -49,16 +50,14 @@ body {
     align-items: center;
 }
 
-.brand {
-    display: flex;
-    align-items: center;
-}
-
-/* Suppression de la hauteur forcée pour laisser le CSS décider */
+/* CORRECTION LOGO PC : Empêche la taille géante */
 .brand img {
-    height: 80px; /* Taille optimale sur PC */
-    width: auto;
+    height: 70px;            /* Hauteur stable sur PC */
+    width: auto;             /* Garde les proportions */
+    max-width: 250px;        /* Limite de largeur pour éviter l'explosion visuelle */
     object-fit: contain;
+    display: block;
+    transition: all 0.3s ease;
 }
 
 .menu {
@@ -87,7 +86,7 @@ body {
    ========================================================================== */
 .hero-cloud {
     background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 100%);
-    padding: 160px 0 80px; /* Espace pour la nav absolue */
+    padding: 160px 0 80px; /* Espace pour la nav sur PC */
 }
 
 .grid-hero {
@@ -109,7 +108,7 @@ h1 {
 }
 
 /* ==========================================================================
-   FORMULAIRE DE CONTACT (CORRECTIF ALIGNEMENT)
+   FORMULAIRE DE CONTACT (Alignement vertical)
    ========================================================================== */
 .contact-form-wrapper {
     background: #ffffff;
@@ -121,7 +120,7 @@ h1 {
 
 .modern-form {
     display: flex;
-    flex-direction: column; /* Force l'alignement vertical */
+    flex-direction: column; /* Force l'alignement vertical sur PC et Mobile */
     gap: 15px;
 }
 
@@ -129,12 +128,6 @@ h1 {
     display: flex;
     flex-direction: column;
     text-align: left;
-}
-
-.form-group label {
-    font-weight: 600;
-    margin-bottom: 5px;
-    font-size: 0.9rem;
 }
 
 .form-group input, 
@@ -157,24 +150,24 @@ h1 {
 }
 
 /* ==========================================================================
-   LE FIX MOBILE FINAL (ANTI-CHEVAUCHEMENT)
+   FIX MOBILE FINAL (Correction chevauchement texte)
    ========================================================================== */
 @media (max-width: 768px) {
-    /* La nav ne couvre plus le texte : elle le pousse */
+    /* La nav devient un bloc qui pousse le contenu au lieu de le couvrir */
     .main-nav {
         position: relative; 
-        padding: 10px 0;
+        padding: 15px 0;
     }
 
     .nav-container {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
     }
 
-    /* Le logo devient petit pour libérer l'écran */
+    /* Le logo devient discret sur mobile */
     .brand img {
-        height: 50px !important; 
-        width: auto !important;
+        height: 45px !important; 
+        max-width: 180px;
     }
 
     .menu {
@@ -183,34 +176,27 @@ h1 {
         gap: 10px;
     }
 
-    /* Ajustement du Hero pour mobile */
+    /* Réduction des espaces Hero sur mobile */
     .hero-cloud {
         padding: 40px 0 60px; 
     }
 
     h1 {
-        font-size: 2rem !important;
+        font-size: 1.9rem !important;
         text-align: center;
         line-height: 1.2;
     }
 
-    /* Formulaire sur une seule colonne */
-    .grid-contact {
+    .grid-hero, .grid-contact {
         grid-template-columns: 1fr;
+        text-align: center;
     }
 }
 
-/* ==========================================================================
-   WHATSAPP BUTTON
-   ========================================================================== */
+/* WHATSAPP */
 .wa-container {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 25px;
+    right: 25px;
     z-index: 2000;
-}
-
-.wa-btn img {
-    width: 55px;
-    height: 55px;
 }
