@@ -1,240 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<!-- Police FR premium -->
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- Police AR premium -->
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>موجود — موقع رسمي + واتساب + Maps | Synaptech</title>
-  <meta name="description" content="موجود من Synaptech: نعملولك موقع صغير و رسمي فيه واتساب، Google Maps، أوقات العمل، صور و أسعار. رابط واحد تنجّم تبعثو للحرفاء." />
-  <link rel="canonical" href="https://synaptech.tn/mawjoud/ar.html" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="ar_TN" />
-  <meta property="og:title" content="موجود — موقع رسمي للمشروع | Synaptech" />
-  <meta property="og:description" content="موقع فيه واتساب + Maps + صور + أسعار + أوقات العمل. ساهل و واضح." />
-  <meta property="og:url" content="https://synaptech.tn/mawjoud/ar.html" />
-
-  <link rel="icon" href="../favicon.ico" />
-
-  <style>
-    /* نفس الستايل تقريباً */
-    :root{
-      --bg:#ffffff;--text:#0b1220;--muted:#5a6474;
-      --border: rgba(15,23,42,.10);
-      --brand:#146EF5;--brand2:#7C3AED;
-      --soft:#F4F7FF;--soft2:#F7F7FB;
-      --radius:20px;--max:1180px;
-    }
-    *{box-sizing:border-box}
-    body{
-  margin:0;
-  font-family:"Tajawal", system-ui, -apple-system, "Segoe UI", Tahoma, Arial;
-  color:var(--text);
-  background:var(--bg);
-  line-height:1.9;
-}
-
-    a{color:inherit;text-decoration:none}
-    .container{max-width:var(--max);margin:auto;padding:0 20px}
-
-    header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 0}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:950;letter-spacing:-.2px}
-    .logo{width:38px;height:38px;border-radius:14px;display:grid;place-items:center;background:radial-gradient(120% 120% at 0% 0%, var(--brand), var(--brand2));color:#fff;font-weight:950;box-shadow:0 14px 34px rgba(20,110,245,.18)}
-    .nav-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:14px;border:1px solid var(--border);background:#fff;font-weight:900;white-space:nowrap;transition:.12s}
-    .btn:hover{transform:translateY(-1px);box-shadow:0 14px 40px rgba(2,6,23,.10);border-color:rgba(15,23,42,.18)}
-    .btn.primary{background:var(--brand);border:none;color:#fff;box-shadow:0 18px 46px rgba(20,110,245,.20)}
-    .btn.ghost{background:var(--soft)}
-
-    .hero{padding:86px 0 56px;background:
-      radial-gradient(900px 440px at 40% -10%, rgba(20,110,245,.18), transparent 60%),
-      radial-gradient(900px 440px at 95% 0%, rgba(124,58,237,.12), transparent 58%),
-      linear-gradient(180deg, rgba(244,247,255,.75), #fff 55%);
-      border-bottom:1px solid var(--border)
-    }
-    h1{margin:0 0 14px;font-size:clamp(32px,5vw,60px);letter-spacing:-.6px;line-height:1.12}
-    .lead{margin:0;color:var(--muted);font-size:clamp(16px,1.7vw,20px);max-width:90ch;font-weight:650}
-    .hero-actions{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-    .chips{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
-    .chip{border:1px solid var(--border);background:#fff;padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:800}
-
-    section{padding:62px 0}
-    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:16px}
-    .section-head h2{margin:0;font-size:clamp(22px,2.9vw,36px);letter-spacing:-.3px}
-    .section-head p{margin:0;color:var(--muted);font-weight:650;max-width:92ch}
-
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .card{border:1px solid var(--border);border-radius:var(--radius);background:#fff;padding:22px;transition:.15s}
-    .card:hover{transform:translateY(-4px);box-shadow:0 22px 70px rgba(2,6,23,.10);border-color:rgba(20,110,245,.22)}
-    .card h3{margin:0 0 6px}
-    .card p{margin:0;color:var(--muted);font-weight:650}
-
-    .pricing{background:linear-gradient(180deg, rgba(20,110,245,.06), transparent 42%);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-    .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .plan{position:relative}
-    .badge{position:absolute;top:14px;left:14px;background:rgba(20,110,245,.10);color:var(--brand);border:1px solid rgba(20,110,245,.18);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900}
-    .price{display:flex;align-items:baseline;gap:8px;margin-top:10px;font-weight:950}
-    .price strong{font-size:42px;letter-spacing:-1px}
-    .price span{color:var(--muted);font-weight:750}
-    ul{margin:12px 0 0;padding-right:18px;color:var(--muted);font-weight:650}
-    li{margin:6px 0}
-
-    footer{padding:34px 0 44px;color:var(--muted);font-size:14px}
-    @media(max-width:980px){.grid3,.plans{grid-template-columns:1fr}.hero{padding:72px 0 52px}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mawjoud | ورّي خدمتك للعالم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Tajawal:wght@200;300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<header>
-  <div class="container nav">
-    <div class="brand">
-      <div class="logo">م</div>
-      <div>موجود <span style="color:var(--muted);font-weight:850">من Synaptech</span></div>
-    </div>
-    <div class="nav-actions">
-      <a class="btn ghost" href="#pricing">الأسعار</a>
-      <a class="btn" href="#contact">اتصال</a>
-      <a class="btn ghost" href="./">FR</a>
-      <a class="btn primary" href="https://wa.me/21622961115?text=سلام%20Synaptech%2C%20نحب%20موقع%20موجود">واتساب</a>
-    </div>
-  </div>
-</header>
 
-<main>
-  <section class="hero">
-    <div class="container">
-      <h1>موجود — خليك موجود أونلاين</h1>
-      <p class="lead">
-        نعملولك <b>موقع صغير و رسمي</b> فيه كل شيء:
-        العنوان، <b>Google Maps</b>، <b>واتساب</b>، الصور و الأسعار.
-        رابط واحد تنجم تبعثو لأي حريف على فيسبوك، إنستغرام و واتساب.
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn primary" href="https://wa.me/21622961115?text=سلام%20Synaptech%2C%20نحب%20موقع%20موجود">نحب موقع</a>
-        <a class="btn" href="tel:+21622961115">اتصال</a>
-        <a class="btn" href="mailto:hello@synaptech.tn">إيميل</a>
-      </div>
-
-      <div class="chips">
-        <div class="chip">واتساب مباشر</div>
-        <div class="chip">لينك Maps</div>
-        <div class="chip">يخدم على التليفون</div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <h2>شنوة يعطيك موجود؟</h2>
-        <p>المهم: الحريف يلقى المعلومة بسرعة و يتصل بيك في ثواني.</p>
-      </div>
-
-      <div class="grid3">
-        <div class="card">
-          <h3>زر واتساب مباشر</h3>
-          <p>الحريف يضغط و يحل واتساب برسالة جاهزة.</p>
+    <nav class="glass-nav">
+        <div class="container nav-flex">
+            <img src="mawjoud/logosite.png" alt="Mawjoud" class="logo-nav">
+            <div class="nav-links">
+                <a href="index.html" class="lang-switch">Français</a>
+                <a href="https://wa.me/21622961115" class="btn-primary">بداية مشروعك هنا</a>
+            </div>
         </div>
-        <div class="card">
-          <h3>Google Maps</h3>
-          <p>العنوان واضح و الحريف يوصل بسهولة.</p>
+    </nav>
+
+    <header class="hero-modern">
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge-new">صُنع في تونس 🇹🇳</span>
+                <h1>موش لازم تكون مهندس <br><span class="gradient-text">باش تعمل site pro.</span></h1>
+                <p>Mawjoud يعملك حضورك الرسمي في 48 ساعة. WhatsApp، Maps، وتصاور خدمتك. كل شي ساهل.</p>
+                <div class="hero-btns">
+                    <a href="#packs" class="btn-primary">شوف الـ Packs</a>
+                    <a href="https://wa.me/21622961115" class="btn-secondary">احكي معانا WhatsApp</a>
+                </div>
+            </div>
         </div>
-        <div class="card">
-          <h3>صور و أسعار</h3>
-          <p>صور + خدمات/أسعار (مهمّة برشا للبيع).</p>
+    </header>
+
+    <section class="bento-container container">
+        <div class="bento-grid">
+            <div class="bento-card card-lg" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=2070&auto=format&fit=crop');">
+                <h3>WhatsApp Direct</h3>
+                <p>الكليون يكلمك طول، من غير تكسير راس.</p>
+            </div>
+            <div class="bento-card">
+                <h3>Google Maps</h3>
+                <p>يجيوك لدارك، حانوتك، ولا الـ bureau متاعك.</p>
+            </div>
+            <div class="bento-card">
+                <h3>تصاور و أسوام</h3>
+                <p>ورّي سلعتك بأبهى حلّة.</p>
+            </div>
+            <div class="bento-card card-mid">
+                <h3>خفيف كيف الريشة</h3>
+                <p>يتحل في رمشة عين على التليفون.</p>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="pricing" class="pricing">
-    <div class="container">
-      <div class="section-head">
-        <h2>الأسعار (TND)</h2>
-        <p>باكات واضحة للتجّار و المشاريع الصغرى في تونس.</p>
-      </div>
-
-      <div class="plans">
-        <div class="card plan">
-          <h3>Express (صفحة واحدة)</h3>
-          <div class="price"><strong>350</strong><span>TND</span></div>
-          <ul>
-            <li>واتساب + Maps</li>
-            <li>أوقات العمل + صور</li>
-            <li>خدمات + أسعار</li>
-            <li>رابط رسمي واحد</li>
-          </ul>
+    <footer class="modern-footer">
+        <div class="container">
+            <p>© 2026 Mawjoud • Synaptech</p>
         </div>
+    </footer>
 
-        <div class="card plan">
-          <div class="badge">الأكثر طلب</div>
-          <h3>Pro (3 صفحات)</h3>
-          <div class="price"><strong>600</strong><span>TND</span></div>
-          <ul>
-            <li>Accueil + Services + Contact</li>
-            <li>فورم بسيط</li>
-            <li>تصميم أكمل</li>
-            <li>تهيئة أساسية</li>
-          </ul>
-        </div>
-
-        <div class="card plan">
-          <h3>Premium (5 صفحات)</h3>
-          <div class="price"><strong>1000</strong><span>TND</span></div>
-          <ul>
-            <li>Galerie + Avis</li>
-            <li>حجز واتساب</li>
-            <li>سرعة و أداء أحسن</li>
-            <li>صفحات إضافية</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card" style="margin-top:16px">
-        <h3>اشتراك شهري (اختياري)</h3>
-        <p style="margin:0;color:var(--muted);font-weight:650">استضافة + تعديلات صغيرة + صيانة + دعم واتساب.</p>
-        <div class="price" style="margin-top:10px"><strong>30</strong><span>TND / شهر</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" style="padding-top:10px">
-    <div class="container">
-      <div class="card" style="border-radius:24px">
-        <div style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center">
-          <div>
-            <div style="font-weight:950;font-size:18px">اتصال</div>
-            <div style="color:var(--muted);font-weight:650;margin-top:6px">Email: <b>hello@synaptech.tn</b></div>
-            <div style="color:var(--muted);font-weight:650">WhatsApp / Tel: <b>+216 22 961 115</b></div>
-          </div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn primary" href="https://wa.me/21622961115">واتساب</a>
-            <a class="btn" href="tel:+21622961115">اتصال</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="container">
-    © <span id="year"></span> موجود من Synaptech • hello@synaptech.tn • +216 22 961 115
-  </div>
-</footer>
-
-<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
 </body>
 </html>
