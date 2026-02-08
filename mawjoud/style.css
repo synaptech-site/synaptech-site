@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MAWJOUD PREMIUM - DESIGN MINIMALISTE & FIN
+   MAWJOUD PREMIUM CSS - DARK & MINIMALIST
    ========================================================================== */
 
 :root {
@@ -8,217 +8,71 @@
     --text: #ffffff;
     --dim-text: rgba(255, 255, 255, 0.5);
     --primary: #8b5cf6;
-    --neon: #22c55e;
     --border: rgba(255, 255, 255, 0.08);
-    --radius: 8px; /* Coins plus sophistiqués */
+    --radius: 8px;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    -webkit-font-smoothing: antialiased;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
 
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg);
     color: var(--text);
-    line-height: 1.6;
-    font-weight: 300; /* Typographie fine par défaut */
+    font-weight: 300;
 }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 25px;
-}
+[dir="rtl"] body { font-family: 'Tajawal', sans-serif; text-align: right; }
 
-/* --- NAVIGATION GLASS --- */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
+
+/* Navigation */
 .glass-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 25px 0;
-    background: rgba(5, 5, 5, 0.8);
-    backdrop-filter: blur(20px);
+    position: sticky; top: 0; z-index: 1000; padding: 25px 0;
+    background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
 }
+.nav-flex { display: flex; justify-content: space-between; align-items: center; }
+[dir="rtl"] .nav-flex { flex-direction: row-reverse; }
 
-.nav-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.logo-nav { height: 32px; }
+.lang-switch {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em;
+    color: var(--dim-text); text-decoration: none; margin-right: 25px;
 }
+[dir="rtl"] .lang-switch { margin-right: 0; margin-left: 25px; }
 
-.logo-nav {
-    height: 32px;
-    filter: brightness(1.2);
-}
+/* Hero */
+.hero-modern { padding: 120px 0 80px; text-align: center; }
+.badge-new { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.2em; padding: 8px 20px; border: 1px solid var(--border); border-radius: 100px; color: var(--dim-text); }
+h1 { font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 200; letter-spacing: -0.03em; margin: 30px 0; line-height: 1.1; }
+.gradient-text { color: var(--primary); }
+.hero-modern p { font-size: 1.1rem; font-weight: 200; color: var(--dim-text); max-width: 600px; margin: 0 auto 50px; }
 
-/* --- HERO SECTION --- */
-.hero-modern {
-    padding: 120px 0 80px;
-    text-align: center;
-}
+/* Buttons */
+.btn-primary { background: #fff; color: #000; padding: 16px 40px; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; text-decoration: none; border-radius: 4px; }
+.btn-secondary { color: #fff; padding: 16px 40px; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; text-decoration: none; border: 1px solid var(--border); border-radius: 4px; margin-left: 15px; }
+[dir="rtl"] .btn-secondary { margin-left: 0; margin-right: 15px; }
 
-.badge-new {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    padding: 8px 20px;
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    color: var(--dim-text);
-}
-
-h1 {
-    font-size: clamp(2.2rem, 6vw, 4rem);
-    font-weight: 200; /* Ultra fine */
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    margin: 30px 0;
-}
-
-.gradient-text {
-    color: var(--primary);
-    background: linear-gradient(90deg, #fff, var(--primary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero-modern p {
-    font-size: 1.1rem;
-    font-weight: 200;
-    color: var(--dim-text);
-    max-width: 600px;
-    margin: 0 auto 50px;
-}
-
-/* --- BOUTONS --- */
-.btn-primary {
-    background: var(--text);
-    color: var(--bg);
-    padding: 18px 45px;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: 0.3s;
-}
-
-.btn-primary:hover {
-    background: var(--primary);
-    color: #fff;
-}
-
-.btn-secondary {
-    color: var(--text);
-    padding: 18px 45px;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    margin-left: 15px;
-}
-
-/* --- BENTO GRID --- */
-.section-title {
-    font-weight: 200;
-    font-size: 2rem;
-    margin-bottom: 50px;
-    text-align: center;
-}
-
-.bento-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 220px);
-    gap: 15px;
-    margin-bottom: 100px;
-}
-
-.bento-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 35px;
-    position: relative;
-}
-
-.bento-card h3 {
-    font-weight: 300;
-    font-size: 1.1rem;
-    margin-bottom: 12px;
-}
-
-.bento-card p {
-    font-weight: 200;
-    font-size: 0.9rem;
-    color: var(--dim-text);
-}
-
-.card-lg { grid-column: span 2; grid-row: span 2; display: flex; align-items: flex-end; }
+/* Bento Grid */
+.bento-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 220px); gap: 15px; margin: 50px 0 100px; }
+.bento-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 35px; }
+.card-lg { grid-column: span 2; grid-row: span 2; display: flex; flex-direction: column; justify-content: flex-end; }
 .card-mid { grid-column: span 2; }
 
-/* --- PRICING --- */
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
+/* Pricing */
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.pack-card { background: var(--card); padding: 50px 30px; border: 1px solid var(--border); border-radius: var(--radius); text-align: center; }
+.pack-card.featured { border: 1px solid var(--primary); }
+.price { font-size: 3.5rem; font-weight: 200; margin-bottom: 20px; }
+.price span { font-size: 0.9rem; color: var(--dim-text); }
 
-.pack-card {
-    background: var(--card);
-    padding: 60px 40px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    text-align: center;
-}
+/* Footer */
+.modern-footer { padding: 60px 0; border-top: 1px solid var(--border); text-align: center; color: var(--dim-text); font-size: 0.75rem; font-weight: 200; }
 
-.pack-card.featured {
-    border: 1px solid var(--primary);
-}
-
-.pack-card h4 {
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    font-size: 0.7rem;
-    color: var(--primary);
-    margin-bottom: 20px;
-}
-
-.price {
-    font-size: 3.5rem;
-    font-weight: 200;
-    margin-bottom: 30px;
-}
-
-.price span {
-    font-size: 0.9rem;
-    color: var(--dim-text);
-    letter-spacing: 0.1em;
-}
-
-/* --- FOOTER --- */
-.modern-footer {
-    padding: 80px 0;
-    border-top: 1px solid var(--border);
-    text-align: center;
-    color: var(--dim-text);
-    font-size: 0.8rem;
-    font-weight: 200;
-}
-
-/* --- RESPONSIVE --- */
-@media (max-width: 900px) {
+/* Mobile */
+@media (max-width: 800px) {
     .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
     .card-lg, .card-mid { grid-column: span 1; height: 300px; }
-    .hero-btns { display: flex; flex-direction: column; gap: 15px; padding: 0 40px; }
-    .btn-secondary { margin-left: 0; }
+    .hero-btns { display: flex; flex-direction: column; gap: 15px; }
+    .btn-secondary { margin-left: 0; margin-right: 0; }
 }
