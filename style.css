@@ -235,32 +235,75 @@ h1 {
     font-weight: 600;
 }
 
-/* Formulaire à droite (Petit et Propre) */
+/* --- ALIGNEMENT FORMULAIRE --- */
+.contact-section { 
+    padding: 60px 0; 
+}
+
+.grid-contact { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px; 
+    align-items: start; 
+}
+
 .contact-form-wrapper {
     background: #ffffff;
     padding: 30px;
-    border-radius: 24px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
-    border: 1px solid #f0f0f0;
-    width: 100%;
-    max-width: 450px; /* Limite la largeur du formulaire */
-    margin-left: auto; /* Force l'alignement à droite */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
 }
 
-/* Responsive pour Mobile */
-@media (max-width: 991px) {
+.modern-form {
+    display: flex;
+    flex-direction: column; /* Force l'alignement vertical */
+    gap: 15px; /* Espace entre les champs */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.btn-submit {
+    background: #0052FF;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%; /* S'aligne sur la largeur du formulaire */
+}
+
+/* --- FIX RESPONSIVE --- */
+@media (max-width: 768px) {
     .grid-contact {
         grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
     }
     
-    .contact-form-wrapper {
-        margin: 0 auto;
-    }
-    
-    .contact-info h2 {
-        font-size: 2.2rem;
+    /* Correction taille logo mobile */
+    .brand img {
+        height: 45px !important;
+        width: auto !important;
     }
 }
-
