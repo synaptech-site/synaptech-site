@@ -91,3 +91,8 @@ h1 { font-family: 'Google Sans', sans-serif; font-size: clamp(2.2rem, 6vw, 3.8re
         height: 32px;
     }
 }
+.logo {
+    height: 40px;
+    width: auto;
+}
+
