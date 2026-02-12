@@ -221,3 +221,13 @@ h1 {
     .pack-google.featured { transform: scale(1); }
     .nav-flex { padding: 5px 0; }
 }
+
+/* FORCE L'AFFICHAGE DU LOGO */
+.logo, .main-logo {
+    display: block !important;
+    height: 60px !important; /* Testez avec une hauteur fixe */
+    width: auto !important;
+    min-width: 50px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
