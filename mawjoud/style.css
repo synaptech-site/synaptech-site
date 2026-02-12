@@ -1,3 +1,7 @@
+/* ==========================================================================
+   MAWJOUD - DESIGN SYSTEM GOOGLE (STABLE & RESPONSIVE)
+   ========================================================================== */
+
 :root {
     --google-blue: #4285F4;
     --google-red: #EA4335;
@@ -12,97 +16,208 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
-body { font-family: 'Open Sans', sans-serif; background-color: #fff; color: var(--text-dark); line-height: 1.6; }
+body { 
+    font-family: 'Open Sans', sans-serif; 
+    background-color: #fff; 
+    color: var(--text-dark); 
+    line-height: 1.6; 
+}
+
+/* Support Arabe/Tunisien */
 [dir="rtl"] body { font-family: 'Tajawal', sans-serif; }
 
 .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
 
-/* Navigation */
-.google-nav { padding: 16px 0; background: #fff; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
-.nav-flex { display: flex; justify-content: space-between; align-items: center; }
+/* ==========================================================================
+   NAVIGATION & LOGO
+   ========================================================================== */
+.google-nav { 
+    padding: 12px 0; 
+    background: #fff; 
+    border-bottom: 1px solid var(--border-color); 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+}
+
+.nav-flex { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
 [dir="rtl"] .nav-flex { flex-direction: row-reverse; }
 
-.brand { font-family: 'Google Sans', sans-serif; font-size: 1.6rem; font-weight: 500; }
-.brand .divider { color: var(--border-color); margin: 0 10px; font-weight: 300; }
-.brand .sub-brand { color: var(--text-light); font-size: 0.9rem; font-weight: 400; }
+/* Correction Logo PNG */
+.logo {
+    height: 45px; 
+    width: auto;  
+    display: block;
+    transition: transform 0.2s ease;
+}
 
-.g-blue { color: var(--google-blue); }
-.g-red { color: var(--google-red); }
-.g-yellow { color: var(--google-yellow); }
-.g-green { color: var(--google-green); }
+.logo:hover { transform: scale(1.03); }
 
-/* Buttons */
-.btn-google-blue { background: var(--google-blue); color: #fff; padding: 12px 26px; border-radius: 4px; text-decoration: none; font-weight: 500; display: inline-block; transition: 0.2s; border: none; }
-.btn-google-blue:hover { background: #3b78e7; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+/* ==========================================================================
+   BOUTONS GOOGLE STYLE
+   ========================================================================== */
+.btn-google-blue { 
+    background: var(--google-blue); 
+    color: #fff; 
+    padding: 12px 26px; 
+    border-radius: 4px; 
+    text-decoration: none; 
+    font-weight: 500; 
+    display: inline-block; 
+    transition: 0.2s; 
+    border: none; 
+}
 
-.btn-google-outline { border: 1px solid var(--border-color); color: var(--google-blue); padding: 12px 26px; border-radius: 4px; text-decoration: none; font-weight: 500; transition: 0.2s; display: inline-block; }
+.btn-google-blue:hover { 
+    background: #3b78e7; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2); 
+}
+
+.btn-google-outline { 
+    border: 1px solid var(--border-color); 
+    color: var(--google-blue); 
+    padding: 12px 26px; 
+    border-radius: 4px; 
+    text-decoration: none; 
+    font-weight: 500; 
+    transition: 0.2s; 
+    display: inline-block; 
+}
+
 .btn-google-outline:hover { background: #f1f3f4; }
 
-.btn-lang-google { text-decoration: none; color: var(--text-light); font-size: 0.9rem; margin-right: 20px; }
+.btn-lang-google { 
+    text-decoration: none; 
+    color: var(--text-light); 
+    font-size: 0.9rem; 
+    margin-right: 20px; 
+}
+
 [dir="rtl"] .btn-lang-google { margin-right: 0; margin-left: 20px; }
 
-/* Hero */
+/* ==========================================================================
+   HERO & FEATURES
+   ========================================================================== */
 .hero-google { padding: 100px 0 80px; text-align: center; }
-h1 { font-family: 'Google Sans', sans-serif; font-size: clamp(2.2rem, 6vw, 3.8rem); color: #202124; margin-bottom: 24px; font-weight: 500; }
-.hero-google p { font-size: 1.3rem; color: var(--text-light); max-width: 750px; margin: 0 auto 40px; }
 
-/* Features Grid */
-.google-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; padding: 60px 0; }
+h1 { 
+    font-family: 'Google Sans', sans-serif; 
+    font-size: clamp(2.2rem, 6vw, 3.8rem); 
+    color: #202124; 
+    margin-bottom: 24px; 
+    font-weight: 500; 
+}
+
+.g-blue { color: var(--google-blue); }
+.g-green { color: var(--google-green); }
+
+.hero-google p { 
+    font-size: 1.3rem; 
+    color: var(--text-light); 
+    max-width: 750px; 
+    margin: 0 auto 40px; 
+}
+
+.google-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+    gap: 24px; 
+    padding: 60px 0; 
+}
+
 .google-card { padding: 32px; border-radius: 8px; transition: 0.3s; }
 .google-card:hover { background: var(--bg-gray); }
-.icon-circle { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 20px; }
+
+.icon-circle { 
+    width: 56px; 
+    height: 56px; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 1.4rem; 
+    margin-bottom: 20px; 
+}
+
 .bg-blue { background: #e8f0fe; }
 .bg-red { background: #fce8e6; }
 .bg-yellow { background: #fef7e0; }
 .bg-green { background: #e6f4ea; }
 
-/* Pricing */
+/* ==========================================================================
+   PACKS & PRICING (LAHJA TOUNSIA SUPPORT)
+   ========================================================================== */
 .pricing-google { padding: 80px 0; background: var(--bg-gray); text-align: center; }
 .section-title { font-family: 'Google Sans', sans-serif; margin-bottom: 50px; font-size: 2rem; }
-.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-.pack-google { background: #fff; padding: 48px 32px; border-radius: 8px; border: 1px solid var(--border-color); transition: 0.3s; position: relative; }
-.pack-google.featured { border: 2px solid var(--google-blue); transform: scale(1.05); }
-.populaire { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--google-blue); color: #fff; padding: 4px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+
+.pricing-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 24px; 
+}
+
+.pack-google { 
+    background: #fff; 
+    padding: 48px 32px; 
+    border-radius: 8px; 
+    border: 1px solid var(--border-color); 
+    transition: 0.3s; 
+    position: relative; 
+}
+
+.pack-google.featured { 
+    border: 2px solid var(--google-blue); 
+    transform: scale(1.05); 
+}
+
+.populaire { 
+    position: absolute; 
+    top: -15px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background: var(--google-blue); 
+    color: #fff; 
+    padding: 4px 16px; 
+    border-radius: 20px; 
+    font-size: 0.8rem; 
+    font-weight: 600; 
+}
+
 .price { font-size: 3rem; font-weight: 700; margin: 24px 0; }
 .price span { font-size: 1rem; color: var(--text-light); font-weight: 400; }
-.pack-google ul { margin: 24px 0; list-style: none; color: var(--text-light); }
-.pack-google li { margin-bottom: 12px; }
 
-/* Footer */
-.google-footer { padding: 60px 0; text-align: center; border-top: 1px solid var(--border-color); color: var(--text-light); font-size: 0.9rem; }
+.pack-list { 
+    margin: 24px 0; 
+    list-style: none; 
+    color: var(--text-light); 
+}
 
-/* Responsive */
+.pack-list li { margin-bottom: 12px; }
+
+/* Correction alignement Arabe pour les listes */
+[dir="rtl"] .pack-list { text-align: center; }
+
+/* ==========================================================================
+   FOOTER & RESPONSIVE
+   ========================================================================== */
+.google-footer { 
+    padding: 60px 0; 
+    text-align: center; 
+    border-top: 1px solid var(--border-color); 
+    color: var(--text-light); 
+    font-size: 0.9rem; 
+}
+
 @media (max-width: 768px) {
-    .google-nav { padding: 12px 0; }
-    .brand { font-size: 1.3rem; }
+    .google-nav { padding: 10px 0; }
+    .logo { height: 35px; }
     .hero-btns { display: flex; flex-direction: column; gap: 12px; }
     .btn-google-outline { margin-left: 0; }
     .pack-google.featured { transform: scale(1); }
+    .nav-flex { padding: 5px 0; }
 }
-/* --- CORRECTION LOGO PNG --- */
-.logo {
-    height: 45px; /* Hauteur idéale pour la barre Google */
-    width: auto;  /* Garde les proportions sans déformer */
-    display: block;
-    transition: transform 0.2s ease;
-}
-
-.logo:hover {
-    transform: scale(1.03); /* Petit effet interactif au survol */
-}
-
-/* Ajustement spécifique pour mobile */
-@media (max-width: 768px) {
-    .logo {
-        height: 35px; /* On réduit un peu sur téléphone pour gagner de l'espace */
-    }
-    
-    .nav-flex {
-        padding: 5px 0;
-    }
-}
-
-/* --- NETTOYAGE DES ANCIENS STYLES BRAND --- */
-/* Vous pouvez supprimer ou commenter l'ancien style .brand qui utilisait du texte */
-/* .brand { font-family: 'Google Sans', sans-serif; ... } */
-
