@@ -79,20 +79,30 @@ h1 { font-family: 'Google Sans', sans-serif; font-size: clamp(2.2rem, 6vw, 3.8re
     .btn-google-outline { margin-left: 0; }
     .pack-google.featured { transform: scale(1); }
 }
-.logo-img {
-    height: 40px; /* Ajustez la hauteur selon vos besoins */
-    width: auto;
+/* --- CORRECTION LOGO PNG --- */
+.logo {
+    height: 45px; /* Hauteur idéale pour la barre Google */
+    width: auto;  /* Garde les proportions sans déformer */
     display: block;
+    transition: transform 0.2s ease;
 }
 
-/* Sur mobile, on peut le réduire un peu */
+.logo:hover {
+    transform: scale(1.03); /* Petit effet interactif au survol */
+}
+
+/* Ajustement spécifique pour mobile */
 @media (max-width: 768px) {
-    .logo-img {
-        height: 32px;
+    .logo {
+        height: 35px; /* On réduit un peu sur téléphone pour gagner de l'espace */
+    }
+    
+    .nav-flex {
+        padding: 5px 0;
     }
 }
-.logo {
-    height: 40px;
-    width: auto;
-}
+
+/* --- NETTOYAGE DES ANCIENS STYLES BRAND --- */
+/* Vous pouvez supprimer ou commenter l'ancien style .brand qui utilisait du texte */
+/* .brand { font-family: 'Google Sans', sans-serif; ... } */
 
