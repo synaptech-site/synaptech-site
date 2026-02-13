@@ -1,233 +1,155 @@
-/* ==========================================================================
-   MAWJOUD - DESIGN SYSTEM GOOGLE (STABLE & RESPONSIVE)
-   ========================================================================== */
-
 :root {
-    --google-blue: #4285F4;
-    --google-red: #EA4335;
-    --google-yellow: #FBBC05;
-    --google-green: #34A853;
-    --text-dark: #202124;
-    --text-light: #5f6368;
-    --border-color: #dadce0;
-    --bg-gray: #f8f9fa;
+    --sq-black: #111111;
+    --sq-white: #ffffff;
+    --sq-gray: #f2f2f2;
+    --sq-text-dim: #555555;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
 body { 
-    font-family: 'Open Sans', sans-serif; 
-    background-color: #fff; 
-    color: var(--text-dark); 
-    line-height: 1.6; 
+    font-family: 'Montserrat', sans-serif; 
+    background-color: var(--sq-white); 
+    color: var(--sq-black);
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Support Arabe/Tunisien */
-[dir="rtl"] body { font-family: 'Tajawal', sans-serif; }
+.container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
 
-.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-
-/* ==========================================================================
-   NAVIGATION & LOGO
-   ========================================================================== */
-.google-nav { 
-    padding: 12px 0; 
-    background: #fff; 
-    border-bottom: 1px solid var(--border-color); 
-    position: sticky; 
-    top: 0; 
-    z-index: 1000; 
+/* Navigation Style Squarespace */
+.sq-nav {
+    padding: 30px 0;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
 }
 
-.nav-flex { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+.nav-flex { display: flex; justify-content: space-between; align-items: center; }
+
+.logo { height: 35px; width: auto; filter: grayscale(1) invert(0); }
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--sq-black);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-left: 30px;
 }
 
-[dir="rtl"] .nav-flex { flex-direction: row-reverse; }
-
-/* Correction Logo PNG */
-.logo {
-    height: 45px; 
-    width: auto;  
-    display: block;
-    transition: transform 0.2s ease;
+/* Bouton Squarespace Signature */
+.btn-sq {
+    background: var(--sq-black);
+    color: #fff !important;
+    padding: 14px 28px;
+    font-size: 0.75rem !important;
+    transition: opacity 0.3s;
 }
 
-.logo:hover { transform: scale(1.03); }
+.btn-sq:hover { opacity: 0.8; }
 
-/* ==========================================================================
-   BOUTONS GOOGLE STYLE
-   ========================================================================== */
-.btn-google-blue { 
-    background: var(--google-blue); 
-    color: #fff; 
-    padding: 12px 26px; 
-    border-radius: 4px; 
-    text-decoration: none; 
-    font-weight: 500; 
-    display: inline-block; 
-    transition: 0.2s; 
-    border: none; 
+/* Hero Section */
+.hero-sq {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: var(--sq-gray);
+    padding-top: 100px;
 }
 
-.btn-google-blue:hover { 
-    background: #3b78e7; 
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2); 
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 30px;
 }
 
-.btn-google-outline { 
-    border: 1px solid var(--border-color); 
-    color: var(--google-blue); 
-    padding: 12px 26px; 
-    border-radius: 4px; 
-    text-decoration: none; 
-    font-weight: 500; 
-    transition: 0.2s; 
-    display: inline-block; 
+h1 em { font-style: italic; }
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--sq-text-dim);
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.btn-google-outline:hover { background: #f1f3f4; }
-
-.btn-lang-google { 
-    text-decoration: none; 
-    color: var(--text-light); 
-    font-size: 0.9rem; 
-    margin-right: 20px; 
+.btn-sq-large {
+    text-decoration: none;
+    background: var(--sq-black);
+    color: white;
+    padding: 20px 50px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
 }
 
-[dir="rtl"] .btn-lang-google { margin-right: 0; margin-left: 20px; }
+/* Template Grid */
+.templates-section { padding: 120px 0; }
+.section-header { text-align: center; margin-bottom: 80px; }
+.section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; }
 
-/* ==========================================================================
-   HERO & FEATURES
-   ========================================================================== */
-.hero-google { padding: 100px 0 80px; text-align: center; }
-
-h1 { 
-    font-family: 'Google Sans', sans-serif; 
-    font-size: clamp(2.2rem, 6vw, 3.8rem); 
-    color: #202124; 
-    margin-bottom: 24px; 
-    font-weight: 500; 
+.template-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
 }
 
-.g-blue { color: var(--google-blue); }
-.g-green { color: var(--google-green); }
+.template-card { cursor: pointer; }
 
-.hero-google p { 
-    font-size: 1.3rem; 
-    color: var(--text-light); 
-    max-width: 750px; 
-    margin: 0 auto 40px; 
+.t-image {
+    position: relative;
+    overflow: hidden;
+    background: #eee;
+    aspect-ratio: 4/5;
 }
 
-.google-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
-    gap: 24px; 
-    padding: 60px 0; 
+.t-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.google-card { padding: 32px; border-radius: 8px; transition: 0.3s; }
-.google-card:hover { background: var(--bg-gray); }
+.template-card:hover img { transform: scale(1.05); }
 
-.icon-circle { 
-    width: 56px; 
-    height: 56px; 
-    border-radius: 50%; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    font-size: 1.4rem; 
-    margin-bottom: 20px; 
+.t-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
-.bg-blue { background: #e8f0fe; }
-.bg-red { background: #fce8e6; }
-.bg-yellow { background: #fef7e0; }
-.bg-green { background: #e6f4ea; }
+.template-card:hover .t-overlay { opacity: 1; }
 
-/* ==========================================================================
-   PACKS & PRICING (LAHJA TOUNSIA SUPPORT)
-   ========================================================================== */
-.pricing-google { padding: 80px 0; background: var(--bg-gray); text-align: center; }
-.section-title { font-family: 'Google Sans', sans-serif; margin-bottom: 50px; font-size: 2rem; }
-
-.pricing-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 24px; 
+.btn-view {
+    background: #fff;
+    color: #000;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
 }
 
-.pack-google { 
-    background: #fff; 
-    padding: 48px 32px; 
-    border-radius: 8px; 
-    border: 1px solid var(--border-color); 
-    transition: 0.3s; 
-    position: relative; 
-}
+.t-info { padding: 25px 0; }
+.t-info h3 { font-size: 1.1rem; margin-bottom: 8px; font-weight: 600; }
+.t-info p { color: var(--sq-text-dim); font-size: 0.9rem; }
 
-.pack-google.featured { 
-    border: 2px solid var(--google-blue); 
-    transform: scale(1.05); 
-}
-
-.populaire { 
-    position: absolute; 
-    top: -15px; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    background: var(--google-blue); 
-    color: #fff; 
-    padding: 4px 16px; 
-    border-radius: 20px; 
-    font-size: 0.8rem; 
-    font-weight: 600; 
-}
-
-.price { font-size: 3rem; font-weight: 700; margin: 24px 0; }
-.price span { font-size: 1rem; color: var(--text-light); font-weight: 400; }
-
-.pack-list { 
-    margin: 24px 0; 
-    list-style: none; 
-    color: var(--text-light); 
-}
-
-.pack-list li { margin-bottom: 12px; }
-
-/* Correction alignement Arabe pour les listes */
-[dir="rtl"] .pack-list { text-align: center; }
-
-/* ==========================================================================
-   FOOTER & RESPONSIVE
-   ========================================================================== */
-.google-footer { 
-    padding: 60px 0; 
-    text-align: center; 
-    border-top: 1px solid var(--border-color); 
-    color: var(--text-light); 
-    font-size: 0.9rem; 
-}
-
-@media (max-width: 768px) {
-    .google-nav { padding: 10px 0; }
-    .logo { height: 35px; }
-    .hero-btns { display: flex; flex-direction: column; gap: 12px; }
-    .btn-google-outline { margin-left: 0; }
-    .pack-google.featured { transform: scale(1); }
-    .nav-flex { padding: 5px 0; }
-}
-
-/* FORCE L'AFFICHAGE DU LOGO */
-.logo, .main-logo {
-    display: block !important;
-    height: 60px !important; /* Testez avec une hauteur fixe */
-    width: auto !important;
-    min-width: 50px !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+/* Responsive */
+@media (max-width: 900px) {
+    .template-grid { grid-template-columns: 1fr; }
+    .container { padding: 0 20px; }
+    .nav-links a:not(.btn-sq) { display: none; }
 }
