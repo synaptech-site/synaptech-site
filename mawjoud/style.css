@@ -7,7 +7,12 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--font-sans); color: var(--sq-black); background: var(--sq-white); -webkit-font-smoothing: antialiased; }
+body { 
+    font-family: var(--font-sans); 
+    color: var(--sq-black); 
+    background: var(--sq-white); 
+    -webkit-font-smoothing: antialiased; 
+}
 
 .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
 
@@ -22,6 +27,7 @@ body { font-family: var(--font-sans); color: var(--sq-black); background: var(--
 
 .nav-flex { display: flex; justify-content: space-between; align-items: center; }
 
+/* Empêche le logo de devenir géant ou de disparaître */
 .logo {
     height: 32px; /* Taille exacte Squarespace */
     width: auto;
@@ -43,7 +49,7 @@ body { font-family: var(--font-sans); color: var(--sq-black); background: var(--
     font-weight: 600;
 }
 
-/* HERO SECTION ÉDITORIALE */
+/* HERO SECTION STYLE SQUARESPACE */
 .hero-sq {
     height: 85vh;
     display: flex;
@@ -80,7 +86,7 @@ body { font-family: var(--font-sans); color: var(--sq-black); background: var(--
     font-weight: 600;
 }
 
-/* TEMPLATE GRID */
+/* GRID DE THÈMES DISPONIBLES */
 .templates-section { padding: 120px 0; }
 .section-intro { text-align: center; margin-bottom: 80px; }
 .section-intro h2 { font-family: var(--font-serif); font-size: 3rem; }
@@ -100,6 +106,29 @@ body { font-family: var(--font-sans); color: var(--sq-black); background: var(--
 
 .t-media img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; }
 .template-card:hover img { transform: scale(1.03); }
+
+.t-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.template-card:hover .t-overlay { opacity: 1; }
+
+.btn-demo {
+    background: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
 
 .t-info { padding: 30px 0; text-align: center; }
 .t-info h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 5px; }
