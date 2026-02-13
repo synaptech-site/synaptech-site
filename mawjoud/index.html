@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mawjoud | Créez votre présence remarquable</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,67 +12,75 @@
     <nav class="sq-nav">
         <div class="container nav-flex">
             <div class="brand">
-                <img src="logo-mawjoud.png" alt="Mawjoud" class="logo">
+                <a href="index.html">
+                    <img src="mawjoud/logo.svg" alt="Mawjoud Logo" class="logo">
+                </a>
             </div>
             <div class="nav-links">
+                <a href="#templates">Produits</a>
                 <a href="#templates">Templates</a>
                 <a href="ar.html" class="lang-link">العربية</a>
-                <a href="https://wa.me/21622961115" class="btn-sq">Commencer</a>
+                <a href="https://wa.me/21622961115" class="btn-sq-nav">Commencer</a>
             </div>
         </div>
     </nav>
 
     <header class="hero-sq">
-        <div class="container hero-content">
-            <h1>Tout pour réussir <br><em>en ligne.</em></h1>
-            <p>Des templates conçus par des designers pour les commerçants tunisiens exigeants.</p>
-            <div class="hero-cta">
-                <a href="#templates" class="btn-sq-dark">Choisir un template</a>
+        <div class="container">
+            <div class="hero-text-box">
+                <h1>Tout pour réussir <br><em>en ligne.</em></h1>
+                <p>Créez un site web exceptionnel pour votre commerce tunisien avec les outils de design les plus avancés.</p>
+                <div class="hero-btns">
+                    <a href="#templates" class="btn-sq-black">Choisir un template</a>
+                </div>
             </div>
         </div>
     </header>
 
     <section id="templates" class="templates-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Parcourir nos templates</h2>
-                <p>Sélectionnez une base, nous la personnalisons pour vous.</p>
+            <div class="section-intro">
+                <h2>Parcourir nos meilleurs templates</h2>
+                <p>Commencez avec une base flexible et personnalisez-la selon votre marque.</p>
             </div>
 
             <div class="template-grid">
                 <div class="template-card">
-                    <div class="t-image">
-                        <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=800" alt="Artisan">
-                        <div class="t-overlay">
-                            <a href="#" class="btn-view">Démo Artisan</a>
+                    <div class="t-media">
+                        <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=800" alt="Template Artisan">
+                        <div class="t-hover">
+                            <span class="btn-secondary">Aperçu</span>
                         </div>
                     </div>
-                    <div class="t-info">
-                        <h3>Artisanat & Poterie</h3>
+                    <div class="t-meta">
+                        <h3>Artisanat Moderne</h3>
+                        <p>Minimaliste • Boutique</p>
                     </div>
                 </div>
 
                 <div class="template-card">
-                    <div class="t-image">
-                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800" alt="Gastronomie">
-                        <div class="t-overlay">
-                            <a href="#" class="btn-view">Démo Food</a>
+                    <div class="t-media">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800" alt="Template Gastronomie">
+                        <div class="t-hover">
+                            <span class="btn-secondary">Aperçu</span>
                         </div>
                     </div>
-                    <div class="t-info">
-                        <h3>Gastronomie Moderne</h3>
+                    <div class="t-meta">
+                        <h3>Gastronomie</h3>
+                        <p>Visuel • Restaurant</p>
                     </div>
                 </div>
 
                 <div class="template-card">
-                    <div class="t-image">
-                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800" alt="Boutique">
-                        <div class="t-overlay">
-                            <a href="#" class="btn-view">Démo Shop</a>
+                    <div class="t-media">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800" alt="Template Mode">
+                        <div class="t-hover">
+                            <span class="btn-secondary">Aperçu</span>
                         </div>
                     </div>
-                    <div class="t-info">
-                        <h3>Concept Store Luxe</h3>
+                    <div class="t-meta">
+                        <h3>Concept Store</h3>
+                        <p>Élégant • Mode</p>
                     </div>
                 </div>
             </div>
@@ -81,7 +89,9 @@
 
     <footer class="sq-footer">
         <div class="container">
-            <p>© 2026 Mawjoud • L'excellence digitale par Synaptech.</p>
+            <div class="footer-content">
+                <p>© 2026 Mawjoud • Une solution de design premium par Synaptech.</p>
+            </div>
         </div>
     </footer>
 
