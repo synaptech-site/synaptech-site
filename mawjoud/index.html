@@ -72,9 +72,9 @@
                 </div>
             </div>
             <div class="hidden md:flex gap-8 font-semibold text-slate-600">
-                <a href="#solutions" class="hover:text-indigo-600 transition">Solutions</a>
                 <a href="#styles" class="hover:text-indigo-600 transition">Modèles</a>
                 <a href="#tarifs" class="hover:text-indigo-600 transition">Tarifs</a>
+                <a href="https://synaptech.tn/mawjoud/ar.html" class="text-indigo-600 underline font-bold">Arabe 🌐</a>
             </div>
             <a href="https://wa.me/21622961115" class="btn-grad text-white px-6 py-2.5 rounded-full font-bold flex items-center gap-2">
                 <i class="fab fa-whatsapp"></i> Contact
@@ -109,7 +109,7 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="group rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all reveal">
                     <div class="h-64 bg-slate-100 overflow-hidden">
-                        <img src="mawjoud/assets/unsplash.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Style Authentique">
+                        <img src="https://images.unsplash.com/photo-1565193998248-d51f3c718a44?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Style Authentique">
                     </div>
                     <div class="p-8 text-center">
                         <h3 class="text-2xl font-bold mb-2">Style Authentique</h3>
@@ -120,7 +120,7 @@
 
                 <div class="group rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all reveal">
                     <div class="h-64 bg-slate-100 overflow-hidden">
-                        <img src="mawjoud/assets/photo-1460925895917-afdab827c52f.avif" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Style Business">
+                        <img src="https://images.unsplash.com/photo-1581578731548-c64695ce6958?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Style Business">
                     </div>
                     <div class="p-8 text-center">
                         <h3 class="text-2xl font-bold mb-2 text-indigo-600">Style Business</h3>
@@ -185,7 +185,7 @@
             </div>
             <div class="flex gap-4">
                 <a href="https://wa.me/21622961115" class="bg-white/5 w-12 h-12 rounded-full flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://instagram.com/synaptech" class="bg-white/5 w-12 h-12 rounded-full flex items-center justify-center hover:bg-pink-600 transition"><i class="fab fa-instagram"></i></a>
+                <a href="https://synaptech.tn/mawjoud/ar.html" class="bg-white/5 w-12 h-12 rounded-full flex items-center justify-center hover:bg-indigo-600 transition" title="Version Arabe"><i class="fas fa-language"></i></a>
             </div>
         </div>
     </footer>
@@ -217,7 +217,7 @@
                     const lat = position.coords.latitude;
                     const lng = position.coords.longitude;
                     const url = `https://www.google.com/maps?q=${lat},${lng}`;
-                    const waMsg = encodeURIComponent(`Bonjour Mawjoud ! Voici ma position pour l'installation du site : ${url}`);
+                    const waMsg = encodeURIComponent(`Bonjour Mawjoud ! Voici ma position : ${url}`);
                     window.location.href = `https://wa.me/21622961115?text=${waMsg}`;
                 }, (error) => {
                     alert("Erreur de localisation. Veuillez activer le GPS.");
