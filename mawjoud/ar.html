@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class="hidden md:flex gap-8 font-bold text-slate-600">
-                <a href="#packs" class="hover:text-indigo-600 transition">الـ Packs</a>
+                <a href="#packs" class="hover:text-indigo-600 transition">الأسوام</a>
                 <a href="#solutions" class="hover:text-indigo-600 transition">الحلول</a>
                 <a href="https://wa.me/21622961115" class="text-indigo-600 underline">Français 🌐</a>
             </div>
@@ -92,8 +92,10 @@
                 <span class="font-bold text-indigo-600">Mawjoud</span> يربطك بالكليونات متاعك عن طريق <span class="font-bold">WhatsApp</span> و <span class="font-bold">Google Maps</span> في أسرع وقت.
             </p>
             <div class="flex flex-wrap justify-center gap-4 reveal">
-                <a href="#packs" class="btn-grad text-white px-10 py-4 rounded-2xl font-bold text-lg">شوف الحلول</a>
-                <a href="https://wa.me/21622961115" class="bg-white border-2 border-slate-200 px-10 py-4 rounded-2xl font-bold text-lg hover:bg-slate-50 transition">احكي مع خبير</a>
+                <a href="#packs" class="btn-grad text-white px-10 py-4 rounded-2xl font-bold text-lg">شوف الأسوام</a>
+                <button onclick="shareLocation()" class="bg-white border-2 border-slate-200 px-10 py-4 rounded-2xl font-bold text-lg hover:bg-slate-50 transition flex items-center gap-2">
+                    <i class="fas fa-location-arrow text-indigo-600"></i> ابعث بلاصتك
+                </button>
             </div>
         </div>
     </section>
@@ -102,43 +104,34 @@
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-4xl font-black mb-4 italic uppercase">اختار الـ Pack اللي يواتيك</h2>
-                <p class="text-slate-500">أسعار واضحة، من غير مفاجآت.</p>
+                <p class="text-slate-500">خلص بالشهر والا فرد مرة، ساهلة العملية.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 
-                <div class="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-100 reveal flex flex-col">
-                    <h3 class="text-2xl font-bold mb-2">Pack Express</h3>
-                    <div class="text-4xl font-black text-slate-900 mb-6">350 <span class="text-sm font-normal text-slate-500 italic">د.ت</span></div>
+                <div class="bg-slate-50 p-10 rounded-[3rem] border border-slate-100 reveal flex flex-col hover:shadow-xl transition">
+                    <h3 class="text-3xl font-bold mb-2">Pack Liberté</h3>
+                    <p class="text-slate-500 mb-6">خلص بالشوية من غير ضغط.</p>
+                    <div class="text-5xl font-black text-indigo-600 mb-8">49 <span class="text-sm font-normal text-slate-500 italic">د.ت / شهر</span></div>
                     <ul class="space-y-4 mb-10 text-slate-600 flex-grow">
-                        <li><i class="fas fa-check-circle text-indigo-500 ml-2"></i> Page de présentation مزيانة</li>
-                        <li><i class="fas fa-check-circle text-indigo-500 ml-2"></i> Bouton WhatsApp يخدم طول</li>
-                        <li><i class="fas fa-check-circle text-indigo-500 ml-2"></i> Localisation Google Maps</li>
+                        <li><i class="fas fa-check-circle text-indigo-500 ml-2"></i> Site vitrine مزيانة</li>
+                        <li><i class="fas fa-check-circle text-indigo-500 ml-2"></i> Bouton WhatsApp direct</li>
+                        <li><i class="fas fa-check-circle text-indigo-500 ml-2"></i> Maintenance كامل العام</li>
                     </ul>
-                    <a href="https://wa.me/21622961115?text=Je veux le Pack Express" class="block text-center border-2 border-slate-900 py-3 rounded-xl font-bold hover:bg-slate-900 hover:text-white transition">اختار هذا</a>
+                    <a href="https://wa.me/21622961115?text=Je veux le Pack Liberté (49DT)" class="block text-center border-2 border-slate-900 py-4 rounded-2xl font-bold hover:bg-slate-900 hover:text-white transition">اختار هذا</a>
                 </div>
 
-                <div class="bg-white p-8 rounded-[2.5rem] border-4 border-indigo-600 shadow-2xl reveal relative flex flex-col scale-105 z-10">
-                    <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase">الأكثر طلباً</span>
-                    <h3 class="text-2xl font-bold mb-2 text-indigo-600">Pack Pro</h3>
-                    <div class="text-4xl font-black text-slate-900 mb-6">600 <span class="text-sm font-normal text-slate-500 italic">د.ت</span></div>
-                    <ul class="space-y-4 mb-10 text-slate-600 flex-grow">
-                        <li><i class="fas fa-star text-indigo-500 ml-2"></i> كل شي في الـ Express</li>
-                        <li><i class="fas fa-check-circle text-indigo-500 ml-2"></i> Galerie فيها 10 تصاور</li>
-                        <li><i class="fas fa-check-circle text-indigo-500 ml-2"></i> Hébergement مخلص عام</li>
+                <div class="bg-indigo-600 p-10 rounded-[3rem] text-white reveal shadow-2xl relative flex flex-col scale-105 z-10">
+                    <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-slate-900 px-4 py-1 rounded-full text-xs font-bold uppercase">أحسن عرض</span>
+                    <h3 class="text-3xl font-bold mb-2">Pack Propriétaire</h3>
+                    <p class="text-indigo-100 mb-6">الـ site ملكك لـ حياتك.</p>
+                    <div class="text-5xl font-black mb-8 italic">450 <span class="text-sm font-normal opacity-80">د.ت / مرة وحدة</span></div>
+                    <ul class="space-y-4 mb-10 text-indigo-50 flex-grow">
+                        <li><i class="fas fa-star text-yellow-300 ml-2"></i> الـ site يقعد ملكك ديما</li>
+                        <li><i class="fas fa-check-circle text-white ml-2"></i> Nom de domaine .tn بلاش</li>
+                        <li><i class="fas fa-check-circle text-white ml-2"></i> Galerie تصاور احترافية</li>
                     </ul>
-                    <a href="https://wa.me/21622961115?text=Je veux le Pack Pro" class="block text-center btn-grad text-white py-4 rounded-xl font-bold shadow-lg">ابدا توّة</a>
-                </div>
-
-                <div class="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-100 reveal flex flex-col">
-                    <h3 class="text-2xl font-bold mb-2">Pack Premium</h3>
-                    <div class="text-4xl font-black text-slate-900 mb-6">1000 <span class="text-sm font-normal text-slate-500 italic">د.ت</span></div>
-                    <ul class="space-y-4 mb-10 text-slate-600 flex-grow">
-                        <li><i class="fas fa-plus-circle text-indigo-500 ml-2"></i> كل شي في الـ Pro</li>
-                        <li><i class="fas fa-check-circle text-indigo-500 ml-2"></i> Nom de domaine .tn خاص بيك</li>
-                        <li><i class="fas fa-check-circle text-indigo-500 ml-2"></i> Support VIP معانا عام كامل</li>
-                    </ul>
-                    <a href="https://wa.me/21622961115?text=Je veux le Pack Premium" class="block text-center border-2 border-slate-900 py-3 rounded-xl font-bold hover:bg-slate-900 hover:text-white transition">اختار هذا</a>
+                    <a href="https://wa.me/21622961115?text=Je veux le Pack Propriétaire (450DT)" class="block text-center bg-white text-indigo-600 py-4 rounded-2xl font-bold hover:bg-slate-100 transition shadow-lg">ابدا توّة</a>
                 </div>
 
             </div>
@@ -150,12 +143,12 @@
             <div class="flex justify-center mb-6">
                 <img src="logo.svg" alt="Mawjoud" class="h-12 brightness-0 invert opacity-80">
             </div>
-            <p class="text-slate-400 mb-8 max-w-md mx-auto italic font-light">"موجود" يعاون كل حرفي تونسي باش يكون عنده بلاصة في الأنترنات بأسعار معقولة.</p>
+            <p class="text-slate-400 mb-8 max-w-md mx-auto italic font-light">"موجود" هو الحل باش تخرج خدمتك للنور بأقل تكاليف.</p>
             <div class="flex justify-center gap-6 mb-12">
                 <a href="https://wa.me/21622961115" class="text-2xl hover:text-green-400 transition"><i class="fab fa-whatsapp"></i></a>
-                <a href="#" class="text-2xl hover:text-indigo-400 transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-2xl hover:text-indigo-400 transition"><i class="fab fa-instagram"></i></a>
             </div>
-            <p class="text-sm text-slate-500">© 2026 موجود • <span class="font-bold">Synaptech</span> تونس 🇹🇳</p>
+            <p class="text-sm text-slate-500 italic">© 2026 موجود • <span class="font-bold text-white">Synaptech</span> تونس 🇹🇳</p>
         </div>
     </footer>
 
@@ -164,7 +157,6 @@
     </a>
 
     <script>
-        // Animation function
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -178,6 +170,20 @@
         }
         window.addEventListener("scroll", reveal);
         reveal();
+
+        function shareLocation() {
+            if (!navigator.geolocation) {
+                alert("النافigateur متاعك ما يدعمش الـ GPS.");
+            } else {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
+                    const url = `https://www.google.com/maps?q=${lat},${lng}`;
+                    const waMsg = encodeURIComponent(`عصبة للناس الكل ! هذي بلاصتي : ${url}`);
+                    window.location.href = `https://wa.me/21622961115?text=${waMsg}`;
+                });
+            }
+        }
     </script>
 
 </body>
