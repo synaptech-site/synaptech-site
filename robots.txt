@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /merci-fr.html
-Disallow: /thank-you.html
 Sitemap: https://synaptech.tn/sitemap.xml
